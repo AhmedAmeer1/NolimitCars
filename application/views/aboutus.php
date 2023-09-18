@@ -6,11 +6,11 @@
         <title></title>
         <link rel="stylesheet" href="<?= base_url('assets/css/aboutus.css') ?>">
     </head>
-    <?php $this->load->view('common_components/header'); ?>
+ 
     <body>
 
 
- 
+    <?php $this->load->view('common_components/header'); ?>
         <section id="content">
             <section class="commonbanner">
                 <div class="sub_banner_overlay"></div>
@@ -35,5 +35,7 @@
                 </div>
             </section>
         </section>
+
+        <?php $this->load->view('common_components/footer'); ?>
     </body>
     </html>

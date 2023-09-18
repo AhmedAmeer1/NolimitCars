@@ -5,7 +5,7 @@
   
 
 
-     <link href="<?php echo base_url('assets/css/bootstrap.min1.css')?>" rel="stylesheet" />
+    <link href="<?php echo base_url('assets/css/bootstrap.min1.css')?>" rel="stylesheet" />
     <link href="<?php echo base_url('assets/css/custom.css')?>" rel="stylesheet" />
 
     
@@ -41,16 +41,16 @@
                             <a class="nav-link" href="<?php echo base_url()?>">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="https://www.nolimitcars.co.uk/wp/about-us/">About Us</a>
+                            <a class="nav-link" href="<?php echo base_url()?>aboutus">About Us</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="https://www.nolimitcars.co.uk/wp/faqs/">Faq</a>
+                            <a class="nav-link" href="<?php echo base_url()?>faq">Faq </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="https://www.nolimitcars.co.uk/wp/reviews/">reviews</a>
+                            <a class="nav-link" href="<?php echo base_url()?>customerReviews">reviews</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="https://www.nolimitcars.co.uk/wp/contact-us/">contact</a>
+                            <a class="nav-link"href="<?php echo base_url()?>contactus">contact</a>
                         </li>
                     </ul>
                 </div>
