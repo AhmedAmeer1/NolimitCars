@@ -102,23 +102,23 @@
 
             <div>
                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav ml-auto">
+               <ul class="navbar-nav ml-auto">
                         <li class="nav-item active">
                             <a class="nav-link" href="<?php echo base_url()?>">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="https://www.nolimitcars.co.uk/wp/about-us/">About Us</a>
+                            <a class="nav-link" href="<?php echo base_url()?>aboutus">About Us</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="https://www.nolimitcars.co.uk/wp/faqs/">Faq</a>
+                            <a class="nav-link" href="<?php echo base_url()?>faq">Faq </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="https://www.nolimitcars.co.uk/wp/reviews/">reviews</a>
+                            <a class="nav-link" href="<?php echo base_url()?>customerReviews">reviews</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="https://www.nolimitcars.co.uk/wp/contact-us/">contact</a>
+                            <a class="nav-link"href="<?php echo base_url()?>contactus">contact</a>
                         </li>
-                    </ul>
+                    </ul>  
                 </div>
                 <div class="container  text-right new-number" style="padding-top:60px;padding-right: 0px !important;">
                     <a href="tel:02039822911"><img src="<?php echo base_url('assets/images/call.png')?>" alt=""> 02039822911</a>
