@@ -41,9 +41,9 @@
                                 Email us at <a class="contactmail" href="mailto:info@nolimitcars.co.uk">info@nolimitcars.co.uk</a><br>
                                 Telephone: <a href="tel:01293775422">01293 775422</a><br>
                                 <br>
-                                <span class="sitename">NOLIMIT AIRPORT LTD.</span> <br>
+                                <span class="sitename">NOLIMIT AIRPORT LTD.</span> <span class=""> <br>
                                 Registered England and Wales.<br>
-                                Registration No: 11212437
+                                Registration No: 11212437.</span>
                             </div>
                         </div>
                         <div class="contact_column">

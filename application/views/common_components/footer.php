@@ -44,13 +44,13 @@
                     <ul class="side-menu">
                         <li><a href="">© NOLIMIT Cars 2017</a></li>
                         <!--<li><a href="https://www.nolimitcars.co.uk/wp/about-us/">About</a></li>-->
-                        <li><a href="https://www.nolimitcars.co.uk/wp/terms-and-conditions/">Terms</a></li>
-                        <li><a href="https://www.nolimitcars.co.uk/wp/drivers/">Drivers</a></li>
+                        <li><a  href="<?php echo base_url()?>terms">Terms</a></li>
+                        <li><a  href="<?php echo base_url()?>drivers">Drivers</a></li>
                         <!--<li><a data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">Areas</a>-->
                     </ul>
                 </div>
                 <div class="col-md-6">
-                   <h6 class="credit"> Crafted by <a href="https://www.solutions2xl.com/" target="_blank" >2XL</a></h6>
+                   <h6 class="credit"><a href="https://www.solutions2xl.com/" target="_blank" ></a></h6>
                 </div>
             </div>
             

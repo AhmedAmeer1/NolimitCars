@@ -12,7 +12,6 @@
 
 
 
-<body>
 
     <header class="limits-header-wrapper d-md-block d-none">
 
@@ -50,7 +49,7 @@
                             <a class="nav-link" href="<?php echo base_url()?>customerReviews">reviews</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link"href="<?php echo base_url()?>contactus">contact</a>
+                            <a class="nav-link" href="<?php echo base_url()?>contactUs">contact</a>
                         </li>
                     </ul>
                 </div>

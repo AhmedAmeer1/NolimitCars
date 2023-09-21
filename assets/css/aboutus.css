@@ -1,3 +1,13 @@
+html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, menu, nav, section, time, mark, audio, video, details, summary {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font-weight: normal;
+    vertical-align: baseline;
+    background: transparent;
+}
+
 body {
     background: #000;
     font-family: 'Helvetica 55 Roman';
@@ -5,6 +15,10 @@ body {
     color: #fff;
     margin: 0;
     text-align: left;
+}
+
+section {
+    display: block;
 }
 
 #footer, #content {
@@ -93,20 +107,21 @@ img, object, embed {
 }
 
 .subcontent_wrapper h1 {
-    color: white !important;
+    color: white;
     position: relative;
     font-family: 'Helvetica Neue Condensed Bold';
     font-size: 24px;
     line-height: 28px;
-
+    /* text-transform: uppercase; */
     text-align: center;
+    font-weight: 900;
     margin-bottom: 30px;
 }
 
 .subcontent_wrapper p {
-    color: white !important;
+    color: white;
     font-family: 'Helvetica 55 Roman';
-    font-size: 13px;
+    font-size: 14px;
     line-height: 18px;
     margin-bottom: 20px;
 }
@@ -141,16 +156,8 @@ a {
     background: transparent;
 }
 
-
-article, aside, figure, footer, header, nav, section, details, summary {
-    display: block;
-}
-
-*, *:before, *:after {
-    box-sizing: inherit;
-}
-
 .subbottom_text {
+    
     position: relative;
     font-family: 'Helvetica Neue Medium';
     font-size: 24px;
@@ -158,14 +165,8 @@ article, aside, figure, footer, header, nav, section, details, summary {
     margin-top: 30px;
 }
 
-html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, menu, nav, section, time, mark, audio, video, details, summary {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    font-weight: normal;
-    vertical-align: baseline;
-    background: transparent;
+article, aside, figure, footer, header, nav, section, details, summary {
+    display: block;
 }
 
 *, *:before, *:after {

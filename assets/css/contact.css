@@ -17,6 +17,10 @@ body {
     text-align: left;
 }
 
+section {
+    display: block;
+}
+
 .commonbanner {
     position: relative;
     width: 100%;
@@ -128,17 +132,19 @@ img, object, embed {
     font-family: 'Helvetica Neue Condensed Bold';
     font-size: 24px;
     line-height: 28px;
+    font-weight: 900;
     margin-bottom: 20px;
 }
 
 .address_wrapper {
     font-family: 'Helvetica 55 Roman';
-    font-size: 18px;
+    font-size: 19px;
 }
 
 .sitename {
     font-family: 'Helvetica Neue Bold';
     color: #f38422;
+    font-weight: 900;
 }
 
 a.contactmail {
@@ -174,7 +180,6 @@ a:-webkit-any-link {
 }
 
 .address_wrapper {
-    color: white !important;
     font-family: 'Helvetica 55 Roman';
     font-size: 18px;
 }
@@ -206,12 +211,15 @@ form {
 }
 
 .contact_column h1, h1.reviewshead {
-    color: white !important;
+    color: white;
     position: relative;
     font-family: 'Helvetica Neue Condensed Bold';
     font-size: 24px;
     line-height: 28px;
     margin-bottom: 20px;
+}
+.br-class{
+    color: white;
 }
 
 h1 {

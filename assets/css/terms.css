@@ -17,13 +17,17 @@ body {
     text-align: left;
 }
 
-section {
-    display: block;
-}
-
 #footer, #content {
     position: relative;
     width: 100%;
+}
+
+article, aside, figure, footer, header, nav, section, details, summary {
+    display: block;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
 }
 
 .commonbanner {
@@ -105,49 +109,21 @@ img, object, embed {
 }
 
 .subcontent_wrapper h1 {
-    color: white;
+    color: white !important;
     position: relative;
     font-family: 'Helvetica Neue Condensed Bold';
     font-size: 24px;
     line-height: 28px;
+    font-weight: 900;
     /* text-transform: uppercase; */
     text-align: center;
-    font-weight: 900;
     margin-bottom: 30px;
 }
 
-.contenthead {
-    color: white;
-    position: relative;
-    display: block;
-    font-family: 'Helvetica Neue Bold';
-    font-size: 14px;
-    font-weight: 900;
-    margin-bottom: 5px;
-}
-
 .subcontent_wrapper p {
-    color: white;
+    color: white !important;
     font-family: 'Helvetica 55 Roman';
     font-size: 14px;
     line-height: 18px;
     margin-bottom: 20px;
 }
-
-p {
-    display: block;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-}
-
-*, *:before, *:after {
-    box-sizing: inherit;
-}
-
-article, aside, figure, footer, header, nav, section, details, summary {
-    display: block;
-}
-
-

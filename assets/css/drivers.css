@@ -26,6 +26,14 @@ section {
     width: 100%;
 }
 
+article, aside, figure, footer, header, nav, section, details, summary {
+    display: block;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
 .commonbanner {
     position: relative;
     width: 100%;
@@ -105,7 +113,7 @@ img, object, embed {
 }
 
 .subcontent_wrapper h1 {
-    color: white;
+    color: white !important;
     position: relative;
     font-family: 'Helvetica Neue Condensed Bold';
     font-size: 24px;
@@ -116,38 +124,59 @@ img, object, embed {
     margin-bottom: 30px;
 }
 
-.contenthead {
-    color: white;
-    position: relative;
-    display: block;
-    font-family: 'Helvetica Neue Bold';
-    font-size: 14px;
-    font-weight: 900;
-    margin-bottom: 5px;
-}
-
 .subcontent_wrapper p {
-    color: white;
+    color: white !important;
     font-family: 'Helvetica 55 Roman';
     font-size: 14px;
     line-height: 18px;
     margin-bottom: 20px;
 }
 
-p {
-    display: block;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
+.subcontent_wrapper p a {
+    color: #f38422;
 }
 
-*, *:before, *:after {
-    box-sizing: inherit;
+a {
+    color: #000000;
+    text-decoration: none;
+    outline: none;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
 }
 
-article, aside, figure, footer, header, nav, section, details, summary {
-    display: block;
+a {
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
 }
 
+a:-webkit-any-link {
+    color: #f38422;
+    cursor: pointer;
+    /* text-decoration: underline; */
+}
 
+ul.doctodown {
+    position: relative;
+    list-style: none;
+    margin-top: 30px;
+}
+
+ul {
+    list-style: none;
+}
+
+ul.doctodown li {
+    position: relative;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+}
