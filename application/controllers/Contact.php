@@ -47,7 +47,7 @@ class Contact extends CI_Controller {
             $config['smtp_host'] = 'localhost';
             $config['smtp_port'] = 1025;
             $config['smtp_user'] = 'ahmedameer1999421@gmail.com';
-            $config['smtp_pass'] = 'Dev@1022';
+            $config['smtp_pass'] = 'hsadhsd237';
             $config['mailtype'] = 'html';
             $this->load->library('email', $config);
 
