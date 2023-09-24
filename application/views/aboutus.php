@@ -1,8 +1,8 @@
 <!DOCTYPE html>
     <html lang="en">
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="width=device-width, initial-scale=1.0, user-scalable=no" name="viewport">
+      
         <title></title>
         <link rel="stylesheet" href="<?= base_url('assets/css/aboutus.css') ?>">
     </head>
@@ -37,5 +37,8 @@
         </section>
 
         <?php $this->load->view('common_components/footer'); ?>
+
+
+    <script src="<?php echo base_url('assets/js/custom.js')?>"></script>
     </body>
     </html>

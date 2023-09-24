@@ -84,25 +84,7 @@
 
 <?php $this->load->view('common_components/header'); ?>
 
-    <div class="menu-side-wrapper d-md-none d-block">
-        <ul>
-            <li>
-                <a href="<?php echo base_url()?>">Home</a>
-            </li>
-            <li>
-                <a href="https://www.nolimitcars.co.uk/wp/about-us/">About Us</a>
-            </li>
-            <li>
-                <a href="https://www.nolimitcars.co.uk/wp/faqs/">Faq</a>
-            </li>
-            <li>
-                <a href="https://www.nolimitcars.co.uk/wp/reviews/">Reviews</a>
-            </li>
-            <li>
-                <a href="https://www.nolimitcars.co.uk/wp/contact-us/">Contact</a>
-            </li>
-        </ul>
-    </div>
+
 
     <main class="home">
        
@@ -291,124 +273,13 @@
         </section>
         
 
-        <!--<section class="reviewlist-wrapper">
-            <div class="container no-gutter-responsive">
-                <h1>RECENT REVIEWS</h1><br>
-                    <div class="box-content">
-                        <h2></h2>
-                        <div class="rating-box-inner">
-                            <div class="row">
-                                <?php foreach($reviews['data'] as $rvw ){?>
-                                <div class="col-md-3">
-                                    <div class="rating-box">
-                                        <h3><?php echo $rvw['first_name'];?> <?php echo $rvw['last_name'];?></h3>
-                                        <a style="color: #000;" href="<?php echo base_url('Reviews/reviewDetails/'.encode_param($rvw['id']))?>" class="user"><b><?php echo $rvw['first_name'];?> <?php echo $rvw['last_name'];?></b></a>
-                                        <h4><?php echo date_format(new DateTime($rvw['created_at']),"dS M Y"); ?></h4>
-                                    <fieldset class="rating prevent-click">
-                                        <input type="radio" <?php echo $rvw['rating'] == '5' ? 'checked':''?> 
-                                        id="star5_<?php echo $rvw['id']?>" name="rating_<?php echo $rvw['id']?>" value="5" />
-                                        <label for="star5_<?php echo $rvw['id']?>" title="Rocks!">5 stars</label>
-                                        <input type="radio" <?php echo $rvw['rating'] == '4' ? 'checked':''?> 
-                                        id="star4_<?php echo $rvw['id']?>" name="rating_<?php echo $rvw['id']?>" value="4" />
-                                        <label for="star4_<?php echo $rvw['id']?>" title="Pretty good">4 stars</label>
-                                        <input type="radio" <?php echo $rvw['rating'] == '3' ? 'checked':''?> 
-                                        id="star3_<?php echo $rvw['id']?>" name="rating_<?php echo $rvw['id']?>" value="3" />
-                                        <label for="star3_<?php echo $rvw['id']?>" title="Meh">3 stars</label>
-                                        <input type="radio" <?php echo $rvw['rating'] == '2' ? 'checked':''?> 
-                                        id="star2_<?php echo $rvw['id']?>" name="rating_<?php echo $rvw['id']?>" value="2" />
-                                        <label for="star2_<?php echo $rvw['id']?>" title="Kinda bad">2 stars</label>
-                                        <input type="radio" <?php echo $rvw['rating'] == '1' ? 'checked':''?> 
-                                        id="star1_<?php echo $rvw['id']?>" name="rating_<?php echo $rvw['id']?>" value="1" />
-                                        <label for="star1_<?php echo $rvw['id']?>" title="Sucks big time">1 star</label>
-                                    </fieldset>
-                                        <div class="clear"></div>
-                                        <h5>test</h5>
-                                    </div>
-                                </div>
-                            <?php } ?>
-                            </div>
-                        </div>
-                        <div class="head">
-                            <button class="review-button"><a style="text-decoration: none;color: white;" href="<?php echo base_url('Reviews/review')?>">See All Reviews</a></button>
-                        </div>
-                    </div>
-            </div>
-        </section>-->
+
 
     </main>
 
     <?php $this->load->view('common_components/footer'); ?>
 
-    <!--<div class="collapse areas-main" id="collapseExample">
-        <div class="container">
-            <div class="areas-wrapper">
-                <h1>Popular Destinations</h1>
-                <ul class="mb-5">
-                    <li>Birmingham</li>
-                    <li>Blackpool</li>
-                    <li>Bournemouth</li>
-                    <li>Bristol</li>
-                    <li>Cardiff</li>
-                    <li>Coventry</li>
-                    <li>East Midlands</li>
-                    <li>Exeter</li>
-                    <li>Euston Station</li>
-                    <li>Gatwick</li>
-                    <li>Heathrow</li>
-                    <li>humberside</li>
-                    <li>Leeds-Bradford</li>
-                    <li>Liverpool</li>
-                    <li>London City</li>
-                </ul>
-                <ul>
-                    <li><a href="https://www.nolimitcars.co.uk/local-taxi-cab-hire-company-brighton/"> LOCAL TAXI CAB HIRE COMPANY BRIGHTON</a></li>
-                    <li><a href="https://www.nolimitcars.co.uk/local-mini-cab-hire-company-brighton/"> LOCAL MINI CAB HIRE COMPANY BRIGHTON</a></li>
-                    <li><a href="https://www.nolimitcars.co.uk/local-corporate-taxi-cab-company-brighton/"> LOCAL CORPORATE TAXI CAB COMPANY BRIGHTON</a></li>
-                    <li><a href="https://www.nolimitcars.co.uk/local-chauffeured-car-hire-company-brighton/"> LOCAL CHAUFFEURED CAR HIRE COMPANY BRIGHTON</a></li>
-                    <li><a href="https://www.nolimitcars.co.uk/local-airport-taxi-transfer-company-brighton/"> LOCAL AIRPORT TAXI TRANSFER COMPANY BRIGHTON</a></li>
-                    <li><a href="https://www.nolimitcars.co.uk/local-taxi-cab-hire-company-clifton-in-bristol/"> LOCAL TAXI CAB HIRE COMPANY CLIFTON IN BRISTOL</a></li>
-                    <li><a href="https://www.nolimitcars.co.uk/local-mini-cab-hire-company-clifton-in-bristol/"> LOCAL MINI CAB HIRE COMPANY CLIFTON IN BRISTOL</a></li>
-                    <li><a href="https://www.nolimitcars.co.uk/local-corporate-taxi-cab-company-clifton-in-bristol/"> LOCAL CORPORATE TAXI CAB COMPANY CLIFTON IN BRISTOL</a></li>
-                    <li><a href="https://www.nolimitcars.co.uk/local-chauffeured-car-hire-company-clifton-in-bristol/"> LOCAL CHAUFFEURED CAR HIRE COMPANY CLIFTON IN BRISTOL</a></li>
-                    <li><a href="https://www.nolimitcars.co.uk/local-airport-taxi-transfer-company-clifton-in-bristol/"> LOCAL AIRPORT TAXI TRANSFER COMPANY CLIFTON IN BRISTOL</a></li>
-                    <li><a href="https://www.nolimitcars.co.uk/local-taxi-cab-hire-company-gatwick-airport/"> LOCAL TAXI CAB HIRE COMPANY GATWICK AIRPORT</a></li>
-                    <li><a href="https://www.nolimitcars.co.uk/local-mini-cab-hire-company-gatwick-airport/"> LOCAL MINI CAB HIRE COMPANY GATWICK AIRPORT</a></li>
-                    <li><a href="https://www.nolimitcars.co.uk/local-corporate-taxi-cab-company-gatwick-airport/"> LOCAL CORPORATE TAXI CAB COMPANY GATWICK AIRPORT</a></li>
-                    <li><a href="https://www.nolimitcars.co.uk/local-chauffeured-car-hire-company-gatwick-airport/"> LOCAL CHAUFFEURED CAR HIRE COMPANY GATWICK AIRPORT</a></li>
-                    <li><a href="https://www.nolimitcars.co.uk/local-taxi-cab-hire-company-heathrow-airport/"> LOCAL TAXI CAB HIRE COMPANY HEATHROW AIRPORT</a></li>
-                    <li><a href="https://www.nolimitcars.co.uk/local-mini-cab-hire-company-heathrow-airport/"> LOCAL MINI CAB HIRE COMPANY HEATHROW AIRPORT</a></li>
-                    <li><a href="https://www.nolimitcars.co.uk/local-corporate-taxi-cab-company-heathrow-airport/"> LOCAL CORPORATE TAXI CAB COMPANY HEATHROW AIRPORT</a></li>
-                    <li><a href="https://www.nolimitcars.co.uk/local-chauffeured-car-hire-company-heathrow-airport/"> LOCAL CHAUFFEURED CAR HIRE COMPANY HEATHROW AIRPORT</a></li>
-                    <li><a href="https://www.nolimitcars.co.uk/local-airport-taxi-transfer-company-heathrow-airport/"> LOCAL AIRPORT TAXI TRANSFER COMPANY HEATHROW AIRPORT</a></li>
-                    <li><a href="https://www.nolimitcars.co.uk/local-taxi-cab-hire-company-hove/"> LOCAL TAXI CAB HIRE COMPANY HOVE</a></li>
-                    <li><a href="https://www.nolimitcars.co.uk/local-mini-cab-hire-company-hove/"> LOCAL MINI CAB HIRE COMPANY HOVE</a></li>
-                    <li><a href="https://www.nolimitcars.co.uk/local-corporate-taxi-cab-company-hove/"> LOCAL CORPORATE TAXI CAB COMPANY HOVE</a></li>
-                    <li><a href="https://www.nolimitcars.co.uk/local-chauffeured-car-hire-company-hove/"> LOCAL CHAUFFEURED CAR HIRE COMPANY HOVE</a></li>
-                    <li><a href="https://www.nolimitcars.co.uk/local-airport-taxi-transfer-company-hove/"> LOCAL AIRPORT TAXI TRANSFER COMPANY HOVE</a></li>
-                    <li><a href="https://www.nolimitcars.co.uk/local-taxi-cab-hire-company-luton-airport/"> LOCAL TAXI CAB HIRE COMPANY LUTON AIRPORT</a></li>
-                    <li><a href="https://www.nolimitcars.co.uk/local-mini-cab-hire-company-luton-airport/"> LOCAL MINI CAB HIRE COMPANY LUTON AIRPORT</a></li>
-                    <li><a href="https://www.nolimitcars.co.uk/local-corporate-taxi-cab-company-luton-airport/"> LOCAL CORPORATE TAXI CAB COMPANY LUTON AIRPORT</a></li>
-                    <li><a href="https://www.nolimitcars.co.uk/local-chauffeured-car-hire-company-luton-airport/"> LOCAL CHAUFFEURED CAR HIRE COMPANY LUTON AIRPORT</a></li>
-                    <li><a href="https://www.nolimitcars.co.uk/local-airport-taxi-transfer-company-luton-airport/"> LOCAL AIRPORT TAXI TRANSFER COMPANY LUTON AIRPORT</a></li>
-                    <li><a href="https://www.nolimitcars.co.uk/local-taxi-cab-hire-company-ocean-village/"> LOCAL TAXI CAB HIRE COMPANY OCEAN VILLAGE</a></li>
-                    <li><a href="https://www.nolimitcars.co.uk/local-mini-cab-hire-company-ocean-village/"> LOCAL MINI CAB HIRE COMPANY OCEAN VILLAGE</a></li>
-                    <li><a href="https://www.nolimitcars.co.uk/local-corporate-taxi-cab-company-ocean-village/"> LOCAL CORPORATE TAXI CAB COMPANY OCEAN VILLAGE</a></li>
-                    <li><a href="https://www.nolimitcars.co.uk/local-chauffeured-car-hire-company-ocean-village/"> LOCAL CHAUFFEURED CAR HIRE COMPANY OCEAN VILLAGE</a></li>
-                    <li><a href="https://www.nolimitcars.co.uk/local-airport-taxi-transfer-company-ocean-village/"> LOCAL AIRPORT TAXI TRANSFER COMPANY OCEAN VILLAGE</a></li>
-                    <li><a href="https://www.nolimitcars.co.uk/local-taxi-cab-hire-company-preston-park/"> LOCAL TAXI CAB HIRE COMPANY PRESTON PARK</a></li>
-                    <li><a href="https://www.nolimitcars.co.uk/local-mini-cab-hire-company-preston-park/"> LOCAL MINI CAB HIRE COMPANY PRESTON PARK</a></li>
-                    <li><a href="https://www.nolimitcars.co.uk/local-mini-cab-hire-company-preston-park-2/"> LOCAL CORPORATE TAXI CAB COMPANY PRESTON PARK</a></li>
-                    <li><a href="https://www.nolimitcars.co.uk/local-chauffeured-car-hire-company-preston-park/"> LOCAL CHAUFFEURED CAR HIRE COMPANY PRESTON PARK</a></li>
-                    <li><a href="https://www.nolimitcars.co.uk/local-airport-taxi-transfer-company-preston-park/"> LOCAL AIRPORT TAXI TRANSFER COMPANY PRESTON PARK</a></li>
-                    <li><a href="https://www.nolimitcars.co.uk/local-taxi-cab-hire-company-southampton/"> LOCAL TAXI CAB HIRE COMPANY SOUTHAMPTON</a></li>
-                    <li><a href="https://www.nolimitcars.co.uk/local-mini-cab-hire-company-southampton/"> LOCAL MINI CAB HIRE COMPANY SOUTHAMPTON</a></li>
-                    <li><a href="https://www.nolimitcars.co.uk/local-corporate-taxi-cab-company-southampton/"> LOCAL CORPORATE TAXI CAB COMPANY SOUTHAMPTON</a></li>
-                    <li><a href="https://www.nolimitcars.co.uk/local-chauffeured-car-hire-company-southampton/"> LOCAL CHAUFFEURED CAR HIRE COMPANY SOUTHAMPTON</a></li>
-                    <li><a href="https://www.nolimitcars.co.uk/local-airport-taxi-transfer-company-southampton/"> LOCAL AIRPORT TAXI TRANSFER COMPANY SOUTHAMPTON</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>-->
+   
 
     
     

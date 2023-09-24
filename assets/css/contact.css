@@ -75,13 +75,15 @@ img, object, embed {
     object-fit: cover;
 }
 
-img {
+
+/* commented this code because of header phone image issue */
+/* img {
     display: block;
     border: 0 none;
     height: auto;
     max-width: 100%;
     /* vertical-align: bottom; */
-}
+/* } */ */
 
 img, object, embed {
     max-width: 100%;
