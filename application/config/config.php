@@ -22,11 +22,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | If you need to allow multiple domains, remember that this file is still
 | a PHP script and you can easily do that on your own.
 |
-// */
+*/
 // $config['base_url'] = "https://".$_SERVER['HTTP_HOST'].dirname($_SERVER['SCRIPT_NAME']);
-//  $config['base_url'] = "http://".$_SERVER['HTTP_HOST'].dirname($_SERVER['SCRIPT_NAME']);
-
-$config['base_url'] = "http://".$_SERVER['HTTP_HOST'].dirname($_SERVER['SCRIPT_NAME']);
+ $config['base_url'] = 'https://travel24taxi.com/';
+ //$config['base_url'] = "http://".$_SERVER['HTTP_HOST'].dirname($_SERVER['SCRIPT_NAME']);
 
 /*
 |--------------------------------------------------------------------------
