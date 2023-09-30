@@ -26,10 +26,10 @@
     <section id="content">
         <section class="commonbanner">
             <div class="sub_banner_overlay"></div>
-            <img src="https://www.nolimitcars.co.uk/wp/wp-content/uploads/2020/02/about-us.jpg">
+            <img src="<?php echo base_url('assets/images/nolimit-banner.jpg')?>">
         </section>
         <section class="subpagecontent">
-            <img src="https://www.nolimitcars.co.uk/wp/wp-content/uploads/2020/02/faq-content.jpg">
+            <img src="<?php echo base_url('assets/images/nolimit-body.jpg')?>">
             <div class="wrapper">
                 <div class="contact_wrapper">
                     <div class="columnwrapper">
@@ -84,7 +84,7 @@
                                     <li><input name="Gcode" id="Gcode" size="10" maxlength="6" type="text"
                                             class="captcha validate[required] text-input" placeholder="CODE">
                                         <div class="capimage"><img
-                                                src="https://www.nolimitcars.co.uk/wp/wp-content/themes/twentysixteen/captcha.php"
+                                                src="<?php echo base_url('assets/themes/captcha.php')?>"
                                                 alt="Enter captcha" title="Enter captcha" id="captcha"></div>
                                     </li>
                                 </ul>

@@ -19,7 +19,7 @@
             <img src="<?php echo base_url('assets/images/nolimit-banner.jpg')?>">
         </section>
         <section class="subpagecontent">
-            <img src="https://www.nolimitcars.co.uk/wp/wp-content/uploads/2020/02/faq-content.jpg">
+            <img src="<?php echo base_url('assets/images/nolimit-body.jpg')?>">
             <div class="wrapper">
                 <div class="subcontent_wrapper">
                     <h1>About us </h1>

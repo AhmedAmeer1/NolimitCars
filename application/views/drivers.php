@@ -12,10 +12,10 @@
     <section id="content">
         <section class="commonbanner">
             <div class="sub_banner_overlay"></div>
-            <img src="https://www.nolimitcars.co.uk/wp/wp-content/uploads/2020/02/about-us.jpg">
+            <img src="<?php echo base_url('assets/images/nolimit-banner.jpg')?>">
         </section>
         <section class="subpagecontent">
-            <img src="https://www.nolimitcars.co.uk/wp/wp-content/uploads/2020/02/faq-content.jpg">
+            <img src="<?php echo base_url('assets/images/nolimit-body.jpg')?>">
             <div class="wrapper">
                 <div class="subcontent_wrapper">
                     <h1>Driver Application</h1>
@@ -23,8 +23,8 @@
                     <p>Please download and complete the form below and send it back with all required documents by email:&nbsp;<a href="mailto:info@nolimitcars.co.uk">info@nolimitcars.co.uk</a></p>
                     
                     <ul class="doctodown">
-                        <li><a href="https://www.nolimitcars.co.uk/wp/wp-content/uploads/2020/10/Driver_Application_Form.docx"><img src="https://www.nolimitcars.co.uk/wp/wp-content/uploads/2020/02/doc-logo.png"></a></li>
-                        <li><a href="https://www.nolimitcars.co.uk/wp/wp-content/uploads/2020/10/Driver_Application_Form.pdf"><img src="https://www.nolimitcars.co.uk/wp/wp-content/uploads/2020/02/pdf-logo.png"></a></li>
+                        <li><a href="<?php echo base_url('assets/docs/Driver_Application_Form.docx')?>"> <img src="<?php echo base_url('assets/images/doc-logo.png')?>"></a></li>
+                        <li><a href="<?php echo base_url('assets/docs/Driver_Application_Form.pdf')?>"> <img src="<?php echo base_url('assets/images/pdf-logo.png')?>"></a></li>
                     </ul>
                 </div>
             </div>
