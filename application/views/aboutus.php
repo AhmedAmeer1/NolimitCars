@@ -16,7 +16,7 @@
     <section id="content">
         <section class="commonbanner">
             <div class="sub_banner_overlay"></div>
-            <img src="https://www.nolimitcars.co.uk/wp/wp-content/uploads/2020/02/about-us.jpg">
+            <img src="<?php echo base_url('assets/images/nolimit-banner.jpg')?>">
         </section>
         <section class="subpagecontent">
             <img src="https://www.nolimitcars.co.uk/wp/wp-content/uploads/2020/02/faq-content.jpg">
