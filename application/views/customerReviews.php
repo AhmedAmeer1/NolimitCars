@@ -15,10 +15,10 @@
     <section id="content">
         <section class="commonbanner">
             <div class="sub_banner_overlay"></div>
-            <img src="https://www.nolimitcars.co.uk/wp/wp-content/uploads/2020/02/about-us.jpg" alt="">
+            <img src="<?php echo base_url('assets/images/nolimit-banner.jpg')?>" alt="">
         </section>
         <section class="subpagecontent">
-            <img src="https://www.nolimitcars.co.uk/wp/wp-content/uploads/2020/02/faq-content.jpg" alt="">
+            <img src="<?php echo base_url('assets/images/nolimit-body.jpg')?>" alt="">
             <div class="wrapper">
                 <div class="contact_wrapper">
                     <h1 class="reviewshead">Client Reviews</h1>
@@ -265,7 +265,7 @@
                             <span class="client_rating">
                                 ***** </span>
                             <span class="client_review">
-                                <p>Easy to use and value for money would use again 11</p>
+                                <p>Easy to use and value for money would use again</p>
                             </span>
                         </div>
                     </div>
