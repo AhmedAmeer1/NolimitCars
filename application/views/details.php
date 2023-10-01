@@ -534,12 +534,12 @@ input[type=number] {
                   <button type="button" class="close" data-dismiss="modal">&times;</button>
                   <h4 class="modal-title">Your Booking has been successfully completed</h4>
                </div>
-               <!-- <div class="modal-body">
+                <div class="modal-body">
                   <strong>Booking-ID : <span id="book_id"></span></strong><br/>
                   <span>Amount:</span>: £ <span id="book_amount"></span><br/>
                   <span>Date</span>: <span id="book_date"></span><br/>
-                  <!-- <span>Time</span>: <span id="book_time"></span><br/> -->
-               </div> -->
+               <!-- <span>Time</span>: <span id="book_time"></span><br/> -->
+               </div> 
             </div>
          </div>
       </div>
