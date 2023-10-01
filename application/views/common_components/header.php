@@ -61,7 +61,7 @@
                             <a class="nav-link" href="<?php echo base_url()?>aboutus">About Us</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="<?php echo base_url()?>faq">Faq </a>
+                            <a class="nav-link" href="<?php echo base_url()?>nolimitFaq">Faq </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="<?php echo base_url()?>customerReviews">reviews</a>
@@ -124,7 +124,7 @@
                 <a href="<?php echo base_url()?>aboutus">About Us</a>
             </li>
             <li>
-                <a href="<?php echo base_url()?>faq">Faq </a>
+                <a href="<?php echo base_url()?>nolimitFaq">Faq </a>
             </li>
             <li>
                 <a href="<?php echo base_url()?>customerReviews">reviews</a>
