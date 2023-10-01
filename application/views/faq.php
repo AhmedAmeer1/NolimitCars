@@ -13,15 +13,15 @@
 
     <?php $this->load->view('common_components/header'); ?>
     <section id="content">
-        <section class="commonbanner">
-            <div class="sub_banner_overlay"></div>
-            <img src="https://www.nolimitcars.co.uk/wp/wp-content/uploads/2020/02/about-us.jpg">
-        </section>
-        <section class="subpagecontent">
-            <img src="https://www.nolimitcars.co.uk/wp/wp-content/uploads/2020/02/faq-content.jpg">
-            <div class="wrapper">
+    <section class="commonbanner">
+        <div class="sub_banner_overlay"></div>
+        <img src="https://www.nolimitcars.co.uk/wp/wp-content/uploads/2020/02/about-us.jpg">
+    </section>
+    <section class="subpagecontent">
+        <img src="https://www.nolimitcars.co.uk/wp/wp-content/uploads/2020/02/faq-content.jpg">
+        <div class="wrapper">
             <div class="subcontent_wrapper">
-                <h1>Client FAQS Ahmed</h1>
+                <h1>Client FAQS</h1>
                 <span class="contenthead">HOW DO I MAKE BOOKING?</span>
                 <p>Online or by phone. If you don’t know the address (postcode) please email us and fill the details as much as possible.</p>
                 <span class="contenthead">WILL I RECEIVE A BOOKING CONFIRMATION?</span>
