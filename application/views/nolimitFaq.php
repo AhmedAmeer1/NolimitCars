@@ -21,7 +21,7 @@
         <img src="<?php echo base_url('assets/images/nolimit-body.jpg')?>">
         <div class="wrapper">
             <div class="subcontent_wrapper">
-                <h1>Nolimit Client FAQS</h1>
+                <h1>Client FAQS</h1>
                 <span class="contenthead">HOW DO I MAKE BOOKING?</span>
                 <p>Online or by phone. If you don’t know the address (postcode) please email us and fill the details as much as possible.</p>
                 <span class="contenthead">WILL I RECEIVE A BOOKING CONFIRMATION?</span>
