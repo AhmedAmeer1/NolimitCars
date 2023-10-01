@@ -265,7 +265,7 @@
                             <span class="client_rating">
                                 ***** </span>
                             <span class="client_review">
-                                <p>Easy to use and value for money would use again ahmed</p>
+                                <p>Easy to use and value for money would use again </p>
                             </span>
                         </div>
                     </div>
