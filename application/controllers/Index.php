@@ -190,7 +190,8 @@ $data['createHash'] = $this->createHash("13.00","826");
 }
 public function booking_init(){
 	
-
+	echo '<pre>';
+		var_dump("---------------------------booking_init ");
 	$input = $this->input->post();
 	$booking['first_name'] =$input['first_name'];
 	$booking['last_name']=$input['last_name'];
@@ -250,6 +251,12 @@ public function booking_init(){
 	$_SESSION["book_data"]= $booking;
 	$return = array();
 	if($input['payment_method'] == "cash"){ 
+
+
+		echo '<pre>';
+		var_dump("---------------------------cash ");
+
+
 		$result = $this->Index_Model->save_booking();
 		if($result['status'] == 1){
 			
@@ -366,6 +373,8 @@ public function check_promo_code(){
 	echo  json_encode(array('exist'=>$exist ,'msg' =>$msg,'status'=>$result['effected_rows'],'user_id' =>$result['insert_id']));
 	}
 	public function email_notification($data){
+		echo '<pre>';
+		var_dump("email_notification------");
 		$this->load->library('email');
 		$config['protocol'] = 'sendmail'; // mail, sendmail, or smtp    The mail sending protocol.
 		//$config['smtp_host'] = 'smtp.gmail.com';
@@ -574,6 +583,9 @@ $dateTime = date("Y:m:d-H:i:s");
 	return hash("sha256", $ascii);
 	}
 public function lloyds_success(){
+
+	echo '<pre>';
+    var_dump("---------------------------ahmed ");
 	$approval_code =  $_POST['approval_code'];
 	$order_id  =  $_POST['oid'];
 	$refnumber = $_POST['refnumber'];
