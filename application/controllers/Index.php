@@ -190,8 +190,7 @@ $data['createHash'] = $this->createHash("13.00","826");
 }
 public function booking_init(){
 	
-	echo '<pre>';
-		var_dump("---------------------------booking_init ");
+
 	$input = $this->input->post();
 	$booking['first_name'] =$input['first_name'];
 	$booking['last_name']=$input['last_name'];
@@ -251,12 +250,6 @@ public function booking_init(){
 	$_SESSION["book_data"]= $booking;
 	$return = array();
 	if($input['payment_method'] == "cash"){ 
-
-
-		echo '<pre>';
-		var_dump("---------------------------cash ");
-
-
 		$result = $this->Index_Model->save_booking();
 		if($result['status'] == 1){
 			
@@ -373,8 +366,6 @@ public function check_promo_code(){
 	echo  json_encode(array('exist'=>$exist ,'msg' =>$msg,'status'=>$result['effected_rows'],'user_id' =>$result['insert_id']));
 	}
 	public function email_notification($data){
-		echo '<pre>';
-		var_dump("email_notification------");
 		$this->load->library('email');
 		$config['protocol'] = 'sendmail'; // mail, sendmail, or smtp    The mail sending protocol.
 		//$config['smtp_host'] = 'smtp.gmail.com';
@@ -394,18 +385,18 @@ public function check_promo_code(){
 		$config['bcc_batch_mode'] = FALSE; // TRUE or FALSE (boolean)    Enable BCC Batch Mode.
 		$config['bcc_batch_size'] = 200; // Number of emails in each BCC batch.
 		$this->email->initialize($config);
-		$this->email->from('bookings@nolimitcars.co.uk', 'NOLIMIT CARS AHMED');
+		$this->email->from('bookings@nolimitcars.co.uk', 'NOLIMIT CARS TEST');
 		$this->email->to("ahmedameerdev@gmail.com");
         $this->email->subject('Your Nolimit Taxi order has been received!');
 		$mesg = $this->load->view('template/email',$data,true);
 		$this->email->message($mesg);
 		if($this->email->send()){
 			$to = "bookings@nolimitcars.co.uk,soumen.karmakar@solutions2xl.com";
-			//$to = "soumen.karmakar@solutions2xl.com";
+			$bookingid = "badsadb1237";
 		$this->email->initialize($config);
-		$this->email->from('bookings@nolimitcars.co.uk', 'NOLIMIT CARS AHMED');
+		$this->email->from('bookings@nolimitcars.co.uk', 'NOLIMIT CARS A');
 		$this->email->to($to);
-        $this->email->subject('Booking id : ',$data['email']);
+        $this->email->subject('Booking id : ',$bookingid);
 		$mesg = $this->load->view('template/email_admin',$data,true);
 		$this->email->message($mesg);
 		$this->email->send();
@@ -583,9 +574,6 @@ $dateTime = date("Y:m:d-H:i:s");
 	return hash("sha256", $ascii);
 	}
 public function lloyds_success(){
-
-	echo '<pre>';
-    var_dump("---------------------------ahmed ");
 	$approval_code =  $_POST['approval_code'];
 	$order_id  =  $_POST['oid'];
 	$refnumber = $_POST['refnumber'];
