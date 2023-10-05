@@ -45,7 +45,7 @@ class ContactUs extends CI_Controller {
             $to = "bookings@nolimitcars.co.uk,soumen.karmakar@solutions2xl.com";
                 //$to = "soumen.karmakar@solutions2xl.com";
             $this->email->initialize($config);
-            $this->email->from($email, $name);
+            $this->email->from($name, $email);
             // $this->email->from('bookings@nolimitcars.co.uk', 'CONTACT US');
             $this->email->to($to);
             $this->email->subject('Your Nolimit ContactUs Form  has been received');
