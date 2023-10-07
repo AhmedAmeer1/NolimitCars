@@ -44,13 +44,7 @@ class ContactUs extends CI_Controller {
           $smtpUsername = 'bookings@nolimitcars.co.uk';
           $smtpPassword = 'La15jdx@#';
 
-          $mail->isSMTP();
-          $mail->Host = $smtpServer;
-          $mail->Port = $smtpPort;
-          $mail->SMTPSecure = 'tls'; // Use 'ssl' for SSL
-          $mail->SMTPAuth = true;
-          $mail->Username = $smtpUsername;
-          $mail->Password = $smtpPassword;
+
 
           //---------------
 
