@@ -31,37 +31,11 @@ class ContactUs extends CI_Controller {
             $this->load->library('email');
             $config['protocol'] = 'sendmail'; // mail, sendmail, or smtp    The mail sending protocol.
     
-
-
-
+          
             $this->email->initialize($config);
        
-
-          ///-------------
-
-          $smtpServer = 'smtp.gmail.com';
-          $smtpPort = 465; // Use 465 for SSL or 587 for TLS
-          $smtpUsername = 'bookings@nolimitcars.co.uk';
-          $smtpPassword = 'La15jdx@#';
-
-
-
-          //---------------
-
-
-            $to = "ahmedameerdev@gmail.com";
+            $to = "info@nolimitcars.co.uk";
             $this->email->initialize($config);
-            //--
-
-            $this->email->Host = $smtpServer;
-            $this->email->Port = $smtpPort;
-            $this->email->SMTPSecure = 'smptp';
-            $this->email->SMTPAuth = true;
-
-            $this->email->Username = $smtpUsername;
-            $this->email->Password = $smtpPassword;
-     
-            //--
             $this->email->from($name, $email);
 
             $this->email->to($to);
