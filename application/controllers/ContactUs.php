@@ -22,6 +22,12 @@ class ContactUs extends CI_Controller {
         } else {
             $name = $this->input->post('name');
             $email = $this->input->post('email');
+
+
+            $this->load->helper('custom_helper');
+            debug_log("entered contact us ");
+            debug_log($email);
+
             $message = $this->input->post('message');
             $contactnumber = $this->input->post('contactnumber');
        
@@ -44,7 +50,7 @@ class ContactUs extends CI_Controller {
             $this->email->send();
                 
 //------------------------------------------email sending end -------------------------------------------------------------
-
+         
 
 
             $this->load->model('Contact_model');
