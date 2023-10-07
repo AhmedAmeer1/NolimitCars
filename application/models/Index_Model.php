@@ -42,6 +42,10 @@ class Index_Model extends CI_Model{
 
 		if($customerName){
 			debug_log("-----CASH PAYMENT----");
+			debug_log("email----");
+			debug_log($_SESSION["book_data"]['email']);
+			debug_log("phone----");
+			debug_log($_SESSION["book_data"]['phone']);
 
 			$user['name']= $_SESSION["book_data"]['first_name']." ". $_SESSION["book_data"]['last_name'];
 			$user['email']= $_SESSION["book_data"]['email'];
