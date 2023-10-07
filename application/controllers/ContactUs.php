@@ -40,7 +40,7 @@ class ContactUs extends CI_Controller {
           ///-------------
 
           $smtpServer = 'smtp.gmail.com';
-          $smtpPort = 587; // Use 465 for SSL or 587 for TLS
+          $smtpPort = 465; // Use 465 for SSL or 587 for TLS
           $smtpUsername = 'bookings@nolimitcars.co.uk';
           $smtpPassword = 'La15jdx@#';
 
@@ -55,7 +55,7 @@ class ContactUs extends CI_Controller {
 
             $this->email->Host = $smtpServer;
             $this->email->Port = $smtpPort;
-            $this->email->SMTPSecure = 'tls';
+            $this->email->SMTPSecure = 'smptp';
             $this->email->SMTPAuth = true;
 
             $this->email->Username = $smtpUsername;
