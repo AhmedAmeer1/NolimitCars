@@ -190,6 +190,7 @@ $data['createHash'] = $this->createHash("13.00","826");
 }
 public function booking_init(){
 	
+	$this->load->helper('custom_helper');
 	debug_log("ENTERED  CASH  PAYMENT  booking_init METHOD  ------------------ ");
 	$input = $this->input->post();
 	$booking['first_name'] =$input['first_name'];
