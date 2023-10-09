@@ -190,7 +190,7 @@ $data['createHash'] = $this->createHash("13.00","826");
 }
 public function booking_init(){
 	
-
+	debug_log("ENTERED  CASH  PAYMENT  booking_init METHOD  ------------------ ");
 	$input = $this->input->post();
 	$booking['first_name'] =$input['first_name'];
 	$booking['last_name']=$input['last_name'];
@@ -577,7 +577,8 @@ public function lloyds_success(){
 
 
 	$this->load->helper('custom_helper');
-	debug_log("entered lloyds_success ------------------ ");
+	debug_log("ENTERED  ONLINE PAYMENT METHOD ------------------ ");
+	debug_log(" lloyds_success ------------------ ");
 
 
 	$approval_code =  $_POST['approval_code'];
