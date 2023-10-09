@@ -24,9 +24,6 @@ class ContactUs extends CI_Controller {
             $email = $this->input->post('email');
 
 
-            $this->load->helper('custom_helper');
-            debug_log("entered contact us ");
-            debug_log($email);
 
             $message = $this->input->post('message');
             $contactnumber = $this->input->post('contactnumber');

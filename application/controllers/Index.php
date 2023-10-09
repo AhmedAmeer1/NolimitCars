@@ -574,6 +574,12 @@ $dateTime = date("Y:m:d-H:i:s");
 	return hash("sha256", $ascii);
 	}
 public function lloyds_success(){
+
+
+	$this->load->helper('custom_helper');
+	debug_log("entered lloyds_success ------------------ ");
+
+
 	$approval_code =  $_POST['approval_code'];
 	$order_id  =  $_POST['oid'];
 	$refnumber = $_POST['refnumber'];
@@ -620,6 +626,8 @@ public function lloyds_success(){
 	}
 	public function lloyds_failure(){
 		
+		$this->load->helper('custom_helper');
+		debug_log("entered lloyds_failure ------------------ ");
 		// $approval_code =  $_POST['approval_code'];	
 	    // $status =  $_POST['status'];
 		redirect(base_url('index'));
