@@ -392,12 +392,14 @@ public function check_promo_code(){
 		$mesg = $this->load->view('template/email',$data,true);
 		$this->email->message($mesg);
 		if($this->email->send()){
-			$to = "bookings@nolimitcars.co.uk,soumen.karmakar@solutions2xl.com";
+			$to = "bookings@nolimitcars.co.uk";
+			$subject =$data['email'];
+
 			//$to = "soumen.karmakar@solutions2xl.com";
 		$this->email->initialize($config);
 		$this->email->from('bookings@nolimitcars.co.uk', 'NOLIMIT CARS');
 		$this->email->to($to);
-        $this->email->subject('New Nolimit Taxi order has been received!');
+        $this->email->subject($subject);
 		$mesg = $this->load->view('template/email_admin',$data,true);
 		$this->email->message($mesg);
 		$this->email->send();
