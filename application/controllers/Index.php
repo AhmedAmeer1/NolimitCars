@@ -393,7 +393,7 @@ public function check_promo_code(){
 		$this->email->message($mesg);
 		if($this->email->send()){
 			$to = "bookings@nolimitcars.co.uk";
-			$subject =$data['email'];
+			$subject =$data['booking_id'];
 
 			//$to = "soumen.karmakar@solutions2xl.com";
 		$this->email->initialize($config);
