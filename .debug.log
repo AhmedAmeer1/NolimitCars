@@ -1,0 +1,26 @@
+2023-10-07 12:11:52: booking_init function called
+2023-10-07 12:11:52: first_name---111-
+2023-10-07 12:11:52: Ahmed
+2023-10-07 12:11:52: first_name---cash-----
+2023-10-07 12:11:52: Ahmed
+2023-10-07 12:11:52: model ---inside--
+2023-10-07 12:11:52: -----ONLINE PAYMENT----
+2023-10-07 12:11:52: email----
+2023-10-07 12:11:52: ahmedameer1999421@gmail.com
+2023-10-07 12:11:52: phone----
+2023-10-07 12:11:52: 0774782111
+2023-10-07 12:11:52: email_notification function called
+2023-10-17 15:56:10: ENTERED  CASH  PAYMENT  booking_init METHOD  ------------------ 
+2023-10-17 15:56:10: model ---inside--
+2023-10-17 15:56:10: -----CASH PAYMENT----
+2023-10-17 15:56:10: email----
+2023-10-17 15:56:10: ahmedameer1999421@gmail.com
+2023-10-17 15:56:10: phone----
+2023-10-17 15:56:10: 0774782111
+2023-10-18 02:07:39: ENTERED  CASH  PAYMENT  booking_init METHOD  ------------------ 
+2023-10-18 02:07:39: model ---inside--
+2023-10-18 02:07:39: -----CASH PAYMENT----
+2023-10-18 02:07:39: email----
+2023-10-18 02:07:39: ahmedameer1999421@gmail.com
+2023-10-18 02:07:39: phone----
+2023-10-18 02:07:39: 0774782111

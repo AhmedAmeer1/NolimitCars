@@ -58,55 +58,9 @@ input[type=number] {
 	}
 
    </style>
+       <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
    <body>
-      <header class="limits-header-wrapper d-md-block d-none">
-         <div class="sub-header">
-            <div class="container">
-               <div class="row">
-                  <div class="col-md-12 text-right">
-                     <ul>
-                     
-                        </ul>
-                  </div>
-               </div>
-            </div>
-         </div>
-         <nav class="navbar navbar-expand-md navbar-dark">
-            <div class="container pa-50">
-                <a class="navbar-brand" href="<?php echo base_url()?>"><img src="<?php echo base_url('assets/images/logo.png')?>" alt=""></a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-            <div>
-               <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="<?php echo base_url()?>">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="https://www.nolimitcars.co.uk/wp/about-us/">About Us</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="https://www.nolimitcars.co.uk/wp/faqs/">Faq</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="https://www.nolimitcars.co.uk/wp/reviews/">reviews</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="https://www.nolimitcars.co.uk/wp/contact-us/">contact</a>
-                        </li>
-                    </ul>
-                   
-                </div>
-                <div class="container  text-right new-number" style="padding-top:60px;padding-right: 0px !important;">
-                    <a href="tel:02039822911"><img src="<?php echo base_url('assets/images/call.png')?>" alt=""> 02039822911</a>
-                </div>
-            </div>
-                 
-            </div>
-        </nav>
-      </header>
+   <?php $this->load->view('common_components/header'); ?>
       <!-- responsive menu -->
     
       <main class="home">
@@ -402,58 +356,8 @@ input[type=number] {
 
          </section>
       </main>
-      <footer class="limits-footer-wrapper">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4 text-center order-md-0 order-1">
-                    <h1>Book a Taxi</h1>
-                    <h2>Tel: <a href="tel:02039822911" class="footer-contact">02039822911</a></h2>
-                </div>
-                <div class="col-md-4 no-gutter text-center order-md-1 order-0">
-                    <img src="<?php echo base_url('assets/images/logo.png')?>" class="img-fluid footr-logo" alt="Logo">
-                    
-                </div>
-                <div class="col-md-4 text-center order-md-2 order-2">
-                    <h1>Email us</h1>
-                    <h2><a href="mailto:info@nolimitcars.co.uk" class="footer-contact">info@nolimitcars.co.uk</a></h2>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12 text-center">
-                    <h3>All major credit cards accepted</h3>
-                    <ul class="social-media">
-                        <li>
-                            <a href="https://twitter.com/nolimit_cars" target="_blank"><img src="<?php echo base_url('assets/images/twitter.png')?>" alt="icon"></a>
-                        </li>
-                        <li>
-                            <a href="https://www.linkedin.com/company/nolimitcars/" target="_blank"><img src="<?php echo base_url('assets/images/linkedin.png')?>" alt="icon"></a>
-                        </li>
-                        <li>
-                            <a href="https://www.instagram.com/nolimitcars8/" target="_blank"><img src="<?php echo base_url('assets/images/insta.png')?>" alt="icon"></a>
-                        </li>
-                        <li>
-                            <a href="https://www.facebook.com/nolimitcarsltd/" target="_blank"><img src="<?php echo base_url('assets/images/facebook.png')?>" alt="icon"></a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="row mt-md-4 mt-3">
-                <div class="col-md-6">
-                    <ul class="side-menu">
-                        <li><a href="">© NOLIMIT Cars 2017</a></li>
-                        <li><a href="">About</a></li>
-                        <li><a href="">Terms</a></li>
-                        <li><a href="">Drivers</a></li>
-                        <li><a data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">Areas</a>
-                    </ul>
-                </div>
-                <div class="col-md-6">
-                   <h6 class="credit"> Crafted by <a href="https://www.solutions2xl.com/" target="_blank" >2XL</a></h6>
-                </div>
-            </div>
-            
-        </div>
-    </footer>
+      <?php $this->load->view('common_components/footer'); ?>
+      <script src="<?php echo base_url('assets/js/custom.js')?>"></script>
 
     <div class="collapse areas-main" id="collapseExample">
         <div class="container">
@@ -534,12 +438,12 @@ input[type=number] {
                   <button type="button" class="close" data-dismiss="modal">&times;</button>
                   <h4 class="modal-title">Your Booking has been successfully completed</h4>
                </div>
-               <!-- <div class="modal-body">
+                <div class="modal-body">
                   <strong>Booking-ID : <span id="book_id"></span></strong><br/>
                   <span>Amount:</span>: £ <span id="book_amount"></span><br/>
                   <span>Date</span>: <span id="book_date"></span><br/>
-                  <!-- <span>Time</span>: <span id="book_time"></span><br/> -->
-               </div> -->
+               <!-- <span>Time</span>: <span id="book_time"></span><br/> -->
+               </div> 
             </div>
          </div>
       </div>
@@ -556,7 +460,7 @@ input[type=number] {
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
       <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
       <link rel="stylesheet" href="/resources/demos/style.css">
-       <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+   
                <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
                <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css">
                <script src="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js"></script>

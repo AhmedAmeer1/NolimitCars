@@ -19,98 +19,21 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
     
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-230246454-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-230246454-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-  gtag('config', 'UA-230246454-1');
-   </script> 
+    gtag('config', 'UA-230246454-1');
+    </script> 
  
 </head>
     
-</head>
+
 
 <body>
-
-    <header class="limits-header-wrapper d-md-block d-none">
-
-        <div class="sub-header">
-            <div class="container pa-50">
-                <div class="row">
-                    <div class="col-md-12 text-right no-gutter">
-                        <ul>
-                            <!-- <li>
-                                <a href="mailto:info@nolimitcars.co.uk"><img src="<?php echo base_url('assets/images/mail.png')?>" alt=""></a>
-                            </li> -->
-                            <!-- <li>
-                                <a href="tel:02039822911"><img src="<?php echo base_url('assets/images/call.png')?>" alt=""> 02039822911</a>
-                            </li> -->
-                            
-                            <!-- <li>
-                            <a href="<?php echo base_url('BookingForm')?>" class="book-head-btn">Book Online</a>
-                            </li> -->
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <nav class="navbar navbar-expand-md navbar-dark">
-            <div class="container pa-50">
-                <a class="navbar-brand" href="<?php echo base_url()?>"><img src="<?php echo base_url('assets/images/logo.png')?>" alt=""></a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="<?php echo base_url()?>">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="https://www.nolimitcars.co.uk/wp/about-us/">About Us</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="https://www.nolimitcars.co.uk/wp/faqs/">Faq</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="https://www.nolimitcars.co.uk/wp/reviews/">reviews</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="https://www.nolimitcars.co.uk/wp/contact-us/">contact</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
-
-    <!-- responsive menu -->
-    <header class="res-side-menu d-md-none d-block">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <img src="<?php echo base_url('assets/images/logo.png')?>" class="img-fluid" alt="Logo">
-                    <ul class="sub-header-res-new">
-                        <!-- <li>
-                            <a href="mailto:info@nolimitcars.co.uk"><img src="<?php echo base_url('assets/images/mail.png')?>" alt=""></a>
-                        </li> -->
-                        <li>
-                            <a href="tel:02039822911"><img src="<?php echo base_url('assets/images/call.png')?>" alt=""> 02039822911</a>
-                        </li>
-                    </ul>
-                    <!-- <a href="<?php echo base_url('BookingForm')?>" class="res-head-btn">Book Online</a> -->
-                </div>
-            </div>
-            <!-- <button id="menu-btn" class="brgn-btn">X</button> -->
-            <button id="menu-btn" class="navbar-toggler brgn-btn collapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="icon-bar top-bar"></span>
-        <span class="icon-bar middle-bar"></span>
-        <span class="icon-bar bottom-bar"></span>
-        </button>
-        </div>
-    </header>
+<?php $this->load->view('common_components/header'); ?>
 
     <div class="menu-side-wrapper d-md-none d-block">
         <ul>
@@ -184,58 +107,8 @@
 
     </main>
 
-    <footer class="limits-footer-wrapper">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4 text-center order-md-0 order-1">
-                    <h1>Book a Taxi</h1>
-                    <h2>Tel: <a href="tel:02039822911" class="footer-contact">02039822911</a></h2>
-                </div>
-                <div class="col-md-4 no-gutter text-center order-md-1 order-0">
-                    <img src="<?php echo base_url('assets/images/logo.png')?>" class="img-fluid footr-logo" alt="Logo">
-                    
-                </div>
-                <div class="col-md-4 text-center order-md-2 order-2">
-                    <h1>Email us</h1>
-                    <h2><a href="mailto:info@nolimitcars.co.uk" class="footer-contact">info@nolimitcars.co.uk</a></h2>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12 text-center">
-                    <h3>All major credit cards accepted</h3>
-                    <ul class="social-media">
-                        <li>
-                            <a href="https://twitter.com/nolimit_cars" target="_blank"><img src="<?php echo base_url('assets/images/twitter.png')?>" alt="icon"></a>
-                        </li>
-                        <li>
-                            <a href="https://www.linkedin.com/company/nolimitcars/" target="_blank"><img src="<?php echo base_url('assets/images/linkedin.png')?>" alt="icon"></a>
-                        </li>
-                        <li>
-                            <a href="https://www.instagram.com/nolimitcars8/" target="_blank"><img src="<?php echo base_url('assets/images/insta.png')?>" alt="icon"></a>
-                        </li>
-                        <li>
-                            <a href="https://www.facebook.com/nolimitcarsltd/" target="_blank"><img src="<?php echo base_url('assets/images/facebook.png')?>" alt="icon"></a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="row mt-md-4 mt-3">
-                <div class="col-md-6">
-                    <ul class="side-menu">
-                        <li><a href="">© NOLIMIT Cars 2017</a></li>
-                        <li><a href="">About</a></li>
-                        <li><a href="">Terms</a></li>
-                        <li><a href="">Drivers</a></li>
-                        <li><a data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">Areas</a>
-                    </ul>
-                </div>
-                <div class="col-md-6">
-                   <h6 class="credit"> Crafted by <a href="https://www.solutions2xl.com/" target="_blank" >2XL</a></h6>
-                </div>
-            </div>
-            
-        </div>
-    </footer>
+    <?php $this->load->view('common_components/footer'); ?>
+    <script src="<?php echo base_url('assets/js/custom.js')?>"></script>
 
     <div class="collapse areas-main" id="collapseExample">
         <div class="container">

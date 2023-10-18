@@ -1,0 +1,4 @@
+ERROR - 2023-10-18 02:07:39 --> Severity: Notice --> fputs(): write of 8192 bytes failed with errno=32 Broken pipe C:\xampp\htdocs\nolimitCars\system\libraries\Email.php 1935
+ERROR - 2023-10-18 03:07:52 --> 404 Page Not Found: Assets/css
+ERROR - 2023-10-18 03:07:52 --> 404 Page Not Found: Assets/css
+ERROR - 2023-10-18 03:07:52 --> 404 Page Not Found: Assets/css

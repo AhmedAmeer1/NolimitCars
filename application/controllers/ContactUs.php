@@ -22,9 +22,33 @@ class ContactUs extends CI_Controller {
         } else {
             $name = $this->input->post('name');
             $email = $this->input->post('email');
+
+
+
             $message = $this->input->post('message');
             $contactnumber = $this->input->post('contactnumber');
        
+
+//----------------------------------------email sending start ----------------------------------------
+
+            $this->load->library('email');
+            $config['protocol'] = 'sendmail'; // mail, sendmail, or smtp    The mail sending protocol.
+    
+          
+            $this->email->initialize($config);
+       
+            $to = "info@nolimitcars.co.uk";
+            $this->email->initialize($config);
+            $this->email->from($name, $email);
+
+            $this->email->to($to);
+            $this->email->subject('Your Nolimit ContactUs Form  has been received');
+                     $this->email->message( $message);
+            $this->email->send();
+                
+//------------------------------------------email sending end -------------------------------------------------------------
+         
+
 
             $this->load->model('Contact_model');
             if ($this->Contact_model->save_contact($name, $email, $message, $contactnumber)) {

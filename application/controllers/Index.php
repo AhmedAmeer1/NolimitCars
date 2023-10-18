@@ -190,7 +190,8 @@ $data['createHash'] = $this->createHash("13.00","826");
 }
 public function booking_init(){
 	
-
+	$this->load->helper('custom_helper');
+	debug_log("ENTERED  CASH  PAYMENT  booking_init METHOD  ------------------ ");
 	$input = $this->input->post();
 	$booking['first_name'] =$input['first_name'];
 	$booking['last_name']=$input['last_name'];
@@ -391,12 +392,14 @@ public function check_promo_code(){
 		$mesg = $this->load->view('template/email',$data,true);
 		$this->email->message($mesg);
 		if($this->email->send()){
-			$to = "bookings@nolimitcars.co.uk,soumen.karmakar@solutions2xl.com";
+			$to = "bookings@nolimitcars.co.uk";
+			$subject =$data['email'];
+
 			//$to = "soumen.karmakar@solutions2xl.com";
 		$this->email->initialize($config);
 		$this->email->from('bookings@nolimitcars.co.uk', 'NOLIMIT CARS');
 		$this->email->to($to);
-        $this->email->subject('New Nolimit Taxi order has been received!');
+        $this->email->subject($subject);
 		$mesg = $this->load->view('template/email_admin',$data,true);
 		$this->email->message($mesg);
 		$this->email->send();
@@ -574,15 +577,39 @@ $dateTime = date("Y:m:d-H:i:s");
 	return hash("sha256", $ascii);
 	}
 public function lloyds_success(){
+
+
+	$this->load->helper('custom_helper');
+	debug_log("ENTERED  ONLINE PAYMENT METHOD ------------------ ");
+	debug_log(" lloyds_success ------------------ ");
+
+
+
+
+	debug_log(" -------------------------------------- ");
+
+
+	$input = $this->input->post();
+
+	$nameTest =$input['first_name'];
+	$booking['first_name'] =$input['first_name'];
+	$booking['last_name']=$input['last_name'];
+
+
+	debug_log(" first_name--------- ");
+	debug_log($nameTest);
+
 	$approval_code =  $_POST['approval_code'];
 	$order_id  =  $_POST['oid'];
 	$refnumber = $_POST['refnumber'];
 	$status =  $_POST['status'];
 
+	debug_log(" lloyds_success ---------1111111111111111--------- ");
+
 			$_SESSION["book_data"]['payment_id'] =$order_id;
 			$_SESSION["book_data"]['payer_id'] =$refnumber;
 			$_SESSION['payment_status'] = "success";
-
+			debug_log(" lloyds_success ---------2222222222222--------- ");
 
 			$result = $this->Index_Model->save_booking();
 			
@@ -596,6 +623,11 @@ public function lloyds_success(){
 			$data['way_point_1'] =(!empty($_SESSION["way_points"][0])?$_SESSION["way_points"][0]:'');
 			$data['way_point_2']=(!empty($_SESSION["way_points"][1])?$_SESSION["way_points"][1]:'');
 			$data['way_point_3']=(!empty($_SESSION["way_points"][2])?$_SESSION["way_points"][2]:'');
+
+
+			debug_log(" lloyds_success ---------3333333333333333333--------- ");
+
+
 			$data['type'] ="Online";
 			$this->db->where('vehicle_id',$_SESSION["vehice_id"]);
 			$data['vehicle'] =$this->db->get('vehicle')->row('title');
@@ -609,17 +641,29 @@ public function lloyds_success(){
 			$data['greet_status'] =  $_SESSION["book_data"]['greet_status'];
 			$data['greeting_cost'] = $_SESSION["book_data"]['greeting_cost'];
 			$data['sub_total'] = $_SESSION['base_fare'];
+
+
+			debug_log(" lloyds_success ---------444444444444444444--------- ");
+
 			$data['total'] = $_SESSION["book_data"]['amount'];
 			$data['promocode_discount'] =$_SESSION["book_data"]['promocode_discount'];
 			$data['scomments_special_inst'] =$input['scomments_special_inst'];
 			$data['hand_lagguage'] =$input['hand_lagguage'];
 			$data['flight_no'] =$input['flight_no'];
 			$data['pick_up'] =$input['pick_up'];
+
+			debug_log(" lloyds_success ---------5555555555555555--------- ");
+
 			$this->email_notification($data);
+
+			debug_log(" lloyds_success ---------666666666666666666666666--------- ");
+
 		    redirect(base_url('index/journey_data?status=1&booking_id='.$result['booking_id']));
 	}
 	public function lloyds_failure(){
 		
+		$this->load->helper('custom_helper');
+		debug_log("entered lloyds_failure ------------------ ");
 		// $approval_code =  $_POST['approval_code'];	
 	    // $status =  $_POST['status'];
 		redirect(base_url('index'));

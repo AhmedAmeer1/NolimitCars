@@ -23,6 +23,8 @@ class Index_Model extends CI_Model{
 	}
 	public function save_booking(){
 		
+		$this->load->helper('custom_helper');
+		debug_log("model ---inside--");
 		//$this->db->order_by('id','DESC');
 		//$last_booking_id = $this->db->get('booking_deatils')->row('booking_id');
 		//if(empty($last_booking_id)){
@@ -34,11 +36,35 @@ class Index_Model extends CI_Model{
 		$result['status'] = $this->db->affected_rows();
 		if($this->db->affected_rows() == 1){
 
+
+		$customerName=$_SESSION["book_data"]['first_name'];
+		//  $customerName='';
+
+		if($customerName){
+			debug_log("-----CASH PAYMENT----");
+			debug_log("email----");
+			debug_log($_SESSION["book_data"]['email']);
+			debug_log("phone----");
+			debug_log($_SESSION["book_data"]['phone']);
+
 			$user['name']= $_SESSION["book_data"]['first_name']." ". $_SESSION["book_data"]['last_name'];
 			$user['email']= $_SESSION["book_data"]['email'];
 			$user['phone']=$_SESSION["book_data"]['phone'];
 			$user['promo_code']=$_SESSION["promocode"];
 			$user['amount']=	$_SESSION['total_fare'];
+		}
+		else{
+			$user['name']= 'online payemnt';
+			debug_log("-----ONLINE PAYMENT----");
+			debug_log("email----");
+			debug_log($_SESSION["book_data"]['email']);
+			debug_log("phone----");
+			debug_log($_SESSION["book_data"]['phone']);
+		}
+
+					//error throwning 
+				
+	
 		
 			$this->db->insert('user',$user);
 			//$user['promo_code']=
