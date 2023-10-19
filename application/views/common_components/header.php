@@ -57,18 +57,18 @@
                         <li class="nav-item active">
                             <a class="nav-link" href="<?php echo base_url()?>">Home</a>
                         </li>
-                        <li class="nav-item">
+                        <!-- <li class="nav-item">
                             <a class="nav-link" href="<?php echo base_url()?>aboutus">About Us</a>
-                        </li>
+                        </li> -->
                         <li class="nav-item">
                             <a class="nav-link" href="<?php echo base_url()?>faq">Faq </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="<?php echo base_url()?>customerReviews">reviews</a>
                         </li>
-                        <li class="nav-item">
+                        <!-- <li class="nav-item">
                             <a class="nav-link" href="<?php echo base_url()?>contactUs">contact</a>
-                        </li>
+                        </li> -->
                         </ul>
                     </div>
                     <div class="container  text-right new-number"

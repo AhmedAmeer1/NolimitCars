@@ -95,7 +95,7 @@
                     <div class="col-md-6 no-gutter-responsive lite-gutter">
                         <div class="book-form-box">
                             <div class="head">
-                                <h1>BOOK A TAXI</h1>
+                                <h1>BOOK NOW</h1>
                                 <img src="assets/images/pay-options.png" class="img-fluid" alt="Payement">
                             </div>
                             <?php 
@@ -268,7 +268,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="paymentalert">Our payment system is under maintenance, please call us on <a href="tel:02039822911">02039822911</a> or email on <a href="mailto:info@nolimitcars.co.uk">info@nolimitcars.co.uk</a> for booking</div>
+                <!-- <div class="paymentalert">Our payment system is under maintenance, please call us on <a href="tel:02039822911">02039822911</a> or email on <a href="mailto:info@nolimitcars.co.uk">info@nolimitcars.co.uk</a> for booking</div> -->
             </div>
         </section>
         

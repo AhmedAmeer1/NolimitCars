@@ -8,7 +8,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4 text-center order-md-0 order-1">
-                    <h1>Book a Taxi</h1>
+                    <h1>Book Now</h1>
                     <h2>Tel: <a href="tel:02039822911" class="footer-contact">02039822911</a></h2>
                 </div>
                 <div class="col-md-4 no-gutter text-center order-md-1 order-0">
@@ -46,6 +46,9 @@
                         <!--<li><a href="https://www.nolimitcars.co.uk/wp/about-us/">About</a></li>-->
                         <li><a  href="<?php echo base_url()?>terms">Terms</a></li>
                         <li><a  href="<?php echo base_url()?>drivers">Drivers</a></li>
+                        <li><a  href="<?php echo base_url()?>aboutus">About Us</a></li>
+                        <li><a  href="<?php echo base_url()?>contactUs">contact</a></li>
+                        
                         <!--<li><a data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">Areas</a>-->
                     </ul>
                 </div>

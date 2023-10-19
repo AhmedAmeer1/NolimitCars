@@ -75,7 +75,7 @@ input[type=number] {
             <div class="container">
                <div class="row">
                   <div class="col-md-12">
-                    <div class="paymentalert">Our payment system is under maintenance, please call us on <a href="tel:02039822911">02039822911</a> or email on <a href="mailto:info@nolimitcars.co.uk">info@nolimitcars.co.uk</a> for booking</div>
+                    <!-- <div class="paymentalert">Our payment system is under maintenance, please call us on <a href="tel:02039822911">02039822911</a> or email on <a href="mailto:info@nolimitcars.co.uk">info@nolimitcars.co.uk</a> for booking</div> -->
                      <h1>Please check journey details and select date and time</h1>
                      <div class="details-box">
                         <h2>JOURNEY DETAILS</h2>
