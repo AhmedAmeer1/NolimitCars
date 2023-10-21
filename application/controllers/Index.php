@@ -254,8 +254,10 @@ public function booking_init(){
 		debug_log("-----------START BOOKING INIT  ------------------ ");
 		debug_log("_SESSION[book_data]--- ");
 		debug_log($_SESSION["book_data"]);
-		debug_log("book_data]--- ");
-		debug_log($booking['flight_no']);
+	
+
+		debug_log("_SESSION[book_data][flight_no]");
+		debug_log($_SESSION["book_data"]['flight_no']);
 
 
 	$return = array();
