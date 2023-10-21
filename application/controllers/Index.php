@@ -656,6 +656,7 @@ public function lloyds_success(){
 
 			debug_log(" EMAIL TEST ---------3333333333333333333--------- ");
 			debug_log($data['email']);
+	
 
 
 			$data['type'] ="Online";
@@ -677,13 +678,21 @@ public function lloyds_success(){
 
 			$data['total'] = $_SESSION["book_data"]['amount'];
 			$data['promocode_discount'] =$_SESSION["book_data"]['promocode_discount'];
-			$data['scomments_special_inst'] =$input['scomments_special_inst'];
-			$data['hand_lagguage'] =$input['hand_lagguage'];
-			$data['flight_no'] =$input['flight_no'];
-			$data['pick_up'] =$input['pick_up'];
+	
+			// $data['scomments_special_inst'] =$input['scomments_special_inst'];
+			// $data['hand_lagguage'] =$input['hand_lagguage'];
+			// $data['flight_no'] =$input['flight_no'];
+			// $data['pick_up'] =$input['pick_up'];
+
+
+			$data['scomments_special_inst'] =$_SESSION["book_data"]['scomments_special_inst'];
+			$data['hand_lagguage'] =$_SESSION["book_data"]['hand_lagguage'];
+			$data['flight_no']=$_SESSION["book_data"]['flight_no'];
+			$data['pick_up']=$_SESSION["book_data"]['pick_up'];
 
 	
-
+			debug_log("session data flight  ------898989898989898989867676767");
+			debug_log($_SESSION["book_data"]['flight_no']);
 			$this->email_notification($data);
 
 	
