@@ -28,6 +28,9 @@ input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+.note-text{
+   color:red !important;
+}
 
 /* Firefox */
 input[type=number] {
@@ -116,7 +119,7 @@ input[type=number] {
                                        </div>
                                        <p class="picker"><input onChange="checkDate()" required type="text" id="datepicker" autocomplete="off"></p>
                                        <!-- <p class="picker"><input   onchange="checkDate()"  id="travel_date"  class="datep" required class="datepicker-input" type="date" >
-</p> -->
+                                                </p> -->
                                        <!-- <input   onchange="checkDate()"  id="travel_date"  class="datep" required class="datepicker-input" type="date" > -->
                                        <!-- <label for="travel_date">SELECT DATE</label> 
                                           <input type="text"  id="travel_date"  type="date" class="datep"> -->
@@ -150,6 +153,8 @@ input[type=number] {
                            </div>
                         </div>
                      </div>
+                     <br>
+                     <h1 class="note-text">Please give us 12 hours in advance for the booking or call us.</h1>
                   </div>
                </div>
             </div>

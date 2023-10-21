@@ -1,6 +1,9 @@
 <!doctype html>
 <html>
 <style>
+    .image-width{
+        width:57%;
+    }
     .hide{
         display:none
     }
@@ -18,7 +21,7 @@
 		color:#fff;
 	}
 	p.flagimg{
-		font-size:36px !important;
+		font-size:33px !important;
 		line-height:40px !important;
 		margin-top:35px !important;
 		font-weight:bold;
@@ -96,7 +99,7 @@
                         <div class="book-form-box">
                             <div class="head">
                                 <h1>BOOK NOW</h1>
-                                <img src="assets/images/pay-options.png" class="img-fluid" alt="Payement">
+                                <img src="assets/images/pay-options.png" class="img-fluid image-width" alt="Payement">
                             </div>
                             <?php 
                            $redirectUrl = (isset($customer_id) && !empty($customer_id))
@@ -259,7 +262,7 @@
                     <div class="col-md-6">
                         <div class="list-details-box">
                             <h4>Your destination is our goal</h4>
-                            <p>From the moment you contact us, we will do everything we can to ensure that your booking and transfer go as smoothly as possible. That means we provide highly professional taxi, minibus, executive, chauffeur and parcel services
+                            <p>From the moment you contact us, we will do everything we can to ensure that your booking and transfer go as smoothly as possible. That means we provide highly professional minicabs, minibus, executive, chauffeur and parcel services
                                 for the number of passengers and the luggage requirements specified by you and provide you with an experienced driver with proven customer service skills and an extensive knowledge of the local area.</p>
                            
                             <p class="disability">We provide wheelchair vehicles, specially designed vehicles for disability people. You can see our large fleet service.     </p>
