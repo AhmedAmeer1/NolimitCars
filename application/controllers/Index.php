@@ -251,13 +251,7 @@ public function booking_init(){
 	$_SESSION["book_data"]= $booking;
 
 	$this->load->helper('custom_helper');
-		debug_log("-----------START BOOKING INIT  ------------------ ");
-		debug_log("_SESSION[book_data]--- ");
-		debug_log($_SESSION["book_data"]);
-	
 
-		debug_log("_SESSION[book_data][flight_no]");
-		debug_log($_SESSION["book_data"]['flight_no']);
 
 
 	$return = array();
@@ -410,11 +404,6 @@ public function check_promo_code(){
 		$this->email->message($mesg);
 
 
-		debug_log("EMAIL RECEIVED TO EMAIL METHOD  ---: ");
-		debug_log($data['email']);
-
-		debug_log("flight_no   ---: ");
-		debug_log($data['flight_no']);
 
 
 
@@ -608,37 +597,33 @@ public function lloyds_success(){
 
 
 	$this->load->helper('custom_helper');
-	debug_log("ENTERED  ONLINE PAYMENT METHOD ------------------ ");
-	debug_log(" lloyds_success ------------------ ");
-	debug_log(" input['last_name'] ------===========------------ ");
-	debug_log($input['last_name']);
+	debug_log("----------------ENTERED  ONLINE PAYMENT METHOD  lloyds_success ------------------ ");
+	debug_log(" flight_no ---------- ");
+	debug_log($_SESSION["book_data"]['flight_no']);
+
+
+			$input = $this->input->post();
+
+			// $nameTest =$input['first_name'];
+			// $booking['first_name'] =$input['first_name'];
+			// $booking['last_name']=$input['last_name'];
+
+			$nameTest =$_SESSION["book_data"]['first_name'];
+			$booking['first_name']  =$_SESSION["book_data"]['first_name'];
+			$booking['last_name'] =$_SESSION["book_data"]['last_name'];
 
 
 
-	debug_log(" -------------------------------------- ");
+			$approval_code =  $_POST['approval_code'];
+			$order_id  =  $_POST['oid'];
+			$refnumber = $_POST['refnumber'];
+			$status =  $_POST['status'];
 
-
-	$input = $this->input->post();
-
-	$nameTest =$input['first_name'];
-	$booking['first_name'] =$input['first_name'];
-	$booking['last_name']=$input['last_name'];
-
-
-	debug_log(" first_name--------- ");
-	debug_log($nameTest);
-
-	$approval_code =  $_POST['approval_code'];
-	$order_id  =  $_POST['oid'];
-	$refnumber = $_POST['refnumber'];
-	$status =  $_POST['status'];
-
-	debug_log(" lloyds_success ---------1111111111111111--------- ");
 
 			$_SESSION["book_data"]['payment_id'] =$order_id;
 			$_SESSION["book_data"]['payer_id'] =$refnumber;
 			$_SESSION['payment_status'] = "success";
-			debug_log(" lloyds_success ---------2222222222222--------- ");
+
 
 			$result = $this->Index_Model->save_booking();
 			
@@ -652,12 +637,6 @@ public function lloyds_success(){
 			$data['way_point_1'] =(!empty($_SESSION["way_points"][0])?$_SESSION["way_points"][0]:'');
 			$data['way_point_2']=(!empty($_SESSION["way_points"][1])?$_SESSION["way_points"][1]:'');
 			$data['way_point_3']=(!empty($_SESSION["way_points"][2])?$_SESSION["way_points"][2]:'');
-
-
-			debug_log(" EMAIL TEST ---------3333333333333333333--------- ");
-			debug_log($data['email']);
-	
-
 
 			$data['type'] ="Online";
 			$this->db->where('vehicle_id',$_SESSION["vehice_id"]);
@@ -678,21 +657,17 @@ public function lloyds_success(){
 
 			$data['total'] = $_SESSION["book_data"]['amount'];
 			$data['promocode_discount'] =$_SESSION["book_data"]['promocode_discount'];
-	
-			// $data['scomments_special_inst'] =$input['scomments_special_inst'];
+	  		// $data['scomments_special_inst'] =$input['scomments_special_inst'];
 			// $data['hand_lagguage'] =$input['hand_lagguage'];
 			// $data['flight_no'] =$input['flight_no'];
 			// $data['pick_up'] =$input['pick_up'];
-
-
 			$data['scomments_special_inst'] =$_SESSION["book_data"]['scomments_special_inst'];
 			$data['hand_lagguage'] =$_SESSION["book_data"]['hand_lagguage'];
 			$data['flight_no']=$_SESSION["book_data"]['flight_no'];
 			$data['pick_up']=$_SESSION["book_data"]['pick_up'];
 
 	
-			debug_log("session data flight  ------898989898989898989867676767");
-			debug_log($_SESSION["book_data"]['flight_no']);
+	
 			$this->email_notification($data);
 
 	
