@@ -41,11 +41,7 @@ class Index_Model extends CI_Model{
 		//  $customerName='';
 
 		if($customerName){
-			debug_log("-----CASH PAYMENT----");
-			debug_log("email----");
-			debug_log($_SESSION["book_data"]['email']);
-			debug_log("phone----");
-			debug_log($_SESSION["book_data"]['phone']);
+			debug_log("-----ONLINE OR CASH PAYMENT-- model   username and email NOT NULL");
 
 			$user['name']= $_SESSION["book_data"]['first_name']." ". $_SESSION["book_data"]['last_name'];
 			$user['email']= $_SESSION["book_data"]['email'];
@@ -55,11 +51,8 @@ class Index_Model extends CI_Model{
 		}
 		else{
 			$user['name']= 'online payemnt';
-			debug_log("-----ONLINE PAYMENT----");
-			debug_log("email----");
-			debug_log($_SESSION["book_data"]['email']);
-			debug_log("phone----");
-			debug_log($_SESSION["book_data"]['phone']);
+			debug_log("-----ONLINE PAYMENT-- model   username and email phonenumber is NULL EMPTY--");
+		
 		}
 
 					//error throwning 

@@ -367,6 +367,11 @@ public function check_promo_code(){
 	echo  json_encode(array('exist'=>$exist ,'msg' =>$msg,'status'=>$result['effected_rows'],'user_id' =>$result['insert_id']));
 	}
 	public function email_notification($data){
+
+		$this->load->helper('custom_helper');
+		debug_log("---------------------------START  ENTERED email_notification method ------------------ ");
+		debug_log("EMAIL RECEIVED TO EMAIL METHOD  ---: ",$data['email']);
+
 		$this->load->library('email');
 		$config['protocol'] = 'sendmail'; // mail, sendmail, or smtp    The mail sending protocol.
 		//$config['smtp_host'] = 'smtp.gmail.com';
