@@ -249,6 +249,15 @@ public function booking_init(){
 	//exit;
 	$_SESSION['total_fare'] = $booking['amount'];
 	$_SESSION["book_data"]= $booking;
+
+	$this->load->helper('custom_helper');
+		debug_log("-----------START BOOKING INIT  ------------------ ");
+		debug_log("_SESSION[book_data]--- ");
+		debug_log($_SESSION["book_data"]);
+		debug_log("book_data]--- ");
+		debug_log($booking['flight_no']);
+
+
 	$return = array();
 	if($input['payment_method'] == "cash"){ 
 		$result = $this->Index_Model->save_booking();
@@ -662,7 +671,7 @@ public function lloyds_success(){
 			$data['sub_total'] = $_SESSION['base_fare'];
 
 
-			debug_log(" lloyds_success ---------444444444444444444--------- ");
+
 
 			$data['total'] = $_SESSION["book_data"]['amount'];
 			$data['promocode_discount'] =$_SESSION["book_data"]['promocode_discount'];
@@ -671,11 +680,11 @@ public function lloyds_success(){
 			$data['flight_no'] =$input['flight_no'];
 			$data['pick_up'] =$input['pick_up'];
 
-			debug_log(" lloyds_success ---------5555555555555555--------- ");
+	
 
 			$this->email_notification($data);
 
-			debug_log(" lloyds_success ---------666666666666666666666666--------- ");
+	
 
 		    redirect(base_url('index/journey_data?status=1&booking_id='.$result['booking_id']));
 	}
