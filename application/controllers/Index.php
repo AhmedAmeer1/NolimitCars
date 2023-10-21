@@ -396,7 +396,8 @@ public function check_promo_code(){
         $this->email->subject('Your Nolimit Taxi order has been received!');
 		$mesg = $this->load->view('template/email',$data,true);
 		$this->email->message($mesg);
-		debug_log("EMAIL RECEIVED TO EMAIL METHOD  ---: ",$data['email']);
+		debug_log("EMAIL RECEIVED TO EMAIL METHOD  ---: ");
+		debug_log($data['email']);
 		if($this->email->send()){
 			$to = "bookings@nolimitcars.co.uk";
 			$subject =$data['booking_id'];
