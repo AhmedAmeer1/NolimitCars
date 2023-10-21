@@ -599,7 +599,8 @@ public function lloyds_success(){
 	$this->load->helper('custom_helper');
 	debug_log("ENTERED  ONLINE PAYMENT METHOD ------------------ ");
 	debug_log(" lloyds_success ------------------ ");
-
+	debug_log(" input['last_name'] ------===========------------ ");
+	debug_log($input['last_name']);
 
 
 
@@ -642,7 +643,8 @@ public function lloyds_success(){
 			$data['way_point_3']=(!empty($_SESSION["way_points"][2])?$_SESSION["way_points"][2]:'');
 
 
-			debug_log(" lloyds_success ---------3333333333333333333--------- ");
+			debug_log(" EMAIL TEST ---------3333333333333333333--------- ");
+			debug_log($data['email']);
 
 
 			$data['type'] ="Online";
