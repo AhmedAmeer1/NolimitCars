@@ -370,7 +370,7 @@ public function check_promo_code(){
 
 		$this->load->helper('custom_helper');
 		debug_log("---------------------------START  ENTERED email_notification method ------------------ ");
-		debug_log("EMAIL RECEIVED TO EMAIL METHOD  ---: ",$data['email']);
+	
 
 		$this->load->library('email');
 		$config['protocol'] = 'sendmail'; // mail, sendmail, or smtp    The mail sending protocol.
@@ -396,6 +396,7 @@ public function check_promo_code(){
         $this->email->subject('Your Nolimit Taxi order has been received!');
 		$mesg = $this->load->view('template/email',$data,true);
 		$this->email->message($mesg);
+		debug_log("EMAIL RECEIVED TO EMAIL METHOD  ---: ",$data['email']);
 		if($this->email->send()){
 			$to = "bookings@nolimitcars.co.uk";
 			$subject =$data['booking_id'];
