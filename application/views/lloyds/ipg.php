@@ -19,8 +19,7 @@
 <input type="hidden" name="currency" value="826"/>
 
 <input type="hidden" name="responseFailURL" value="<?php echo base_url('index/lloyds_failure') ?>"/>
-<!-- <input type="hidden" name="responseSuccessURL" value="<?php echo base_url('index/lloyds_success') ?>"/> -->
-<input type="hidden" name="responseSuccessURL" value="<?php echo base_url('index/lloyds_success' ,$total) ?>"/>
+<input type="hidden" name="responseSuccessURL" value="<?php echo base_url('index/lloyds_success' ) ?>"/>
 
 <input type="submit" style="display:none" id="submit" value="Submit">
 </form>
@@ -36,4 +35,19 @@ setTimeout(function(){
     $("#submit").click();
     }, 
     2000);
+
+
+
+    function redirectToPage() {
+  // Check if the URL is provided
+  if (url) {
+    // Redirect to the specified URL
+    window.location.href = url;
+  } else {
+    // If no URL is provided, display an error message
+    console.error("No URL provided for redirection.");
+  }
+}
+
+
 </script>
