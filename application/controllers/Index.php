@@ -165,11 +165,7 @@ $data['all_points'][]=$post_data['destination'];
 	
 
 
-		$this->load->helper('custom_helper');
-		debug_log("----------------ENTERED journey_data ------------------ ");
-		debug_log("SESSION[book_data] ");
-		debug_log($_SESSION["book_data"]);
-	
+
 		
 
 	if(!empty($_GET['status'] ) && $_GET['status']  == 1){
@@ -201,7 +197,7 @@ public function booking_init(){
 	
 	$this->load->helper('custom_helper');
 	debug_log("------------------------------------------------------------------------START------------------------------------------------------------------------------------------- ");
-	debug_log("ENTERED  CASH  PAYMENT  booking_init METHOD  ------------------ ");
+	// debug_log("ENTERED  CASH  PAYMENT  booking_init METHOD  ------------------ ");
 	$input = $this->input->post();
 	$booking['first_name'] =$input['first_name'];
 	$booking['last_name']=$input['last_name'];
@@ -259,6 +255,16 @@ public function booking_init(){
 	//exit;
 	$_SESSION['total_fare'] = $booking['amount'];
 	$_SESSION["book_data"]= $booking;
+
+
+	$this->load->helper('custom_helper');
+	debug_log("----------------ENTERED BOOKING INIT ------------------ ");
+	debug_log("SESSION[book_data] ");
+	debug_log($_SESSION["book_data"]);
+
+
+
+
 
 	$this->load->helper('custom_helper');
 
