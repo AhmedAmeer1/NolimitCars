@@ -263,6 +263,8 @@ public function booking_init(){
 	debug_log($_SESSION["book_data"]);
 
 
+	debug_log(" flight_no ----booking init  method ------ ");
+	debug_log($_SESSION["book_data"]['flight_no']);
 
 
 
@@ -614,7 +616,7 @@ public function lloyds_success(){
 
 	$this->load->helper('custom_helper');
 	debug_log("----------------ENTERED  ONLINE PAYMENT METHOD  lloyds_success ------------------ ");
-	debug_log(" flight_no ---------- ");
+	debug_log(" flight_no ----lloyds_success------ ");
 	debug_log($_SESSION["book_data"]['flight_no']);
 
 
@@ -684,6 +686,10 @@ public function lloyds_success(){
 
 	
 	
+
+			debug_log(" THE DATA SENT TO EMAIL FROM LOLC BANK SUCESS --------- ");
+			debug_log(($data);
+
 			$this->email_notification($data);
 
 	
