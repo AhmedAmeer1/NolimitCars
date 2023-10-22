@@ -622,13 +622,13 @@ public function lloyds_success(){
 
 			$input = $this->input->post();
 
-			// $nameTest =$input['first_name'];
-			// $booking['first_name'] =$input['first_name'];
-			// $booking['last_name']=$input['last_name'];
+			$nameTest =$input['first_name'];
+			$booking['first_name'] =$input['first_name'];
+			$booking['last_name']=$input['last_name'];
 
-			$nameTest =$_SESSION["book_data"]['first_name'];
-			$booking['first_name']  =$_SESSION["book_data"]['first_name'];
-			$booking['last_name'] =$_SESSION["book_data"]['last_name'];
+			// $nameTest =$_SESSION["book_data"]['first_name'];
+			// $booking['first_name']  =$_SESSION["book_data"]['first_name'];
+			// $booking['last_name'] =$_SESSION["book_data"]['last_name'];
 
 
 
@@ -646,7 +646,10 @@ public function lloyds_success(){
 			$result = $this->Index_Model->save_booking();
 			
 			$data['booking_id'] = $result['booking_id'];
-			$data['first_name'] =$_SESSION["book_data"]['first_name'];
+			//$data['first_name'] =$_SESSION["book_data"]['first_name'];
+
+			$data['first_name'] ==$input['first_name'];
+
 			$data['last_name']=$_SESSION["book_data"]['last_name'];
 			$data['email']=$_SESSION["book_data"]['email'];
 			$data['phone']=$_SESSION["book_data"]['phone'];
@@ -675,19 +678,19 @@ public function lloyds_success(){
 
 			$data['total'] = $_SESSION["book_data"]['amount'];
 			$data['promocode_discount'] =$_SESSION["book_data"]['promocode_discount'];
-	  		// $data['scomments_special_inst'] =$input['scomments_special_inst'];
-			// $data['hand_lagguage'] =$input['hand_lagguage'];
-			// $data['flight_no'] =$input['flight_no'];
-			// $data['pick_up'] =$input['pick_up'];
-			$data['scomments_special_inst'] =$_SESSION["book_data"]['scomments_special_inst'];
-			$data['hand_lagguage'] =$_SESSION["book_data"]['hand_lagguage'];
-			$data['flight_no']=$_SESSION["book_data"]['flight_no'];
-			$data['pick_up']=$_SESSION["book_data"]['pick_up'];
+	  		$data['scomments_special_inst'] =$input['scomments_special_inst'];
+			$data['hand_lagguage'] =$input['hand_lagguage'];
+			$data['flight_no'] =$input['flight_no'];
+			$data['pick_up'] =$input['pick_up'];
+			// $data['scomments_special_inst'] =$_SESSION["book_data"]['scomments_special_inst'];
+			// $data['hand_lagguage'] =$_SESSION["book_data"]['hand_lagguage'];
+			// $data['flight_no']=$_SESSION["book_data"]['flight_no'];
+			// $data['pick_up']=$_SESSION["book_data"]['pick_up'];
 
 	
 	
 
-			debug_log(" THE DATA SENT TO EMAIL FROM LOLC BANK SUCESS --------- ");
+			debug_log(" -----THE DATA SENT TO EMAIL FROM LOLC BANK SUCESS --------- ");
 			debug_log($data);
 
 			$this->email_notification($data);
