@@ -275,6 +275,12 @@ public function booking_init(){
 	$return = array();
 	if($input['payment_method'] == "cash"){ 
 		$result = $this->Index_Model->save_booking();
+
+
+		debug_log(" -----THE DATA RETURN FROM  SAVE BOOKING FUNCTION INSIDE   CASH FUNCTION   1111111  --------- ");
+		debug_log($result);
+
+
 		if($result['status'] == 1){
 			
 			$return['booking_id'] = $result['booking_id'];
@@ -645,6 +651,11 @@ public function lloyds_success(){
 
 			$result = $this->Index_Model->save_booking();
 			
+
+			debug_log(" -----THE DATA RETURN FROM  SAVE BOOKING FUNCTION INSIDE LOLC BANK  --------- ");
+			debug_log($result);
+
+
 			$data['booking_id'] = $result['booking_id'];
 			//$data['first_name'] =$_SESSION["book_data"]['first_name'];
 
