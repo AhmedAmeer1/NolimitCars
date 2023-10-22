@@ -283,6 +283,8 @@ public function booking_init(){
 
 
 	$return = array();
+
+	
 	if($input['payment_method'] == "cash"){ 
 		$result = $this->Index_Model->save_booking();
 
@@ -638,13 +640,13 @@ public function lloyds_success(){
 
 			$input = $this->input->post();
 
-			$nameTest =$input['first_name'];
-			$booking['first_name'] =$input['first_name'];
-			$booking['last_name']=$input['last_name'];
+			// $nameTest =$input['first_name'];
+			// $booking['first_name'] =$input['first_name'];
+			// $booking['last_name']=$input['last_name'];
 
-			// $nameTest =$_SESSION["book_data"]['first_name'];
-			// $booking['first_name']  =$_SESSION["book_data"]['first_name'];
-			// $booking['last_name'] =$_SESSION["book_data"]['last_name'];
+			$nameTest =$_SESSION["book_data"]['first_name'];
+			$booking['first_name']  =$_SESSION["book_data"]['first_name'];
+			$booking['last_name'] =$_SESSION["book_data"]['last_name'];
 
 
 
