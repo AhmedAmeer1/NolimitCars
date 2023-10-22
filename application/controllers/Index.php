@@ -630,10 +630,13 @@ $dateTime = date("Y:m:d-H:i:s");
 	return hash("sha256", $ascii);
 	}
 public function lloyds_success(){
-
+	$total = $this->input->get('total');
 
 	$this->load->helper('custom_helper');
 	debug_log("----------------ENTERED  ONLINE PAYMENT METHOD  lloyds_success ------------------ ");
+	debug_log("total amount received from    view lolc ------");
+	debug_log($total);
+
 	debug_log(" flight_no ----lloyds_success------ ");
 	debug_log($_SESSION["book_data"]['flight_no']);
 
