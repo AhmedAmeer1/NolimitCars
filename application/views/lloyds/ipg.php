@@ -1,4 +1,3 @@
-
 <html>
 <head><title>IPG Connect Sample for PHP</title></head>
 <body>
