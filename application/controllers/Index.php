@@ -688,7 +688,7 @@ public function lloyds_success(){
 	
 
 			debug_log(" THE DATA SENT TO EMAIL FROM LOLC BANK SUCESS --------- ");
-			debug_log(($data);
+			debug_log($data);
 
 			$this->email_notification($data);
 
