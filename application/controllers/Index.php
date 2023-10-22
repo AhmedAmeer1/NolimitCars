@@ -163,6 +163,15 @@ $data['all_points'][]=$post_data['destination'];
 		$_SESSION["discount"] =0;
 		$_SESSION["promocode"] =0;
 	
+
+
+		$this->load->helper('custom_helper');
+		debug_log("----------------ENTERED journey_data ------------------ ");
+		debug_log("SESSION[book_data] ");
+		debug_log($_SESSION["book_data"]);
+	
+		
+
 	if(!empty($_GET['status'] ) && $_GET['status']  == 1){
 		$payment_status= "done";
 	}else{
@@ -191,6 +200,7 @@ $data['createHash'] = $this->createHash("13.00","826");
 public function booking_init(){
 	
 	$this->load->helper('custom_helper');
+	debug_log("------------------------------------------------------------------------START------------------------------------------------------------------------------------------- ");
 	debug_log("ENTERED  CASH  PAYMENT  booking_init METHOD  ------------------ ");
 	$input = $this->input->post();
 	$booking['first_name'] =$input['first_name'];
