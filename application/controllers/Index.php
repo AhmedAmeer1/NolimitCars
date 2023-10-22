@@ -665,6 +665,9 @@ public function lloyds_success(){
 			debug_log(" -----THE DATA RETURN FROM  SAVE BOOKING FUNCTION INSIDE LOLC BANK  --------- ");
 			debug_log($result);
 
+			
+						debug_log("this is aglobal variable --------1111111111111111111111111111111---- online --- ");
+						debug_log(	$this->globalVar);
 
 			$data['booking_id'] = $result['booking_id'];
 			//$data['first_name'] =$_SESSION["book_data"]['first_name'];
