@@ -120,18 +120,18 @@
             <li>
                 <a href="<?php echo base_url()?>">Home</a>
             </li>
-            <li>
+            <!-- <li>
                 <a href="<?php echo base_url()?>aboutus">About Us</a>
-            </li>
+            </li> -->
             <li>
                 <a href="<?php echo base_url()?>faq">Faq </a>
             </li>
             <li>
                 <a href="<?php echo base_url()?>customerReviews">reviews</a>
             </li>
-            <li>
+            <!-- <li>
                 <a  href="<?php echo base_url()?>contactUs">contact</a>
-            </li>
+            </li> -->
         </ul>
     </div>
 
