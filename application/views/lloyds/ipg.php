@@ -19,8 +19,8 @@
 <input type="hidden" name="currency" value="826"/>
 
 <input type="hidden" name="responseFailURL" value="<?php echo base_url('index/lloyds_failure') ?>"/>
-<input type="hidden" name="responseSuccessURL" value="<?php echo base_url('index/lloyds_success') ?>"/>
-<!-- <input type="hidden" name="responseSuccessURL" value="<?php echo base_url('index/lloyds_success' ,$total) ?>"/> -->
+<!-- <input type="hidden" name="responseSuccessURL" value="<?php echo base_url('index/lloyds_success') ?>"/> -->
+<input type="hidden" name="responseSuccessURL" value="<?php echo base_url('index/lloyds_success' ,$total) ?>"/>
 
 <input type="submit" style="display:none" id="submit" value="Submit">
 </form>
