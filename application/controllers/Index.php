@@ -1,6 +1,9 @@
 <?php 
 defined('BASEPATH') OR exit('No direct script access allowed');
 class Index extends CI_Controller {	
+
+	private $globalVar;
+
 	public function __construct() {
 		parent::__construct();
 		date_default_timezone_set('Europe/London');
@@ -255,14 +258,21 @@ public function booking_init(){
 	//exit;
 	$_SESSION['total_fare'] = $booking['amount'];
 	$_SESSION["book_data"]= $booking;
-
+	// $bookingData=$booking;
+	$this->globalVar = $booking;
 
 	$this->load->helper('custom_helper');
 	debug_log("----------------ENTERED BOOKING INIT ------------------ ");
-	debug_log("SESSION[book_data] ");
-	debug_log($_SESSION["book_data"]);
+	// debug_log("SESSION[book_data] ");
+	// debug_log($_SESSION["book_data"]);
+
+	debug_log("this is aglobal variable --------1111111111111111111111111111111------- ");
+	debug_log(	$this->globalVar);
 
 
+
+
+	
 	debug_log(" flight_no ----booking init  method ------ ");
 	debug_log($_SESSION["book_data"]['flight_no']);
 
