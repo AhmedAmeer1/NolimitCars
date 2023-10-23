@@ -332,15 +332,15 @@ $booking['promocode_discount']=(!empty($_SESSION["discount"])?$_SESSION["discoun
 
 
 	//testing geeting cookies value 
-	$cookiedata = get_cookie('book_data');
-	$unserialized_object = unserialize(base64_decode($cookiedata));
-	debug_log(" cookie data with get value  first method ");
-	debug_log($unserialized_object);
+	// $cookiedata = get_cookie('book_data');
+	// $unserialized_object = unserialize(base64_decode($cookiedata));
+	// debug_log(" cookie data with get value  first method ");
+	// debug_log($unserialized_object);
 
 
-	$unserialized_bookdata = unserialize(base64_decode('book_data'));
-	debug_log(" cookie data with get value second method ");
-	debug_log($unserialized_bookdata);
+	// $unserialized_bookdata = unserialize(base64_decode('book_data'));
+	// debug_log(" cookie data with get value second method ");
+	// debug_log($unserialized_bookdata);
 
 
 
