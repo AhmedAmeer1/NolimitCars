@@ -707,7 +707,7 @@ public function lloyds_success(){
 
 
 	//setting the value to session variables using cookies values
-	$booking['first_name'] = get_cookie('flight_no');
+	//$booking['first_name'] = get_cookie('flight_no');
 	$booking['last_name'] = get_cookie('last_name');
 	$booking['email'] = get_cookie('email');
 	$booking['phone'] = get_cookie('phone');
