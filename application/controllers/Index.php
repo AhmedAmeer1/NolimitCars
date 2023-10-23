@@ -702,12 +702,12 @@ public function lloyds_success(){
 	debug_log($_SESSION["book_data"]['flight_no']);
 
 
-	$flightNumber = $_SESSION["book_data"]['flight_no']
+	// $flightNumber = $_SESSION["book_data"]['flight_no']
 
 
 
 	//setting the value to session variables using cookies values
-	//$booking['first_name'] = get_cookie('flight_no');
+	$booking['first_name'] = get_cookie('flight_no');
 	$booking['last_name'] = get_cookie('last_name');
 	$booking['email'] = get_cookie('email');
 	$booking['phone'] = get_cookie('phone');
@@ -739,11 +739,12 @@ public function lloyds_success(){
 	$booking['hand_lagguage'] = get_cookie('hand_lagguage');
 	$booking['pick_up'] = get_cookie('pick_up');
 	
+$_SESSION["book_data"]= $booking;
 
-	if(!$flightNumber){
-		debug_log("book data flight number is NULL -------- 1111111111111111------ ");
-		$_SESSION["book_data"]= $booking;
-	}
+	// if(!$flightNumber){
+	// 	debug_log("book data flight number is NULL -------- 1111111111111111------ ");
+	// 	$_SESSION["book_data"]= $booking;
+	// }
 	debug_log("book data flight number is NOT NULL  --------22222222222222------ ");
 
 
