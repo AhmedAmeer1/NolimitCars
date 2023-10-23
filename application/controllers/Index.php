@@ -702,6 +702,9 @@ public function lloyds_success(){
 	debug_log($_SESSION["book_data"]['flight_no']);
 
 
+	$flightNumber = $_SESSION["book_data"]['flight_no']
+
+
 
 	//setting the value to session variables using cookies values
 	$booking['first_name'] = get_cookie('flight_no');
@@ -737,8 +740,7 @@ public function lloyds_success(){
 	$booking['pick_up'] = get_cookie('pick_up');
 	
 
-
-	if(!$_SESSION["book_data"]['flight_no']){
+	if(!$flightNumber){
 		debug_log("book data flight number is NULL -------- 1111111111111111------ ");
 		$_SESSION["book_data"]= $booking;
 	}
