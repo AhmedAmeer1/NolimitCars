@@ -262,9 +262,87 @@ public function booking_init(){
 	// $bookingData=$booking;
 	$this->globalVar = $booking;
 
-	set_cookie('flight_no',$booking['flight_no'],86400); 
-	set_cookie('book_data',$booking,86400); 
+
+
+
+///testing
+$booking['first_name'] =$input['first_name'];
+$booking['last_name']=$input['last_name'];
+$booking['email']=$input['email'];
+$booking['phone']=$input['phone'];
+$booking['vehicle_id'] = $_SESSION["vehice_id"];
+$booking['service_type']= $_SESSION["journey_type"];
+$booking['source'] =$_SESSION["source"];
+$booking['destination'] =$_SESSION["destination"];
+$booking['way_point_1'] =(!empty($_SESSION["way_points"][0])?$_SESSION["way_points"][0]:'');
+$booking['way_point_2']=(!empty($_SESSION["way_points"][1])?$_SESSION["way_points"][1]:'');
+$booking['way_point_3']=(!empty($_SESSION["way_points"][2])?$_SESSION["way_points"][2]:'');
+$dates = str_replace("/","-",$input['jouney_date']);
+$booking['travel_date'] = date("Y-m-d", strtotime($dates));
+$booking['travel_time']= $input['journey_time'];
+$booking['pick_up_door_name']= $input['pick_up'];
+$booking['flight_no']= $input['flight_no'];
+$booking['passenger']= $input['no_of_passenger'];
+$booking['suitcase']= $input['no_of_suitcase'];
+$booking['child_seat']= $input['child_seat'];
+$booking['greet_status']= $input['meet_and_greet'];
+$booking['payment_type']= $input['payment_method'];
+$booking['base_fare']= $_SESSION['base_fare'];
+$booking['user_id']= (!empty($_SESSION['user_id'])?$_SESSION['user_id']:'0');
+$booking['userType']= (!empty($_SESSION['user_type'])?$_SESSION['user_type']:'');
+$booking['status']= 1;
+$booking['promocode_discount']=(!empty($_SESSION["discount"])?$_SESSION["discount"]:0);
+
+
+
+
+	// setting cokies for online payment  because session variable is not working for first time online booking 
+	set_cookie('first_name',$booking['first_name'],86400);
+	set_cookie('last_name',$booking['last_name'],86400);
+	set_cookie('email',$booking['email'],86400);
+	set_cookie('phone',$booking['phone'],86400);
+	set_cookie('vehicle_id',$booking['vehicle_id'],86400);
+	set_cookie('service_type',$booking['service_type'],86400);
+	set_cookie('source',$booking['source'],86400);
+	set_cookie('destination',$booking['destination'],86400);
+	set_cookie('way_point_1',$booking['way_point_1'],86400);
+	set_cookie('way_point_2',$booking['way_point_2'],86400);
+	set_cookie('way_point_3',$booking['way_point_3'],86400);
+	set_cookie('dates',$dates,86400);
+	set_cookie('travel_date',$booking['travel_date'],86400);
+	set_cookie('travel_time',$booking['travel_time'],86400);
+	set_cookie('pick_up_door_name',$booking['pick_up_door_name'],86400);
+	set_cookie('flight_no',$booking['flight_no'],86400);
+	set_cookie('passenger',$booking['passenger'],86400);
+	set_cookie('suitcase',$booking['suitcase'],86400);
+	set_cookie('child_seat',$booking['child_seat'],86400);
+	set_cookie('greet_status',$booking['greet_status'],86400);
+	set_cookie('base_fare',$booking['base_fare'],86400);
+	set_cookie('user_id',$booking['user_id'],86400);
+	set_cookie('userType',$booking['userType'],86400);
+	set_cookie('status',$booking['status'],86400);
+	set_cookie('promocode_discount',$booking['promocode_discount'],86400);
+
+
+
+	$serialized_object = base64_encode(serialize($booking));
+	set_cookie('book_data',$serialized_object,86400); 
+
 	$this->load->helper('custom_helper');
+
+
+	//testing geeting cookies value 
+	$cookiedata = get_cookie('book_data');
+	$unserialized_object = unserialize(base64_decode($cookiedata));
+	debug_log(" cookie data with get value  first method ");
+	debug_log($unserialized_object);
+
+
+	$unserialized_bookdata = unserialize(base64_decode('book_data'));
+	debug_log(" cookie data with get value second method ");
+	debug_log($unserialized_bookdata);
+
+
 
 
 	debug_log("----------------ENTERED BOOKING INIT ------------------ ");
@@ -648,6 +726,24 @@ public function lloyds_success(){
 	$flight_no = get_cookie('flight_no');
 	debug_log(" flight_no ----using cookies------ ");
 	debug_log($flight_no);
+
+
+
+//object setting to cookies
+
+	$cookiedata = get_cookie('book_data');
+	$unserialized_object = unserialize(base64_decode($cookiedata));
+	debug_log(" cookie data with get value  first method ");
+	debug_log($unserialized_object);
+
+
+	$unserialized_bookdata = unserialize(base64_decode('book_data'));
+	debug_log(" cookie data with get value second method ");
+	debug_log($unserialized_bookdata);
+
+
+	set_cookie('book_data',$serialized_object,86400); 
+
 	// set_cookie('flight_no',$booking['flight_no'],86400); 
 	// set_cookie('book_data',$booking,86400); 
 
@@ -662,23 +758,15 @@ public function lloyds_success(){
 			$nameTest =$_SESSION["book_data"]['first_name'];
 			$booking['first_name']  =$_SESSION["book_data"]['first_name'];
 			$booking['last_name'] =$_SESSION["book_data"]['last_name'];
-
-
-
 			$approval_code =  $_POST['approval_code'];
 			$order_id  =  $_POST['oid'];
 			$refnumber = $_POST['refnumber'];
 			$status =  $_POST['status'];
-
-
 			$_SESSION["book_data"]['payment_id'] =$order_id;
 			$_SESSION["book_data"]['payer_id'] =$refnumber;
 			$_SESSION['payment_status'] = "success";
-
-
 			$result = $this->Index_Model->save_booking();
 			
-
 			debug_log(" -----THE DATA RETURN FROM  SAVE BOOKING FUNCTION INSIDE LOLC BANK  --------- ");
 			debug_log($result);
 
@@ -688,9 +776,7 @@ public function lloyds_success(){
 
 			$data['booking_id'] = $result['booking_id'];
 			//$data['first_name'] =$_SESSION["book_data"]['first_name'];
-
 			$data['first_name'] ==$input['first_name'];
-
 			$data['last_name']=$_SESSION["book_data"]['last_name'];
 			$data['email']=$_SESSION["book_data"]['email'];
 			$data['phone']=$_SESSION["book_data"]['phone'];
@@ -699,7 +785,6 @@ public function lloyds_success(){
 			$data['way_point_1'] =(!empty($_SESSION["way_points"][0])?$_SESSION["way_points"][0]:'');
 			$data['way_point_2']=(!empty($_SESSION["way_points"][1])?$_SESSION["way_points"][1]:'');
 			$data['way_point_3']=(!empty($_SESSION["way_points"][2])?$_SESSION["way_points"][2]:'');
-
 			$data['type'] ="Online";
 			$this->db->where('vehicle_id',$_SESSION["vehice_id"]);
 			$data['vehicle'] =$this->db->get('vehicle')->row('title');
@@ -713,10 +798,6 @@ public function lloyds_success(){
 			$data['greet_status'] =  $_SESSION["book_data"]['greet_status'];
 			$data['greeting_cost'] = $_SESSION["book_data"]['greeting_cost'];
 			$data['sub_total'] = $_SESSION['base_fare'];
-
-
-
-
 			$data['total'] = $_SESSION["book_data"]['amount'];
 			$data['promocode_discount'] =$_SESSION["book_data"]['promocode_discount'];
 	  		$data['scomments_special_inst'] =$input['scomments_special_inst'];
