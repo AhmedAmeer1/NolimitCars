@@ -697,6 +697,9 @@ public function lloyds_success(){
 
 	$total = $this->input->get('total');
 
+	debug_log("----------------ENTERED  ONLINE PAYMENT METHOD  lloyds_success ------------------ ");
+	debug_log(" flight_no ----lloyds_success------ ");
+	debug_log($_SESSION["book_data"]['flight_no']);
 
 
 
@@ -744,12 +747,8 @@ public function lloyds_success(){
 
 
 
-	debug_log("----------------ENTERED  ONLINE PAYMENT METHOD  lloyds_success ------------------ ");
-	debug_log("total amount received from    view lolc ------");
-	debug_log($total);
 
-	debug_log(" flight_no ----lloyds_success------ ");
-	debug_log($_SESSION["book_data"]['flight_no']);
+
 
 	$flight_no = get_cookie('flight_no');
 	debug_log(" flight_no ----using cookies------ ");
@@ -788,7 +787,8 @@ public function lloyds_success(){
 
 			$data['booking_id'] = $result['booking_id'];
 			//$data['first_name'] =$_SESSION["book_data"]['first_name'];
-			$data['first_name'] ==$input['first_name'];
+
+			$data['first_name'] ==$_SESSION["book_data"]['first_name'];
 			$data['last_name']=$_SESSION["book_data"]['last_name'];
 			$data['email']=$_SESSION["book_data"]['email'];
 			$data['phone']=$_SESSION["book_data"]['phone'];

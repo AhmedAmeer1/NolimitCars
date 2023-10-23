@@ -148,7 +148,7 @@
                     <tr style="text-align: center;">
                         <td colspan="2" style="border: 1px solid #d2d2d2;    text-align: left;
     border: 1px solid #f5f5f5;
-    padding: 15px 10px;     background-color: #fff; font-weight: bold; border: 1px solid #d2d2d2;">Flight Number test --</td>
+    padding: 15px 10px;     background-color: #fff; font-weight: bold; border: 1px solid #d2d2d2;">Flight Number</td>
                         <td style="border: 1px solid #d2d2d2; padding-top: 20px; background-color: #fff;"><?php echo $flight_no;?></td>
                     </tr>
                     
