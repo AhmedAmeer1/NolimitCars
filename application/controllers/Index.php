@@ -8,6 +8,7 @@ class Index extends CI_Controller {
 		parent::__construct();
 		date_default_timezone_set('Europe/London');
 		$this->load->model('Index_Model');
+		$this->load->helper('cookie');
 	
  	}	
 	public function index(){
@@ -261,7 +262,11 @@ public function booking_init(){
 	// $bookingData=$booking;
 	$this->globalVar = $booking;
 
+	set_cookie('flight_no',$booking['flight_no'],86400); 
+	set_cookie('book_data',$booking,86400); 
 	$this->load->helper('custom_helper');
+
+
 	debug_log("----------------ENTERED BOOKING INIT ------------------ ");
 	// debug_log("SESSION[book_data] ");
 	// debug_log($_SESSION["book_data"]);
@@ -639,6 +644,13 @@ public function lloyds_success(){
 
 	debug_log(" flight_no ----lloyds_success------ ");
 	debug_log($_SESSION["book_data"]['flight_no']);
+
+	$flight_no = get_cookie('flight_no');
+	debug_log(" flight_no ----using cookies------ ");
+	debug_log($flight_no);
+	// set_cookie('flight_no',$booking['flight_no'],86400); 
+	// set_cookie('book_data',$booking,86400); 
+
 
 
 			$input = $this->input->post();
