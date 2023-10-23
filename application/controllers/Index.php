@@ -697,9 +697,6 @@ public function lloyds_success(){
 
 	$total = $this->input->get('total');
 
-	debug_log("----------------ENTERED  ONLINE PAYMENT METHOD  lloyds_success ------------------ ");
-	debug_log(" flight_no ----lloyds_success------ ");
-	debug_log($_SESSION["book_data"]['flight_no']);
 
 
 	// $flightNumber = $_SESSION["book_data"]['flight_no']
@@ -739,12 +736,17 @@ public function lloyds_success(){
 	$booking['hand_lagguage'] = get_cookie('hand_lagguage');
 	$booking['pick_up'] = get_cookie('pick_up');
 	
-$_SESSION["book_data"]= $booking;
+	$_SESSION["book_data"]= $booking;
 
-	// if(!$flightNumber){
-	// 	debug_log("book data flight number is NULL -------- 1111111111111111------ ");
-	// 	$_SESSION["book_data"]= $booking;
-	// }
+
+	debug_log("----------------ENTERED  ONLINE PAYMENT METHOD  lloyds_success ------------------ ");
+	debug_log(" flight_no ----lloyds_success------ ");
+	debug_log($_SESSION["book_data"]['flight_no']);
+
+		// if(!$flightNumber){
+		// 	debug_log("book data flight number is NULL -------- 1111111111111111------ ");
+		// 	$_SESSION["book_data"]= $booking;
+		// }
 	debug_log("book data flight number is NOT NULL  --------22222222222222------ ");
 
 
