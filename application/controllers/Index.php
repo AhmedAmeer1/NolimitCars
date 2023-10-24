@@ -716,9 +716,9 @@ public function lloyds_success(){
 	// $booking['way_point_2'] = get_cookie('way_point_2');
 	// $booking['way_point_3'] = get_cookie('way_point_3');
 
-	$booking['way_point_1'] =" get_cookie('way_point_1')";
-	$booking['way_point_2'] =" get_cookie('way_point_2')";
-	$booking['way_point_3'] =" get_cookie('way_point_3')";
+	$booking['way_point_1'] =(!empty( get_cookie('way_point_1'))? get_cookie('way_point_1'):'');
+	$booking['way_point_2'] =(!empty( get_cookie('way_point_2'))? get_cookie('way_point_1'):'');
+	$booking['way_point_3'] =(!empty( get_cookie('way_point_3'))? get_cookie('way_point_1'):'');
 
 
 	$booking['travel_date'] = get_cookie('travel_date');
