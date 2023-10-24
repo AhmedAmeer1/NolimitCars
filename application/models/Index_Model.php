@@ -48,7 +48,7 @@ class Index_Model extends CI_Model{
 		if($customerName){
 			debug_log("-----ONLINE OR CASH PAYMENT-- model   username and email NOT NULL");
 			debug_log("----IF MODEL VALUE ");
-			debug_log($total_fare_cookie);
+			debug_log($_SESSION['total_fare']);
 			$user['name']= $_SESSION["book_data"]['first_name']." ". $_SESSION["book_data"]['last_name'];
 			$user['email']= $_SESSION["book_data"]['email'];
 			$user['phone']=$_SESSION["book_data"]['phone'];
