@@ -38,7 +38,12 @@ class Index_Model extends CI_Model{
 
 
 		$customerName=$_SESSION["book_data"]['first_name'];
-		//  $customerName='';
+		
+		$total_fare_cookie=  get_cookie('total_fare')
+		debug_log("-----MODEL ------ COKIE---------------------------------111111111111-----22222");
+		debug_log($total_fare_cookie)
+
+
 
 		if($customerName){
 			debug_log("-----ONLINE OR CASH PAYMENT-- model   username and email NOT NULL");
