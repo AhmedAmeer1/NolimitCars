@@ -2,7 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 class Index extends CI_Controller {	
 
-	private $globalVar;
+
 
 	public function __construct() {
 		parent::__construct();
@@ -260,7 +260,7 @@ public function booking_init(){
 	$_SESSION['total_fare'] = $booking['amount'];
 	$_SESSION["book_data"]= $booking;
 	// $bookingData=$booking;
-	$this->globalVar = $booking;
+
 
 
 
@@ -324,7 +324,7 @@ public function booking_init(){
 	// debug_log($_SESSION["book_data"]);
 
 	debug_log("this is aglobal variable --------1111111111111111111111111111111------- ");
-	debug_log(	$this->globalVar);
+
 
 
 
@@ -692,16 +692,10 @@ $dateTime = date("Y:m:d-H:i:s");
 
 
 public function lloyds_success(){
-
+	//loding this class to use debug_log
 	$this->load->helper('custom_helper');
 
-
 	$total = $this->input->get('total');
-
-
-
-	// $flightNumber = $_SESSION["book_data"]['flight_no']
-
 
 
 	//setting the value to session variables using cookies values
@@ -713,15 +707,9 @@ public function lloyds_success(){
 	$booking['service_type'] = get_cookie('service_type');
 	$booking['source'] = get_cookie('source');
 	$booking['destination'] = get_cookie('destination');
-	// $booking['way_point_1'] = get_cookie('way_point_1');
-	// $booking['way_point_2'] = get_cookie('way_point_2');
-	// $booking['way_point_3'] = get_cookie('way_point_3');
-
 	$booking['way_point_1'] =(!empty( get_cookie('way_point_1'))? get_cookie('way_point_1'):'');
 	$booking['way_point_2'] =(!empty( get_cookie('way_point_2'))? get_cookie('way_point_1'):'');
 	$booking['way_point_3'] =(!empty( get_cookie('way_point_3'))? get_cookie('way_point_1'):'');
-
-
 	$booking['travel_date'] = get_cookie('travel_date');
 	$booking['travel_time'] = get_cookie('travel_time');
 	$booking['pick_up_door_name'] = get_cookie('pick_up_door_name');
@@ -738,50 +726,21 @@ public function lloyds_success(){
 	$booking['child_seat_cost'] = get_cookie('child_seat_cost');
 	$booking['greeting_cost'] = get_cookie('greeting_cost');
 	$booking['amount'] = get_cookie('amount');
-	// $booking['scomments_special_inst'] = get_cookie('scomments_special_inst');
-	// $booking['hand_lagguage'] = get_cookie('hand_lagguage');
-	// $booking['pick_up'] = get_cookie('pick_up');
-
-	// $_SESSION['promocode'] = get_cookie('promocode');
 	$_SESSION['promocode'] =(!empty( get_cookie('promocode'))? get_cookie('promocode'):'');
 	
-
 	$_SESSION["book_data"]= $booking;
 
 
 	debug_log("----------------ENTERED  ONLINE PAYMENT METHOD  lloyds_success ------------------ ");
-	debug_log(" flight_no ----lloyds_success------ ");
-	debug_log($_SESSION["book_data"]['flight_no']);
-
-		// if(!$flightNumber){
-		// 	debug_log("book data flight number is NULL -------- 1111111111111111------ ");
-		// 	$_SESSION["book_data"]= $booking;
-		// }
-	debug_log("book data flight number is NOT NULL  --------22222222222222------ ");
-
-
-
-
-
-
-
-	$flight_no = get_cookie('flight_no');
-	debug_log(" flight_no ----using cookies------ ");
-	debug_log($flight_no);
-
-
-
+	debug_log(" session booking data  in online payment  ----lloyds_success------ ");
+	debug_log($_SESSION["book_data"]);
 
 
 
 
 			$input = $this->input->post();
 
-			// $nameTest =$input['first_name'];
-			// $booking['first_name'] =$input['first_name'];
-			// $booking['last_name']=$input['last_name'];
-
-	
+		
 			$booking['first_name']  = get_cookie('first_name');
 			$booking['last_name'] = get_cookie('last_name');
 			$approval_code =  $_POST['approval_code'];
@@ -793,12 +752,10 @@ public function lloyds_success(){
 			$_SESSION['payment_status'] = "success";
 			$result = $this->Index_Model->save_booking();
 			
-			debug_log(" -----THE DATA RETURN FROM  SAVE BOOKING FUNCTION INSIDE LOLC BANK  --------- ");
-			debug_log($result);
+
 
 			
-						debug_log("this is aglobal variable --------1111111111111111111111111111111---- online --- ");
-						debug_log(	$this->globalVar);
+				
 
 			$data['booking_id'] = $result['booking_id'];
 			//$data['first_name'] =$_SESSION["book_data"]['first_name'];
