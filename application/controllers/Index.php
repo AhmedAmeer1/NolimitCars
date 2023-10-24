@@ -701,10 +701,23 @@ public function lloyds_success(){
 	//setting the value to session variables using cookies values
 	$booking['first_name'] = get_cookie('first_name');
 	$booking['last_name'] = get_cookie('last_name');
-	$booking['email'] = get_cookie('email');
-	$booking['phone'] = get_cookie('phone');
-	$booking['vehicle_id'] = get_cookie('vehicle_id');
-	$booking['service_type'] = get_cookie('service_type');
+
+
+	// $booking['email'] = get_cookie('email');
+	// $booking['phone'] = get_cookie('phone');
+	// $booking['vehicle_id'] = get_cookie('vehicle_id');
+	// $booking['service_type'] = get_cookie('service_type');
+
+
+	$booking['email'] =(!empty( get_cookie('email'))? get_cookie('email'):'test@gmail.com');
+	$booking['phone'] =(!empty( get_cookie('phone'))? get_cookie('phone'):'07711111111');
+	$booking['vehicle_id'] =(!empty( get_cookie('vehicle_id'))? get_cookie('vehicle_id'):'111');
+	$booking['service_type'] =(!empty( get_cookie('service_type'))? get_cookie('service_type'):'1');
+
+
+
+
+
 	$booking['source'] = get_cookie('source');
 	$booking['destination'] = get_cookie('destination');
 	$booking['way_point_1'] =(!empty( get_cookie('way_point_1'))? get_cookie('way_point_1'):'');
