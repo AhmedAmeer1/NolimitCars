@@ -154,7 +154,7 @@ $data['all_points'][]=$post_data['destination'];
 
 		$this->load->helper('custom_helper');
 		debug_log("--------journey_details-------------START------------------------------------------------------------------------------------------- ");
-		debug_log($this->input->post('total_fare');
+		debug_log($this->input->post('total_fare'));
 	
 
 		$_SESSION['total_fare'] = (!empty($this->input->post('total_fare'))? $this->input->post('total_fare'):get_cookie('total_fare'));
