@@ -777,8 +777,8 @@ public function lloyds_success(){
 			// $booking['last_name']=$input['last_name'];
 
 	
-			$booking['first_name']  =$_SESSION["book_data"]['first_name'];
-			$booking['last_name'] =$_SESSION["book_data"]['last_name'];
+			$booking['first_name']  = get_cookie('first_name');
+			$booking['last_name'] = get_cookie('last_name');
 			$approval_code =  $_POST['approval_code'];
 			$order_id  =  $_POST['oid'];
 			$refnumber = $_POST['refnumber'];
