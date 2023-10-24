@@ -798,8 +798,8 @@ public function lloyds_success(){
 			$data['booking_id'] = $result['booking_id'];
 			//$data['first_name'] =$_SESSION["book_data"]['first_name'];
 
-			$data['first_name'] ==$_SESSION["book_data"]['first_name'];
-			$data['last_name']=$_SESSION["book_data"]['last_name'];
+			$data['first_name'] ==get_cookie('first_name');
+			$data['last_name']= get_cookie('last_name');
 			$data['email']=$_SESSION["book_data"]['email'];
 			$data['phone']=$_SESSION["book_data"]['phone'];
 			$data['source'] =$_SESSION["source"];
