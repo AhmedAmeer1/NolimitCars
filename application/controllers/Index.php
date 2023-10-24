@@ -434,6 +434,7 @@ public function check_promo_code(){
 			$msg = "You are already used this promocode.Please try another promocode";
 		}
 
+		set_cookie('promocode',$_SESSION["promocode"],86400);
 		echo  json_encode(array('result'=>$result ,'msg' =>$msg));
 	}
 	public function create_account(){
@@ -740,7 +741,11 @@ public function lloyds_success(){
 	// $booking['scomments_special_inst'] = get_cookie('scomments_special_inst');
 	// $booking['hand_lagguage'] = get_cookie('hand_lagguage');
 	// $booking['pick_up'] = get_cookie('pick_up');
+
+	// $_SESSION['promocode'] = get_cookie('promocode');
+	$_SESSION['promocode'] =(!empty( get_cookie('promocode'))? get_cookie('promocode'):'');
 	
+
 	$_SESSION["book_data"]= $booking;
 
 
