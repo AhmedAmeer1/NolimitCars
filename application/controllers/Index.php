@@ -151,9 +151,15 @@ $data['all_points'][]=$post_data['destination'];
 	public function journey_details(){
 		$_SESSION["vehice_id"] = $this->input->post('selected_vehicle_id');
 		$_SESSION["journey_type"] = $this->input->post('selected_travel_type');
-		$_SESSION['total_fare'] = $this->input->post('total_fare');
-		$_SESSION["base_fare"] = $this->input->post('total_fare');
-		
+		$_SESSION['total_fare'] = (!empty($this->input->post('total_fare'))? $this->input->post('total_fare'):get_cookie('total_fare'));
+
+		//$_SESSION['total_fare'] = $this->input->post('total_fare');
+		//set_cookie('total_fare',$booking['amount'],86400);
+		//$_SESSION['promocode'] =(!empty( get_cookie('promocode'))? get_cookie('promocode'):'');
+	
+		//changed for testing 
+		// $_SESSION["base_fare"] = $this->input->post('total_fare');
+		$_SESSION["base_fare"] = (!empty($this->input->post('total_fare'))? $this->input->post('total_fare'):get_cookie('total_fare'));
 	}
 	public function journey_data(){
 		
@@ -199,7 +205,7 @@ public function booking_init(){
 	
 	$this->load->helper('custom_helper');
 	debug_log("------------------------------------------------------------------------START------------------------------------------------------------------------------------------- ");
-	// debug_log("ENTERED  CASH  PAYMENT  booking_init METHOD  ------------------ ");
+
 	$input = $this->input->post();
 	$booking['first_name'] =$input['first_name'];
 	$booking['last_name']=$input['last_name'];
