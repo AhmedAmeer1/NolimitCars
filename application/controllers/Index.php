@@ -299,8 +299,8 @@ public function booking_init(){
 
 
 
-	$serialized_object = base64_encode(serialize($booking));
-	set_cookie('book_data',$serialized_object,86400); 
+	// $serialized_object = base64_encode(serialize($booking));
+	// set_cookie('book_data',$serialized_object,86400); 
 
 	$this->load->helper('custom_helper');
 
@@ -712,10 +712,15 @@ public function lloyds_success(){
 	$booking['service_type'] = get_cookie('service_type');
 	$booking['source'] = get_cookie('source');
 	$booking['destination'] = get_cookie('destination');
-	$booking['way_point_1'] = get_cookie('way_point_1');
-	$booking['way_point_2'] = get_cookie('way_point_2');
-	$booking['way_point_3'] = get_cookie('way_point_3');
-	// $booking['dates'] = get_cookie('dates');
+	// $booking['way_point_1'] = get_cookie('way_point_1');
+	// $booking['way_point_2'] = get_cookie('way_point_2');
+	// $booking['way_point_3'] = get_cookie('way_point_3');
+
+	$booking['way_point_1'] =" get_cookie('way_point_1')";
+	$booking['way_point_2'] =" get_cookie('way_point_2')";
+	$booking['way_point_3'] =" get_cookie('way_point_3')";
+
+
 	$booking['travel_date'] = get_cookie('travel_date');
 	$booking['travel_time'] = get_cookie('travel_time');
 	$booking['pick_up_door_name'] = get_cookie('pick_up_door_name');
