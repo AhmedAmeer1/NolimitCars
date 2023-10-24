@@ -732,9 +732,9 @@ public function lloyds_success(){
 	$booking['child_seat_cost'] = get_cookie('child_seat_cost');
 	$booking['greeting_cost'] = get_cookie('greeting_cost');
 	$booking['amount'] = get_cookie('amount');
-	$booking['scomments_special_inst'] = get_cookie('scomments_special_inst');
-	$booking['hand_lagguage'] = get_cookie('hand_lagguage');
-	$booking['pick_up'] = get_cookie('pick_up');
+	// $booking['scomments_special_inst'] = get_cookie('scomments_special_inst');
+	// $booking['hand_lagguage'] = get_cookie('hand_lagguage');
+	// $booking['pick_up'] = get_cookie('pick_up');
 	
 	$_SESSION["book_data"]= $booking;
 
@@ -824,10 +824,10 @@ public function lloyds_success(){
 			// $data['pick_up'] =$input['pick_up'];
 
 			
-			$data['scomments_special_inst'] =$_SESSION["book_data"]['scomments_special_inst'];
-			$data['hand_lagguage'] =$_SESSION["book_data"]['hand_lagguage'];
-			$data['flight_no']=$_SESSION["book_data"]['flight_no'];
-			$data['pick_up']=$_SESSION["book_data"]['pick_up'];
+			$data['scomments_special_inst'] = get_cookie('scomments_special_inst');
+			$data['hand_lagguage'] =get_cookie('hand_lagguage');
+			$data['flight_no']=get_cookie('flight_no');
+			$data['pick_up']=get_cookie('pick_up');
 
 	
 	
