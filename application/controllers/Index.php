@@ -9,7 +9,6 @@ class Index extends CI_Controller {
 		date_default_timezone_set('Europe/London');
 		$this->load->model('Index_Model');
 		$this->load->helper('cookie');
-		$this->load->helper('custom_helper');
 	
  	}	
 	public function index(){
@@ -303,7 +302,7 @@ public function booking_init(){
 	// $serialized_object = base64_encode(serialize($booking));
 	// set_cookie('book_data',$serialized_object,86400); 
 
-
+	$this->load->helper('custom_helper');
 
 
 	//testing geeting cookies value 
@@ -319,6 +318,20 @@ public function booking_init(){
 
 
 
+
+	debug_log("----------------ENTERED BOOKING INIT ------------------ ");
+	// debug_log("SESSION[book_data] ");
+	// debug_log($_SESSION["book_data"]);
+
+	debug_log("this is aglobal variable --------1111111111111111111111111111111------- ");
+
+
+
+
+
+	
+	debug_log(" flight_no ----booking init  method ------ ");
+	debug_log($_SESSION["book_data"]['flight_no']);
 
 
 
@@ -679,8 +692,7 @@ $dateTime = date("Y:m:d-H:i:s");
 
 
 public function lloyds_success(){
-
-	//loading this class to use debug_log
+	//loding this class to use debug_log
 	$this->load->helper('custom_helper');
 
 	$total = $this->input->get('total');
@@ -715,6 +727,7 @@ public function lloyds_success(){
 	$booking['greeting_cost'] = get_cookie('greeting_cost');
 	$booking['amount'] = get_cookie('amount');
 	$_SESSION['promocode'] =(!empty( get_cookie('promocode'))? get_cookie('promocode'):'');
+	
 	$_SESSION["book_data"]= $booking;
 
 
@@ -727,6 +740,7 @@ public function lloyds_success(){
 
 			$input = $this->input->post();
 
+		
 			$booking['first_name']  = get_cookie('first_name');
 			$booking['last_name'] = get_cookie('last_name');
 			$approval_code =  $_POST['approval_code'];
@@ -742,7 +756,7 @@ public function lloyds_success(){
 
 			
 				
-			//Setting the values to a data variable to send to the Email
+			//setting the values to data variable to send to the email
 			$data['booking_id'] = $result['booking_id'];
 		    $data['first_name'] =get_cookie('first_name');
 			$data['last_name']= get_cookie('last_name');
