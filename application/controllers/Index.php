@@ -294,7 +294,7 @@ public function booking_init(){
 	set_cookie('scomments_special_inst',$input['scomments_special_inst'],86400);
 	set_cookie('hand_lagguage',$input['hand_lagguage'],86400);
 	set_cookie('pick_up',$input['pick_up'],86400);
-	set_cookie('total_fare',$booking['amount'];,86400);
+	set_cookie('total_fare',$booking['amount'],86400);
 
 
 
