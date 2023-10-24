@@ -167,36 +167,34 @@ $data['all_points'][]=$post_data['destination'];
 		$_SESSION["discount"] =0;
 		$_SESSION["promocode"] =0;
 	
-
-
-
 		
 
-	if(!empty($_GET['status'] ) && $_GET['status']  == 1){
-		$payment_status= "done";
-	}else{
-		$payment_status= "not_done";
-	}
-	if(!empty($_GET['booking_id'] ) ){
-		$booking_id= $_GET['booking_id'];
-	}else{
-		$booking_id= 0;
-	}
-							$this->db->where('vehicle_id',$_SESSION["vehice_id"]);
-	$data['vechicle_data'] = $this->db->get('vehicle')->row();
-	$data['payment_status'] = $payment_status;
-	$data['booking_id'] = $booking_id;
-	$data['setting'] = $this->db->get('settings')->row();
-							$this->db->where('status',1);
-	$data['payment_types'] = $this->db->get('payment_types')->result();
+			if(!empty($_GET['status'] ) && $_GET['status']  == 1){
+				$payment_status= "done";
+			}else{
+				$payment_status= "not_done";
+			}
+			if(!empty($_GET['booking_id'] ) ){
+				$booking_id= $_GET['booking_id'];
+			}else{
+				$booking_id= 0;
+			}
 
-	date_default_timezone_set("Europe/Berlin");
-$dateTime = date("Y:m:d-H:i:s");
+			$this->db->where('vehicle_id',$_SESSION["vehice_id"]);
+			$data['vechicle_data'] = $this->db->get('vehicle')->row();
+			$data['payment_status'] = $payment_status;
+			$data['booking_id'] = $booking_id;
+			$data['setting'] = $this->db->get('settings')->row();
+				$this->db->where('status',1);
+			$data['payment_types'] = $this->db->get('payment_types')->result();
 
-$data['dateTime'] = $dateTime;
-$data['createHash'] = $this->createHash("13.00","826");
-	$this->load->view('details',$data);
-}
+			date_default_timezone_set("Europe/Berlin");
+		$dateTime = date("Y:m:d-H:i:s");
+
+		$data['dateTime'] = $dateTime;
+		$data['createHash'] = $this->createHash("13.00","826");
+			$this->load->view('details',$data);
+	}
 public function booking_init(){
 	
 	$this->load->helper('custom_helper');
@@ -296,6 +294,7 @@ public function booking_init(){
 	set_cookie('scomments_special_inst',$input['scomments_special_inst'],86400);
 	set_cookie('hand_lagguage',$input['hand_lagguage'],86400);
 	set_cookie('pick_up',$input['pick_up'],86400);
+	set_cookie('total_fare',$booking['amount'];,86400);
 
 
 
