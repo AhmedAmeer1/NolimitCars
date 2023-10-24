@@ -42,6 +42,10 @@ class Index_Model extends CI_Model{
 		$total_fare_cookie=  get_cookie('total_fare');
 		debug_log("-----MODEL ------ COKIE---------------------------------111111111111-----22222");
 		debug_log($total_fare_cookie);
+		debug_log($_SESSION["book_data"]['first_name']." ". $_SESSION["book_data"]['last_name']);
+		debug_log($_SESSION["book_data"]['email']);
+		debug_log($_SESSION["book_data"]['phone']);
+
 
 
 
@@ -49,6 +53,15 @@ class Index_Model extends CI_Model{
 			debug_log("-----ONLINE OR CASH PAYMENT-- model   username and email NOT NULL");
 			debug_log("----IF MODEL VALUE ");
 			debug_log($_SESSION['total_fare']);
+			debug_log($_SESSION["book_data"]['first_name']." ". $_SESSION["book_data"]['last_name']);
+			debug_log($_SESSION["book_data"]['email']);
+			debug_log($_SESSION["book_data"]['phone']);
+		
+		
+			
+
+
+
 			$user['name']= $_SESSION["book_data"]['first_name']." ". $_SESSION["book_data"]['last_name'];
 			$user['email']= $_SESSION["book_data"]['email'];
 			$user['phone']=$_SESSION["book_data"]['phone'];
