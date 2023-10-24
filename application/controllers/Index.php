@@ -9,6 +9,7 @@ class Index extends CI_Controller {
 		date_default_timezone_set('Europe/London');
 		$this->load->model('Index_Model');
 		$this->load->helper('cookie');
+		$this->load->helper('custom_helper');
 	
  	}	
 	public function index(){
@@ -302,7 +303,7 @@ public function booking_init(){
 	// $serialized_object = base64_encode(serialize($booking));
 	// set_cookie('book_data',$serialized_object,86400); 
 
-	$this->load->helper('custom_helper');
+
 
 
 	//testing geeting cookies value 
@@ -318,20 +319,6 @@ public function booking_init(){
 
 
 
-
-	debug_log("----------------ENTERED BOOKING INIT ------------------ ");
-	// debug_log("SESSION[book_data] ");
-	// debug_log($_SESSION["book_data"]);
-
-	debug_log("this is aglobal variable --------1111111111111111111111111111111------- ");
-
-
-
-
-
-	
-	debug_log(" flight_no ----booking init  method ------ ");
-	debug_log($_SESSION["book_data"]['flight_no']);
 
 
 
@@ -692,7 +679,8 @@ $dateTime = date("Y:m:d-H:i:s");
 
 
 public function lloyds_success(){
-	//loding this class to use debug_log
+
+	//loading this class to use debug_log
 	$this->load->helper('custom_helper');
 
 	$total = $this->input->get('total');
@@ -727,7 +715,6 @@ public function lloyds_success(){
 	$booking['greeting_cost'] = get_cookie('greeting_cost');
 	$booking['amount'] = get_cookie('amount');
 	$_SESSION['promocode'] =(!empty( get_cookie('promocode'))? get_cookie('promocode'):'');
-	
 	$_SESSION["book_data"]= $booking;
 
 
@@ -740,7 +727,6 @@ public function lloyds_success(){
 
 			$input = $this->input->post();
 
-		
 			$booking['first_name']  = get_cookie('first_name');
 			$booking['last_name'] = get_cookie('last_name');
 			$approval_code =  $_POST['approval_code'];
@@ -756,11 +742,9 @@ public function lloyds_success(){
 
 			
 				
-
+			//Setting the values to a data variable to send to the Email
 			$data['booking_id'] = $result['booking_id'];
-			//$data['first_name'] =$_SESSION["book_data"]['first_name'];
-
-			$data['first_name'] =get_cookie('first_name');
+		    $data['first_name'] =get_cookie('first_name');
 			$data['last_name']= get_cookie('last_name');
 			$data['email']=$_SESSION["book_data"]['email'];
 			$data['phone']=$_SESSION["book_data"]['phone'];
@@ -783,28 +767,17 @@ public function lloyds_success(){
 			$data['greeting_cost'] = $_SESSION["book_data"]['greeting_cost'];
 			$data['sub_total'] = $_SESSION['base_fare'];
 			$data['total'] = $_SESSION["book_data"]['amount'];
-			$data['promocode_discount'] =$_SESSION["book_data"]['promocode_discount'];
-
-	  		// $data['scomments_special_inst'] =$input['scomments_special_inst'];
-			// $data['hand_lagguage'] =$input['hand_lagguage'];
-			// $data['flight_no'] =$input['flight_no'];
-			// $data['pick_up'] =$input['pick_up'];
-
-			
+			$data['promocode_discount'] =$_SESSION["book_data"]['promocode_discount'];	
 			$data['scomments_special_inst'] = get_cookie('scomments_special_inst');
 			$data['hand_lagguage'] =get_cookie('hand_lagguage');
 			$data['flight_no']=get_cookie('flight_no');
 			$data['pick_up']=get_cookie('pick_up');
 
-	
-	
 
 			debug_log(" -----THE DATA SENT TO EMAIL FROM LOLC BANK SUCESS --------- ");
 			debug_log($data);
 
 			$this->email_notification($data);
-
-	
 
 		    redirect(base_url('index/journey_data?status=1&booking_id='.$result['booking_id']));
 	}
