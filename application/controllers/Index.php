@@ -151,6 +151,12 @@ $data['all_points'][]=$post_data['destination'];
 	public function journey_details(){
 		$_SESSION["vehice_id"] = $this->input->post('selected_vehicle_id');
 		$_SESSION["journey_type"] = $this->input->post('selected_travel_type');
+
+		$this->load->helper('custom_helper');
+		debug_log("--------journey_details-------------START------------------------------------------------------------------------------------------- ");
+		debug_log($this->input->post('total_fare');
+	
+
 		$_SESSION['total_fare'] = (!empty($this->input->post('total_fare'))? $this->input->post('total_fare'):get_cookie('total_fare'));
 
 		//$_SESSION['total_fare'] = $this->input->post('total_fare');
