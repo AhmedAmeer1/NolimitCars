@@ -38,10 +38,10 @@ class Index_Model extends CI_Model{
 
 
 		$customerName=$_SESSION["book_data"]['first_name'];
-		
+
 		$total_fare_cookie=  get_cookie('total_fare')
 		debug_log("-----MODEL ------ COKIE---------------------------------111111111111-----22222");
-		debug_log($total_fare_cookie)
+		debug_log($total_fare_cookie);
 
 
 
