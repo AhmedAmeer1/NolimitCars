@@ -715,7 +715,7 @@ public function lloyds_success(){
 	$booking['way_point_1'] = get_cookie('way_point_1');
 	$booking['way_point_2'] = get_cookie('way_point_2');
 	$booking['way_point_3'] = get_cookie('way_point_3');
-	$booking['dates'] = get_cookie('dates');
+	// $booking['dates'] = get_cookie('dates');
 	$booking['travel_date'] = get_cookie('travel_date');
 	$booking['travel_time'] = get_cookie('travel_time');
 	$booking['pick_up_door_name'] = get_cookie('pick_up_door_name');
