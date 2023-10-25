@@ -699,7 +699,7 @@ public function lloyds_success(){
 	$total = $this->input->get('total');
 
 
-	$isFirstName=$_SESSION["book_data"]['first_name']
+	$isFirstName=$_SESSION["book_data"]['first_name'];
 	debug_log("isFirstName   lloyds_success  method ----1111111111111111111111-- ");
 	debug_log($isFirstName);
 
