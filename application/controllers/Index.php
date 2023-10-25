@@ -330,9 +330,10 @@ public function booking_init(){
 
 
 	
-	debug_log(" flight_no ----booking init  method ------ ");
-	debug_log($_SESSION["book_data"]['flight_no']);
-
+	debug_log(" first_name - sesssiion---booking init  method ------ ");
+	debug_log($_SESSION["book_data"]['first_name']);
+	debug_log(" first_name -cookie---booking init  method ------ ");
+	debug_log(get_cookie('first_name'););
 
 
 	$this->load->helper('custom_helper');
@@ -696,6 +697,10 @@ public function lloyds_success(){
 	$this->load->helper('custom_helper');
 
 	$total = $this->input->get('total');
+
+
+	debug_log(" first_name -cookie---lloyds_success  method ------ ");
+	debug_log(get_cookie('first_name'););
 
 
 	//setting the value to session variables using cookies values
