@@ -698,11 +698,18 @@ public function lloyds_success(){
 
 	$total = $this->input->get('total');
 
+
+	$isFirstName=$_SESSION["book_data"]['first_name']
+	debug_log("isFirstName   lloyds_success  method ----1111111111111111111111-- ");
+	debug_log($isFirstName);
+
 	debug_log(" session data  --lloyds_success  method ------ ");
 	debug_log($_SESSION["book_data"]);
 	debug_log(" first_name -cookie---lloyds_success  method ------ ");
 	debug_log(get_cookie('first_name'));
 
+
+if (!$isFirstName){
 	//setting the value to session variables using cookies values
 	// $booking['first_name'] = get_cookie('first_name');
 	// $booking['last_name'] = get_cookie('last_name');
@@ -717,10 +724,6 @@ public function lloyds_success(){
 	$booking['phone'] =(!empty( get_cookie('phone'))? get_cookie('phone'):'07711111111');
 	$booking['vehicle_id'] =(!empty( get_cookie('vehicle_id'))? get_cookie('vehicle_id'):'111');
 	$booking['service_type'] =(!empty( get_cookie('service_type'))? get_cookie('service_type'):'1');
-
-
-
-
 
 	$booking['source'] = get_cookie('source');
 	$booking['destination'] = get_cookie('destination');
@@ -746,16 +749,15 @@ public function lloyds_success(){
 	$_SESSION['promocode'] =(!empty( get_cookie('promocode'))? get_cookie('promocode'):'');
 	$_SESSION['total_fare'] =  get_cookie('total_fare');
 
-
-
-
-
 	$_SESSION["book_data"]= $booking;
+}
+
+
 
 
 	debug_log("----------------ENTERED  ONLINE PAYMENT METHOD  lloyds_success ------------------ ");
-	debug_log(" session booking data  in online payment from cookies   ----lloyds_success------ ");
-	debug_log($_SESSION["book_data"]);
+	// debug_log(" session booking data  in online payment from cookies   ----lloyds_success------ ");
+	// debug_log($_SESSION["book_data"]);
 
 
 
