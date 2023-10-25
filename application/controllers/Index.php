@@ -704,9 +704,12 @@ public function lloyds_success(){
 
 	$total = $this->input->get('total');
 
+	$isFirstName= ($_SESSION["book_data"] == "Undefined" ? "" : $_SESSION["book_data"]['first_name']);
+
+
 	debug_log("i_SESSION---ssssssssssssssssssssssssssssssssssssssssssssssssssssss-   lloyds_success      - ");
 	debug_log($_SESSION);
-	$isFirstName= $_SESSION;
+
 	debug_log("isFirstName   lloyds_success  method ----1111111111111111111111-- ");
 	debug_log($isFirstName);
 
