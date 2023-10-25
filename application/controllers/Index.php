@@ -202,7 +202,7 @@ public function booking_init(){
 	debug_log("------------------------------------------------------------------------START------------------------------------------------------------------------------------------- ");
 
 
-	debug_log("i_SESSION---falseeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee 11111111111111111111-- ");
+	debug_log("i_SESSION---falseeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee 11111111111111111111 book init-- ");
 	debug_log($_SESSION);
 
 
@@ -265,7 +265,7 @@ public function booking_init(){
 	$_SESSION["book_data"]= $booking;
 	// $bookingData=$booking;
 
-	debug_log("i_SESSION---trueeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee-- ");
+	debug_log("i_SESSION---trueeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee--2222222222222222222 11 book init ");
 	debug_log($_SESSION);
 
 
@@ -704,7 +704,7 @@ public function lloyds_success(){
 
 	$total = $this->input->get('total');
 
-	debug_log("i_SESSION---ssssssssssssssssssssssssssssssssssssssssssssssssssssss-- ");
+	debug_log("i_SESSION---ssssssssssssssssssssssssssssssssssssssssssssssssssssss-   lloyds_success      - ");
 	debug_log($_SESSION);
 	$isFirstName= $_SESSION;
 	debug_log("isFirstName   lloyds_success  method ----1111111111111111111111-- ");
