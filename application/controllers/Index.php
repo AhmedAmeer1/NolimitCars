@@ -201,6 +201,11 @@ public function booking_init(){
 	$this->load->helper('custom_helper');
 	debug_log("------------------------------------------------------------------------START------------------------------------------------------------------------------------------- ");
 
+
+	debug_log("i_SESSION---falseeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee 11111111111111111111-- ");
+	debug_log($_SESSION);
+
+
 	$input = $this->input->post();
 	$booking['first_name'] =$input['first_name'];
 	$booking['last_name']=$input['last_name'];
@@ -260,7 +265,8 @@ public function booking_init(){
 	$_SESSION["book_data"]= $booking;
 	// $bookingData=$booking;
 
-
+	debug_log("i_SESSION---trueeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee-- ");
+	debug_log($_SESSION);
 
 
 	// setting cokies for online payment  because session variable is not working for first time online booking 
@@ -698,8 +704,9 @@ public function lloyds_success(){
 
 	$total = $this->input->get('total');
 
-
-	$isFirstName=$_SESSION["book_data"]['first_name'];
+	debug_log("i_SESSION---ssssssssssssssssssssssssssssssssssssssssssssssssssssss-- ");
+	debug_log($_SESSION);
+	$isFirstName= $_SESSION;
 	debug_log("isFirstName   lloyds_success  method ----1111111111111111111111-- ");
 	debug_log($isFirstName);
 
@@ -710,6 +717,8 @@ public function lloyds_success(){
 
 
 if (!$isFirstName){
+	debug_log(" if trueeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee ");
+	debug_log($isFirstName);
 	//setting the value to session variables using cookies values
 	// $booking['first_name'] = get_cookie('first_name');
 	// $booking['last_name'] = get_cookie('last_name');
