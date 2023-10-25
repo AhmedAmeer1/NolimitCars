@@ -202,8 +202,8 @@ public function booking_init(){
 	debug_log("------------------------------------------------------------------------START------------------------------------------------------------------------------------------- ");
 
 
-	debug_log("i_SESSION---falseeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee 11111111111111111111 book init-- ");
-	debug_log($_SESSION);
+	// debug_log("i_SESSION---falseeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee 11111111111111111111 book init-- ");
+	// debug_log($_SESSION);
 
 
 	$input = $this->input->post();
@@ -265,8 +265,8 @@ public function booking_init(){
 	$_SESSION["book_data"]= $booking;
 	// $bookingData=$booking;
 
-	debug_log("i_SESSION---trueeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee--2222222222222222222 11 book init ");
-	debug_log($_SESSION);
+	// debug_log("i_SESSION---trueeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee--2222222222222222222 11 book init ");
+	// debug_log($_SESSION);
 
 
 	// setting cokies for online payment  because session variable is not working for first time online booking 
