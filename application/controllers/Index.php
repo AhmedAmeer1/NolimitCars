@@ -304,6 +304,10 @@ public function booking_init(){
 	set_cookie('total_fare',$booking['amount'],86400);
 
 
+	$this->db->where('vehicle_id',$_SESSION["vehice_id"]);
+	set_cookie('vehicleName',$this->db->get('vehicle')->row('title'),86400);
+
+
 
 	// $serialized_object = base64_encode(serialize($booking));
 	// set_cookie('book_data',$serialized_object,86400); 
@@ -736,9 +740,8 @@ if (!$isFirstName){
 	$booking['phone'] =(!empty( get_cookie('phone'))? get_cookie('phone'):'07711111111');
 	$booking['vehicle_id'] =(!empty( get_cookie('vehicle_id'))? get_cookie('vehicle_id'):'111');
 	$booking['service_type'] =(!empty( get_cookie('service_type'))? get_cookie('service_type'):'1');
-
-	$booking['source'] = get_cookie('source');
-	$booking['destination'] = get_cookie('destination');
+	$booking['source'] =(!empty( get_cookie('source'))? get_cookie('source'):'test source');
+	$booking['destination']=(!empty( get_cookie('destination'))? get_cookie('destination'):'test destination');
 	$booking['way_point_1'] =(!empty( get_cookie('way_point_1'))? get_cookie('way_point_1'):'');
 	$booking['way_point_2'] =(!empty( get_cookie('way_point_2'))? get_cookie('way_point_1'):'');
 	$booking['way_point_3'] =(!empty( get_cookie('way_point_3'))? get_cookie('way_point_1'):'');
@@ -805,7 +808,7 @@ if (!$isFirstName){
 			$data['way_point_3']=(!empty($_SESSION["way_points"][2])?$_SESSION["way_points"][2]:'');
 			$data['type'] ="Online";
 			$this->db->where('vehicle_id',$_SESSION["vehice_id"]);
-			$data['vehicle'] =$this->db->get('vehicle')->row('title');
+			$data['vehicle'] = (!empty($this->db->get('vehicle')->row('title'))? $this->db->get('vehicle')->row('title'):get_cookie('vehicleName'));
 			$data['travel_date'] = $_SESSION["book_data"]['travel_date'];
 			$data['travel_time'] =$_SESSION["book_data"]['travel_time'];
 			$data['travel_type'] = ($_SESSION["journey_type"]== "1"?"Single":"Return");
@@ -818,7 +821,7 @@ if (!$isFirstName){
 			$data['sub_total'] = $_SESSION['base_fare'];
 			$data['total'] = $_SESSION["book_data"]['amount'];
 			$data['promocode_discount'] =$_SESSION["book_data"]['promocode_discount'];	
-			$data['scomments_special_inst'] = get_cookie('scomments_special_inst');
+			$data['scomments_special_inst'] = =(!empty( get_cookie('scomments_special_inst'))? get_cookie('scomments_special_inst'):'test scomments_special_inst');
 			$data['hand_lagguage'] =get_cookie('hand_lagguage');
 			$data['flight_no']=get_cookie('flight_no');
 			$data['pick_up']=get_cookie('pick_up');
