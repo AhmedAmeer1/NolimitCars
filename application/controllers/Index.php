@@ -821,7 +821,7 @@ if (!$isFirstName){
 			$data['sub_total'] = $_SESSION['base_fare'];
 			$data['total'] = $_SESSION["book_data"]['amount'];
 			$data['promocode_discount'] =$_SESSION["book_data"]['promocode_discount'];	
-			$data['scomments_special_inst'] = =(!empty( get_cookie('scomments_special_inst'))? get_cookie('scomments_special_inst'):'test scomments_special_inst');
+			$data['scomments_special_inst'] = (!empty( get_cookie('scomments_special_inst'))? get_cookie('scomments_special_inst'):'test scomments_special_inst');
 			$data['hand_lagguage'] =get_cookie('hand_lagguage');
 			$data['flight_no']=get_cookie('flight_no');
 			$data['pick_up']=get_cookie('pick_up');
