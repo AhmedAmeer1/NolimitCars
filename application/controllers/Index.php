@@ -698,10 +698,10 @@ public function lloyds_success(){
 
 	$total = $this->input->get('total');
 
-
+	debug_log(" session data  --lloyds_success  method ------ ");
+	debug_log($_SESSION["book_data"]);
 	debug_log(" first_name -cookie---lloyds_success  method ------ ");
 	debug_log(get_cookie('first_name'));
-
 
 	//setting the value to session variables using cookies values
 	// $booking['first_name'] = get_cookie('first_name');
@@ -754,7 +754,7 @@ public function lloyds_success(){
 
 
 	debug_log("----------------ENTERED  ONLINE PAYMENT METHOD  lloyds_success ------------------ ");
-	debug_log(" session booking data  in online payment  ----lloyds_success------ ");
+	debug_log(" session booking data  in online payment from cookies   ----lloyds_success------ ");
 	debug_log($_SESSION["book_data"]);
 
 
