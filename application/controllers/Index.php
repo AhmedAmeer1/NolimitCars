@@ -700,7 +700,7 @@ public function lloyds_success(){
 
 
 	debug_log(" first_name -cookie---lloyds_success  method ------ ");
-	debug_log(get_cookie('first_name'););
+	debug_log(get_cookie('first_name'));
 
 
 	//setting the value to session variables using cookies values
