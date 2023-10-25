@@ -333,7 +333,7 @@ public function booking_init(){
 	debug_log(" first_name - sesssiion---booking init  method ------ ");
 	debug_log($_SESSION["book_data"]['first_name']);
 	debug_log(" first_name -cookie---booking init  method ------ ");
-	debug_log(get_cookie('first_name'););
+	debug_log(get_cookie('first_name'));
 
 
 	$this->load->helper('custom_helper');
