@@ -728,8 +728,8 @@ public function lloyds_success(){
 
 	//debug_log(" session data   first_name    --lloyds_success  method ------ ");
 	// debug_log($_SESSION["book_data"]['first_name']);
-	debug_log(" -cookie- data first_name     --lloyds_success  method ------ ");
-	debug_log(get_cookie('first_name'));
+	// debug_log(" -cookie- data first_name     --lloyds_success  method ------ ");
+	// debug_log(get_cookie('first_name'));
 
 
 
