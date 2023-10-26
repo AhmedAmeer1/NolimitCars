@@ -726,8 +726,8 @@ public function lloyds_success(){
 
 
 
-	debug_log(" session data   first_name    --lloyds_success  method ------ ");
-	debug_log($_SESSION["book_data"]['first_name']);
+	//debug_log(" session data   first_name    --lloyds_success  method ------ ");
+	// debug_log($_SESSION["book_data"]['first_name']);
 	debug_log(" -cookie- data first_name     --lloyds_success  method ------ ");
 	debug_log(get_cookie('first_name'));
 
@@ -749,24 +749,24 @@ public function lloyds_success(){
 	$booking['service_type'] = (!empty( get_cookie('service_type'))? get_cookie('service_type'): $_SESSION["book_data"]['service_type']);
 	$booking['source'] = (!empty( get_cookie('source'))? get_cookie('source'): $_SESSION["book_data"]['source']);
 	$booking['destination'] = (!empty( get_cookie('destination'))? get_cookie('destination'): $_SESSION["book_data"]['destination']);
-	$booking['way_point_1'] =(!empty( get_cookie('way_point_1'))? get_cookie('way_point_1'):$_SESSION["book_data"]['way_point_1']);
-	$booking['way_point_2'] =(!empty( get_cookie('way_point_2'))? get_cookie('way_point_2'):$_SESSION["book_data"]['way_point_2']);
-	$booking['way_point_3'] =(!empty( get_cookie('way_point_3'))? get_cookie('way_point_3'):$_SESSION["book_data"]['way_point_3']);
+	$booking['way_point_1'] =(!empty( get_cookie('way_point_1'))? get_cookie('way_point_1'):'');
+	$booking['way_point_2'] =(!empty( get_cookie('way_point_2'))? get_cookie('way_point_2'):'');
+	$booking['way_point_3'] =(!empty( get_cookie('way_point_3'))? get_cookie('way_point_3'):'');
 	$booking['travel_date'] = (!empty( get_cookie('travel_date'))? get_cookie('travel_date'): $_SESSION["book_data"]['travel_date']);
 	$booking['travel_time'] = (!empty( get_cookie('travel_time'))? get_cookie('travel_time'): $_SESSION["book_data"]['travel_time']);
 	$booking['pick_up_door_name'] = (!empty( get_cookie('pick_up_door_name'))? get_cookie('pick_up_door_name'): $_SESSION["book_data"]['pick_up_door_name']);
 	$booking['flight_no'] =(!empty( get_cookie('flight_no'))? get_cookie('flight_no'):$_SESSION["book_data"]['flight_no']);
-	$booking['passenger'] = (!empty( get_cookie('passenger'))? get_cookie('passenger'): $_SESSION["book_data"]['passenger']);
-	$booking['suitcase'] = (!empty( get_cookie('suitcase'))? get_cookie('suitcase'): $_SESSION["book_data"]['suitcase']);
-	$booking['child_seat'] =(!empty( get_cookie('child_seat'))? get_cookie('child_seat'):$_SESSION["book_data"]['child_seat']);
-	$booking['greet_status'] = (!empty( get_cookie('greet_status'))? get_cookie('greet_status'): $_SESSION["book_data"]['greet_status']);
+	$booking['passenger'] = (!empty( get_cookie('passenger'))? get_cookie('passenger'):'');
+	$booking['suitcase'] = (!empty( get_cookie('suitcase'))? get_cookie('suitcase'): '');
+	$booking['child_seat'] =(!empty( get_cookie('child_seat'))? get_cookie('child_seat'):'');
+	$booking['greet_status'] = (!empty( get_cookie('greet_status'))? get_cookie('greet_status'): '');
 	$booking['base_fare'] = (!empty( get_cookie('base_fare'))? get_cookie('base_fare'): $_SESSION["book_data"]['base_fare']);
-	$booking['user_id'] =(!empty( get_cookie('user_id'))? get_cookie('user_id'):$_SESSION["book_data"]['user_id']);
-	$booking['userType'] = (!empty( get_cookie('userType'))? get_cookie('userType'): $_SESSION["book_data"]['userType']);
+	$booking['user_id'] =(!empty( get_cookie('user_id'))? get_cookie('user_id'):'');
+	$booking['userType'] = (!empty( get_cookie('userType'))? get_cookie('userType'):'');
 	$booking['status'] = (!empty( get_cookie('status'))? get_cookie('status'): $_SESSION["book_data"]['status']);
-	$booking['promocode_discount'] =(!empty( get_cookie('promocode_discount'))? get_cookie('promocode_discount'):$_SESSION["book_data"]['promocode_discount']);
-	$booking['child_seat_cost'] = (!empty( get_cookie('child_seat_cost'))? get_cookie('child_seat_cost'): $_SESSION["book_data"]['child_seat_cost']);
-	$booking['greeting_cost'] = (!empty( get_cookie('greeting_cost'))? get_cookie('greeting_cost'): $_SESSION["book_data"]['greeting_cost']);
+	$booking['promocode_discount'] =(!empty( get_cookie('promocode_discount'))? get_cookie('promocode_discount'):'');
+	$booking['child_seat_cost'] = (!empty( get_cookie('child_seat_cost'))? get_cookie('child_seat_cost'): '');
+	$booking['greeting_cost'] = (!empty( get_cookie('greeting_cost'))? get_cookie('greeting_cost'):'');
 	$booking['amount'] =(!empty( get_cookie('amount'))? get_cookie('amount'):$_SESSION["book_data"]['amount']);
 	
 
@@ -777,10 +777,10 @@ public function lloyds_success(){
 	//$booking['total_fare'] = (!empty( get_cookie('total_fare'))? get_cookie('total_fare'): $_SESSION["book_data"]['total_fare']);
 
 
-	$_SESSION['hand_lagguage'] = (!empty( get_cookie('hand_lagguage'))? get_cookie('hand_lagguage'):$_SESSION['hand_lagguage']);
+	$_SESSION['hand_lagguage'] = (!empty( get_cookie('hand_lagguage'))? get_cookie('hand_lagguage'):'');
 	$_SESSION['pick_up'] = (!empty( get_cookie('pick_up'))? get_cookie('pick_up'):$_SESSION['pick_up']);
 	$_SESSION['scomments_special_inst']  = (!empty( get_cookie('scomments_special_inst'))? get_cookie('scomments_special_inst'): $_SESSION['scomments_special_inst'] );
-	$_SESSION['promocode'] = (!empty( get_cookie('promocode'))? get_cookie('promocode'):$_SESSION['promocode']);
+	$_SESSION['promocode'] = (!empty( get_cookie('promocode'))? get_cookie('promocode'):'');
 	$_SESSION['total_fare']  = (!empty( get_cookie('total_fare'))? get_cookie('total_fare'): $_SESSION['total_fare'] );
 	
 	$_SESSION["book_data"]= $booking;
