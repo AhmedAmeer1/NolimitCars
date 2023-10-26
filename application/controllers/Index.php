@@ -261,7 +261,19 @@ public function booking_init(){
 
 	//echo "b-".$booking['amount'];
 	//exit;
+	
+	//$_SESSION['promocode'] = (!empty( get_cookie('promocode'))? get_cookie('promocode'):$_SESSION['promocode']);
+	
+
+
 	$_SESSION['total_fare'] = $booking['amount'];
+	$_SESSION['promocode'] = $booking['promocode_discount'];
+	$_SESSION['hand_lagguage'] = $input['hand_lagguage'];
+	$_SESSION['pick_up'] = $input['pick_up'];
+	$_SESSION['scomments_special_inst'] = $input['scomments_special_inst'];
+
+
+
 	$_SESSION["book_data"]= $booking;
 	// $bookingData=$booking;
 
@@ -756,12 +768,18 @@ public function lloyds_success(){
 	$booking['child_seat_cost'] = (!empty( get_cookie('child_seat_cost'))? get_cookie('child_seat_cost'): $_SESSION["book_data"]['child_seat_cost']);
 	$booking['greeting_cost'] = (!empty( get_cookie('greeting_cost'))? get_cookie('greeting_cost'): $_SESSION["book_data"]['greeting_cost']);
 	$booking['amount'] =(!empty( get_cookie('amount'))? get_cookie('amount'):$_SESSION["book_data"]['amount']);
-	$booking['hand_lagguage'] = (!empty( get_cookie('hand_lagguage'))? get_cookie('hand_lagguage'): $_SESSION["book_data"]['hand_lagguage']);
-	$booking['pick_up'] = (!empty( get_cookie('pick_up'))? get_cookie('pick_up'): $_SESSION["book_data"]['pick_up']);
-	$booking['scomments_special_inst'] =(!empty( get_cookie('scomments_special_inst'))? get_cookie('scomments_special_inst'):$_SESSION["book_data"]['scomments_special_inst']);
-	$booking['promocode'] = (!empty( get_cookie('promocode'))? get_cookie('promocode'): $_SESSION["book_data"]['promocode']);
-	$booking['total_fare'] = (!empty( get_cookie('total_fare'))? get_cookie('total_fare'): $_SESSION["book_data"]['total_fare']);
+	
 
+	//$booking['hand_lagguage'] = (!empty( get_cookie('hand_lagguage'))? get_cookie('hand_lagguage'): $_SESSION["book_data"]['hand_lagguage']);
+	//$booking['pick_up'] = (!empty( get_cookie('pick_up'))? get_cookie('pick_up'): $_SESSION["book_data"]['pick_up']);
+	//$booking['scomments_special_inst'] =(!empty( get_cookie('scomments_special_inst'))? get_cookie('scomments_special_inst'):$_SESSION["book_data"]['scomments_special_inst']);
+	//$booking['promocode'] = (!empty( get_cookie('promocode'))? get_cookie('promocode'): $_SESSION["book_data"]['promocode']);
+	//$booking['total_fare'] = (!empty( get_cookie('total_fare'))? get_cookie('total_fare'): $_SESSION["book_data"]['total_fare']);
+
+
+	$_SESSION['hand_lagguage'] = (!empty( get_cookie('hand_lagguage'))? get_cookie('hand_lagguage'):$_SESSION['hand_lagguage']);
+	$_SESSION['pick_up'] = (!empty( get_cookie('pick_up'))? get_cookie('pick_up'):$_SESSION['pick_up']);
+	$_SESSION['scomments_special_inst']  = (!empty( get_cookie('scomments_special_inst'))? get_cookie('scomments_special_inst'): $_SESSION['scomments_special_inst'] );
 	$_SESSION['promocode'] = (!empty( get_cookie('promocode'))? get_cookie('promocode'):$_SESSION['promocode']);
 	$_SESSION['total_fare']  = (!empty( get_cookie('total_fare'))? get_cookie('total_fare'): $_SESSION['total_fare'] );
 	
@@ -817,16 +835,16 @@ public function lloyds_success(){
 			$data['suitcase']= (!empty($_SESSION["book_data"]['suitcase']) ? $_SESSION["book_data"]['suitcase'] :  get_cookie('suitcase'));
 			$data['child_seat'] =(!empty($_SESSION["book_data"]['child_seat']) ? $_SESSION["book_data"]['child_seat'] :  get_cookie('child_seat'));
 			$data['child_seat_cost'] =(!empty($_SESSION["book_data"]['child_seat_cost']) ? $_SESSION["book_data"]['child_seat_cost'] :  get_cookie('child_seat_cost'));
-			$data['greet_status']= (!empty($_SESSION["book_data"]['greet_status']) ? $_SESSION["book_data"]['greet_status'] :  get_cookie('greet_status'));
+			$data['greet_status']= =(!empty($_SESSION["book_data"]['greet_status']) ? $_SESSION["book_data"]['greet_status'] :  get_cookie('greet_status'));
 			$data['greeting_cost'] =(!empty($_SESSION["book_data"]['greeting_cost']) ? $_SESSION["book_data"]['greeting_cost'] :  get_cookie('greeting_cost'));
 			$data['sub_total'] =(!empty($_SESSION["book_data"]['base_fare']) ? $_SESSION["book_data"]['base_fare'] :  get_cookie('base_fare'));
 			$data['total'] =(!empty($_SESSION["book_data"]['amount']) ? $_SESSION["book_data"]['amount'] :  get_cookie('amount'));
 			$data['promocode_discount'] =(!empty($_SESSION["book_data"]['promocode_discount']) ? $_SESSION["book_data"]['promocode_discount'] :  get_cookie('promocode_discount'));
-			$data['scomments_special_inst'] =(!empty($_SESSION["book_data"]['scomments_special_inst']) ? $_SESSION["book_data"]['scomments_special_inst'] :  get_cookie('scomments_special_inst'));
-			$data['hand_lagguage'] =(!empty($_SESSION["book_data"]['hand_lagguage']) ? $_SESSION["book_data"]['hand_lagguage'] :  get_cookie('hand_lagguage'));
-			$data['flight_no'] =(!empty($_SESSION["book_data"]['flight_no']) ? $_SESSION["book_data"]['flight_no'] :  get_cookie('flight_no'));
-			$data['pick_up'] =(!empty($_SESSION["book_data"]['pick_up']) ? $_SESSION["book_data"]['pick_up'] :  get_cookie('pick_up'));
-
+		    $data['flight_no'] =(!empty($_SESSION["book_data"]['flight_no']) ? $_SESSION["book_data"]['flight_no'] :  get_cookie('flight_no'));
+		
+			$data['scomments_special_inst'] =(!empty($_SESSION['scomments_special_inst']) ? $_SESSION['scomments_special_inst'] :  get_cookie('scomments_special_inst'));
+			$data['hand_lagguage'] =(!empty($_SESSION['hand_lagguage']) ? $_SESSION['hand_lagguage']:  get_cookie('hand_lagguage'));
+			$data['pick_up'] =(!empty($_SESSION['pick_up']) ? $_SESSION['pick_up']:  get_cookie('pick_up'));
 
 
 		
