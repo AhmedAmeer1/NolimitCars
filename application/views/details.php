@@ -32,11 +32,11 @@
     border: 4px solid rgba(255, 255, 255, 0.3);
     border-top: 4px solid white;
     border-radius: 50%;
-    width: 20px;
-    height: 20px;
+    width: 17px;
+    height: 17px;
     animation: spin 2s linear infinite;
     margin-left: -24px !important;
-    margin-top: -16px;
+    margin-top: -14px;
 
 }
 
