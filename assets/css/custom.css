@@ -1487,8 +1487,8 @@ select {
 .details-forms-wrapper .bottom-buttons .paynow-btn {
     background-color: #00517c;
     border-radius: 25px;
-    font-size: 9px;
-    padding: 10px 15px;
+    font-size: 12px;
+    padding: 10px 30px;
     border: 0;
     color: #fff;
 }
