@@ -23,6 +23,33 @@
       <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
    </head>
    <style>
+
+.hidden {
+    display: none;
+}
+
+.spinner {
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    border-top: 4px solid white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    animation: spin 2s linear infinite;
+    margin-right: 75px;
+    margin-top: -16px;
+
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+
+
+
+
+
       input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
@@ -349,11 +376,33 @@ input[type=number] {
                          <button class="paycash-btn payment-method" data-method="pay_cash">PAY CASH</button> 
                          <button class="paynow-btn payment-method" data-method="pay_now">PAY NOW</button> 
                      </div>
+
+
+
+
                          <div class="user-pay-type">
                         <?php foreach($payment_types as $pt){?>
-                           <button  class="paynow-btn payment-method" data-method=<?php echo $pt->method ?>><a id="pay_now_a"><?php echo $pt->title ?></a></button>
+                           <button  class="paynow-btn payment-method" id="myButton" onclick="startLoading()" data-method=<?php echo $pt->method ?>><a id="pay_now_a"><?php echo $pt->title ?> <span class=" hidden spinner"id="loading"></span></a></button>
+                           <!-- <button   class="paynow-btn" id="myButton" onclick="startLoading()"   data-method="asas">loading btn<span class=" hidden spinner"id="loading"></span></button> -->
                         <?php }?>
-                        </div>
+                        <!-- <button   class="paynow-btn" id="myButton" onclick="startLoading()"   data-method="asas">loading btn<span class=" hidden spinner"id="loading"></span></button>
+                       
+                        -->
+                       
+                       
+                        <!-- <button id="myButton"  class="paynow-btn" onclick="startLoading()">Click Me <div class=" hidden spinner"id="loading"></div></button> -->
+                        
+                        <span id="loading" class="hidden">
+                              <span id="hiddenBtn">
+                                  <span class="spinner">
+                                  </span>
+                              </span>
+                           
+                         </span>
+
+                    
+
+                        
                      </div>
                   </div>
                </div>
@@ -454,6 +503,32 @@ input[type=number] {
       </div>
       </div>
       </div>
+
+<script>
+       function startLoading() {
+         // alert("clicked")
+   //  var button = document.getElementById("myButton");
+   //  var loading = document.getElementById("loading");
+   //  var hiddenBtn = document.getElementById("hiddenBtn");
+   //  // Disable the button
+   //  button.disabled = true;
+   //  hiddenBtn.disabled = true;
+   // //  button.style.display ="none"
+   //  // Show the loading spinner
+   //  loading.style.display = "block";
+
+   //  // Simulate a delay (replace with your actual processing)
+   //  setTimeout(function() {
+   //      // Re-enable the button
+   //      button.disabled = false;
+
+   //      // Hide the loading spinner
+   //      loading.style.display = "none";
+   //  }, 6000); // Change 3000 to the desired processing time in milliseconds
+}
+</script>
+
+      
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
       <script src="<?php echo base_url('assets/js/jquery.3.0.min.js')?>"></script>
@@ -569,107 +644,123 @@ input[type=number] {
          }
          
              $('.payment-method').click(function(){ 
-               //  if($("#my_account_div").hasClass('hide')){
-               //     alert("please login to continue");return;
-               //  }
-               //alert($("#exceed_time").val())
-               var valid_phone = validatePhone($("#phone_no").val())
-               var valid_email = ValidateEmail($("#email_id").val())
-              
-            if($("#exceed_time").val() == "1"){
-               
-               alert("You should book 3 hour prior to your journey");return;
-            }
-             else if($("#datepicker").val() == '' || $("#timepicker").val() ==''){
-                 alert("Please fill Journey  details to proceed")
-             }
-             else  if($("#first_name").val() == '' || $("#last_name").val() =='' || $("#email_id").val() =='' || $("#phone_no").val() =='' || $("#pickup").val() ==''){
-                 alert("Please fill all mandatory contact   details to proceed")
-             }
-             else if(valid_phone == false){
-                  alert("Please fill valid phone no")
-               }
-               else if(valid_email == false){
-                  alert("You have entered an invalid email address!")
-               }
-              
-            
-           else{
-                 var jouney_date = $("#datepicker").val();
-                 var journey_time = $("#timepicker").val();
-                 var first_name = $("#first_name").val();
-                 var last_name = $("#last_name").val();
-                 var email = $("#email_id").val();
-                 var phone = $("#phone_no").val();
-                 var pick_up = $("#pick_up").val();
-                 var flight_no = $("#flight_no").val();
-                 var no_of_passenger = $("#no_of_passenger").val();
-                 var no_of_suitcase = $("#no_of_suitcase").val();
-                 var hand_lagguage = $("#hand_lagguage").val();
-                 var child_seat = $("#child_seat").val();
-                 var chk_Greet = document.getElementById("meet_and_greet");
-				 var scomments_special_inst = document.getElementById('scomments_special_inst').value;
-                 if($(this).attr('data-method') =="pay_now_p"){
-                     var payment_method ="paypal";
-                 }
-                 if($(this).attr('data-method') =="pay_now_l"){
-                     var payment_method ="lloyds";
-                 }else{
-                     var payment_method ="cash";
-                 }
-                 if (chk_Greet.checked) {
-                     var meet_and_greet = 1;
-                 }else{
-                     var meet_and_greet = 0;
-                 }
-         
-                
-                 
-                 var url ="<?php echo base_url('index/booking_init') ?>"
-                 $.ajax({
-                         type: "POST",
-                         url: url,
-                         data: {payment_method:payment_method,jouney_date:jouney_date,journey_time:journey_time,first_name:first_name,last_name:last_name,email:email,phone:phone,pick_up:pick_up,flight_no:flight_no,no_of_passenger:no_of_passenger,no_of_suitcase:no_of_suitcase,hand_lagguage:hand_lagguage,child_seat:child_seat,meet_and_greet:meet_and_greet,scomments_special_inst:scomments_special_inst},
-                         success: function(data)
-                         {
-                            $('.payment-method').addClass('hide')
-                            if(payment_method =="cash")
-                            { 
-                             var obj = jQuery.parseJSON(data);
-                             
-                             if(obj.result['booking_id'] !=""){
-                                 $("#book_id").text(obj.result['booking_id']);
-                                 get_book_details(obj.result['booking_id'])
-                                 $("#success_modal").trigger('click')
-         
-                             }
-                            }else if(payment_method =="lloyds"){
-
-                              <?php /*?>window.location.replace('<?php echo base_url('index/ipg')?>');<?php */?>
-							  window.open('<?php echo base_url('index/ipg')?>');
-                           //   $("#chargetotal").val(Math.round($("#total_fare").text()));
-                           //   // $("#lloyds_submit").click();
-
-                            }
-                            
-                            else{
-                               
-                             window.location.replace('<?php echo base_url('payment/create_payment')?>');
-                            }
+                     //  if($("#my_account_div").hasClass('hide')){
+                     //     alert("please login to continue");return;
+                     //  }
+                     //alert($("#exceed_time").val())
+                     var valid_phone = validatePhone($("#phone_no").val())
+                     var valid_email = ValidateEmail($("#email_id").val())
+                  
+                     if($("#exceed_time").val() == "1"){
+                        
+                        alert("You should book 3 hour prior to your journey");return;
+                     }
+                     else if($("#datepicker").val() == '' || $("#timepicker").val() ==''){
+                        alert("Please fill Journey  details to proceed")
+                     }
+                     else  if($("#first_name").val() == '' || $("#last_name").val() =='' || $("#email_id").val() =='' || $("#phone_no").val() =='' || $("#pickup").val() ==''){
+                        alert("Please fill all mandatory contact   details to proceed")
+                     }
+                     else if(valid_phone == false){
+                           alert("Please fill valid phone no")
+                     }
+                     else if(valid_email == false){
+                        alert("You have entered an invalid email address!")
+                     }
+                     
+                  
+                     else{
+                           var jouney_date = $("#datepicker").val();
+                           var journey_time = $("#timepicker").val();
+                           var first_name = $("#first_name").val();
+                           var last_name = $("#last_name").val();
+                           var email = $("#email_id").val();
+                           var phone = $("#phone_no").val();
+                           var pick_up = $("#pick_up").val();
+                           var flight_no = $("#flight_no").val();
+                           var no_of_passenger = $("#no_of_passenger").val();
+                           var no_of_suitcase = $("#no_of_suitcase").val();
+                           var hand_lagguage = $("#hand_lagguage").val();
+                           var child_seat = $("#child_seat").val();
+                           var chk_Greet = document.getElementById("meet_and_greet");
+                        var scomments_special_inst = document.getElementById('scomments_special_inst').value;
+                           if($(this).attr('data-method') =="pay_now_p"){
+                                 var payment_method ="paypal";
+                           }
+                           if($(this).attr('data-method') =="pay_now_l"){
+                                 var payment_method ="lloyds";
+                           }else{
+                                 var payment_method ="cash";
+                           }
+                           if (chk_Greet.checked) {
+                                 var meet_and_greet = 1;
+                           }else{
+                                 var meet_and_greet = 0;
+                           }
+                     
                            
-                         }
-                     })
-         
-         
-                 $('.payment-method').removeClass('fa fa-check');
-                 $(this).addClass('fa fa-check');
-         
-            }
-             
-           
-         
-             
-         })
+                           
+                           var url ="<?php echo base_url('index/booking_init') ?>"
+                           $.ajax({
+                                    type: "POST",
+                                    url: url,
+                                    data: {payment_method:payment_method,jouney_date:jouney_date,journey_time:journey_time,first_name:first_name,last_name:last_name,email:email,phone:phone,pick_up:pick_up,flight_no:flight_no,no_of_passenger:no_of_passenger,no_of_suitcase:no_of_suitcase,hand_lagguage:hand_lagguage,child_seat:child_seat,meet_and_greet:meet_and_greet,scomments_special_inst:scomments_special_inst},
+                                    success: function(data)
+                                    {
+                                       $('.payment-method').addClass('hide')
+                                       if(payment_method =="cash")
+                                       { 
+                                       var obj = jQuery.parseJSON(data);
+                                       
+                                       if(obj.result['booking_id'] !=""){
+                                             $("#book_id").text(obj.result['booking_id']);
+                                             get_book_details(obj.result['booking_id'])
+                                             $("#success_modal").trigger('click')
+                     
+                                       }
+                                       }else if(payment_method =="lloyds"){
+
+                                          <?php /*?>window.location.replace('<?php echo base_url('index/ipg')?>');<?php */?>
+                                 window.open('<?php echo base_url('index/ipg')?>');
+                                       //   $("#chargetotal").val(Math.round($("#total_fare").text()));
+                                       //   // $("#lloyds_submit").click();
+
+                                       }
+                                       
+                                       else{
+                                          
+                                       window.location.replace('<?php echo base_url('payment/create_payment')?>');
+                                       }
+                                       
+                                    }
+                                 })
+                     
+                     
+                           $('.payment-method').removeClass('fa fa-check');
+                           // $(this).addClass('fa fa-check');
+                           var button = document.getElementById("myButton");
+                           var loading = document.getElementById("loading");
+                           var hiddenBtn = document.getElementById("hiddenBtn");
+                           // Disable the button
+                           button.disabled = true;
+                           hiddenBtn.disabled = true;
+                           //  button.style.display ="none"
+                           // Show the loading spinner
+                           loading.style.display = "block";
+
+                           // Simulate a delay (replace with your actual processing)
+                           setTimeout(function() {
+                              // Re-enable the button
+                              button.disabled = false;
+
+                              // Hide the loading spinner
+                              loading.style.display = "none";
+                           }, 6000); 
+                     
+                     }
+                             
+  
+               })
              
       </script>
         <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
