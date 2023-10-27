@@ -24,7 +24,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 // $config['base_url'] = "https://".$_SERVER['HTTP_HOST'].dirname($_SERVER['SCRIPT_NAME']);
- $config['base_url'] = 'http://localhost/nolimitCars/';
+ $config['base_url'] = 'https://travel24taxi.com/';
  //$config['base_url'] = "http://".$_SERVER['HTTP_HOST'].dirname($_SERVER['SCRIPT_NAME']);
 
 /*
@@ -225,8 +225,7 @@ $config['allow_get_array'] = TRUE;
 | your log files will fill up very fast.
 |
 */
-$config['log_threshold'] = 1;
-$config['debug_mode']='yes';
+$config['log_threshold'] = 0;
 
 /*
 |--------------------------------------------------------------------------
@@ -251,7 +250,7 @@ $config['log_path'] = '';
 | Note: Leaving it blank will default to 'php'.
 |
 */
-$config['log_file_extension'] = 'txt';
+$config['log_file_extension'] = '';
 
 /*
 |--------------------------------------------------------------------------
