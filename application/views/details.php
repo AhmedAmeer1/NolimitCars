@@ -35,7 +35,7 @@
     width: 20px;
     height: 20px;
     animation: spin 2s linear infinite;
-    margin-right: 75px;
+    margin-right: -15px;
     margin-top: -16px;
 
 }
