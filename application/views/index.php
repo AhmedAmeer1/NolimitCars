@@ -2,7 +2,7 @@
 <html>
 <style>
     .image-width{
-        width:57%;
+        /* width:57%; */
     }
     .hide{
         display:none
