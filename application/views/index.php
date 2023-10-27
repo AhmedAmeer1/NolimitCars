@@ -145,7 +145,7 @@
                     <div class="col-md-6 no-gutter-responsive lite-gutter">
                         <div class="banner-details">
                             <h1>ALL UK AIRPORTS & OTHER SERVICES</h1>
-                            <p>WE specialise in taxi transfers to and from all UK airports for both individuals and groups, with the accent on a courteous and thoroughly professional personal service at affordable prices. 24 hours a day, 7 days
+                            <p>WE specialise in  minicabs transfers to and from all UK airports for both individuals and groups, with the accent on a courteous and thoroughly professional personal service at affordable prices. 24 hours a day, 7 days
                                 a week </p>
                             <p>Please <a href="mailto:info@nolimitcars.co.uk">email us</a> with as many details as possible and we will email you back with a quote as soon as possible. The price we quote is the price you pay.</p>
                             <p> If you would like a quote for a journey you are planning please use our online booking form or call us on <a href="tel:02039822911" class="block-span">02039 822 911</a></p>
