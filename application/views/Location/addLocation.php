@@ -99,7 +99,6 @@ table, th, td {
               <thead>
                 <tr>
                   <th class="hidden">ID</th>
-                  <th width="100px;"><?php echo $result->google_api_key; ?></th>
                   <th width="100px;">Pick Up Location</th>
                   <th width="100px;">Drop Off Location</th>
                   <th width="100px;">Action</th>

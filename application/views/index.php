@@ -217,7 +217,7 @@
                     </div>
                     <div class="col-md-3">
                         <div class="car-box">
-                            <h2>MOBILITY TAXIS</h2>
+                            <h2>MOBILITY VEHICLE</h2>
                             <img src="assets/images/fleet-8.png" class="img-fluid" alt="car">
                             <h3><span>4</span> Passengers</h3>
                             <h3><span>1</span> Suitcases</h3>
