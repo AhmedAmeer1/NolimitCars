@@ -143,8 +143,9 @@
                                 </div>
                             </div>
                          <?php
-                         foreach($vehicle as $vh){?>
-                            <div class="list-set">
+                         foreach($vehicle as $vh){
+                            if($vh->title != "16 SEATER MINIBUS"){?>
+                             <div class="list-set">
                                 <div class="list-box" data-vehicle="<?php echo $vh->vehicle_id?>" id="<?php echo "vehicle".$vh->vehicle_id?>">
                                     <div class="row">
                                         <div class="col-md-3 no-gutter">
@@ -182,7 +183,55 @@
                          
                             </div>
 
-                         <?php } ?>
+                         <?php } } ?>
+
+
+
+
+                         <?php
+                         foreach($vehicle as $vh){
+                            if($vh->title == "16 SEATER MINIBUS"){?>
+                             <div class="list-set">
+                                <div class="list-box" data-vehicle="<?php echo $vh->vehicle_id?>" id="<?php echo "vehicle".$vh->vehicle_id?>">
+                                    <div class="row">
+                                        <div class="col-md-3 no-gutter">
+                                            <!-- <img src="assets/images/img-1.jpg" class="img-fluid" alt="Car"> -->
+                                            <img src="<?php echo base_url($vh->vehicle_image)?>" class="img-fluid" alt="Car">
+                                        </div>
+                                        <div class="col-md-9 no-gutter">
+                                            <div class="head">
+                                                <h5><?php echo $vh->title?></h5>
+                                                <ul>
+                                                    <li>
+                                                        <i class="fa fa-user" aria-hidden="true"></i><span><?php echo $vh->noOfPassengers; ?></span>
+                                                    </li>
+                                                    <li>
+                                                        <i class="fa fa-suitcase" aria-hidden="true"></i><span><?php echo $vh->noOfSuitcases; ?></span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="content">
+                                                <p><?php echo $vh->vehicle_description?></p>
+                                            </div>
+                                            <div class="bottom amount-div" data-per-km="<?php echo $vh->perKm;?>" data-per-km-return ="<?php echo $vh->perKmReturn;?>" data-vehicle-id="<?php echo $vh->vehicle_id;?>">
+                                                <div class="single">
+                                                    <h5 class="single-amount">£<span id="<?php echo "single-amount-".$vh->vehicle_id?>"></span></h5>
+                                                    <button class="btn-slct-taxi" data-travel-type="1" >SINGLE</button>
+                                                </div>
+                                                <div class="return">
+                                                    <h5 class="return-amount">£<span id="<?php echo "return-amount-".$vh->vehicle_id?>"></span></h5>
+                                                    <button class="btn-slct-taxi"  data-travel-type="2">RETURN</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                         
+                            </div>
+
+                         <?php } } ?>
+
+
                        
                         </div>
                         <!-- <div class="text-center text-md-right">
