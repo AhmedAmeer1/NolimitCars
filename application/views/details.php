@@ -510,10 +510,17 @@ input[type=number] {
                   <h4 class="modal-title">Your Booking has been successfully completed</h4>
                </div>
                 <div class="modal-body">
-                  <strong>Booking-ID : <span id="book_id"></span></strong><br/>
+                  <!-- <strong>Booking-ID : <span id="book_id"></span></strong><br/>
                   <span>Amount:</span>: £ <span id="book_amount"></span><br/>
-                  <span>Date</span>: <span id="book_date"></span><br/>
+                  <span>Date</span>: <span id="book_date"></span><br/> -->
+
+
+                  <strong>Booking-ID : ddjhsjdhsd</strong><br/>
+                  <span>Amount:</span>: £gdhsgdhgsd</span><br/>
+                  <span>Date</span>: dhdhsdghsdgh</span><br/>
+
                <!-- <span>Time</span>: <span id="book_time"></span><br/> -->
+
                </div> 
             </div>
          </div>
