@@ -670,7 +670,9 @@ input[type=number] {
          });
          }
          
-             $('.payment-method').click(function(){ 
+             $('.payment-method').click(function(){
+               
+    console.log("payment-method   clicked ")
                      //  if($("#my_account_div").hasClass('hide')){
                      //     alert("please login to continue");return;
                      //  }
