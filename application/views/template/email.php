@@ -91,7 +91,7 @@
                     </td>
                         <td style="border: 1px solid #d2d2d2; background-color: #fff;">£ <?php echo $child_seat_cost;?></td>
                     </tr>
-                    <?php if($greet_status == 1){?>
+                    <!-- <?php if($greet_status == 1){?>
                         <tr style="text-align: center;">
                         <td style="border: 1px solid #d2d2d2;    text-align: left;
     border: 1px solid #f5f5f5;
@@ -100,7 +100,7 @@
                 <td style="border: 1px solid #d2d2d2; background-color: #fff;"><?php echo $greet_status?>   
                 <td style="border: 1px solid #d2d2d2; background-color: #fff;">£ <?php echo $greeting_cost;?></td>
                     </tr>
-                    <?php }?>
+                    <?php }?> -->
 
 
                     <tr style="text-align: center;">
@@ -115,7 +115,7 @@
                     <tr style="text-align: center;">
                         <td colspan="2" style="border: 1px solid #d2d2d2;    text-align: left;
     border: 1px solid #f5f5f5;
-    padding: 15px 10px;     background-color: #fff; font-weight: bold; border: 1px solid #d2d2d2;">Greeting Cost</td>
+    padding: 15px 10px;     background-color: #fff; font-weight: bold; border: 1px solid #d2d2d2;">>Meet and greet cost<</td>
                         <td style="border: 1px solid #d2d2d2; font-weight: bolder; background-color: #fff;">‎£ <?php echo $greeting_cost; ?></td>
 
 
