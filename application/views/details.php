@@ -749,7 +749,9 @@ input[type=number] {
                                        // $('.payment-method').addClass('hide')
                                        if(payment_method =="cash")
                                        { 
+                                          console.log("cashhhhhhhhhhhhh")
                                        var obj = jQuery.parseJSON(data);
+                                       console.log("111111111111")
                                        alert("11111111")
                                        if(obj.result['booking_id'] !=""){
                                           alert("2222222222")
