@@ -744,9 +744,9 @@ input[type=number] {
                                     data: {payment_method:payment_method,jouney_date:jouney_date,journey_time:journey_time,first_name:first_name,last_name:last_name,email:email,phone:phone,pick_up:pick_up,flight_no:flight_no,no_of_passenger:no_of_passenger,no_of_suitcase:no_of_suitcase,hand_lagguage:hand_lagguage,child_seat:child_seat,meet_and_greet:meet_and_greet,drop_off:drop_off,scomments_special_inst:scomments_special_inst},
                                     success: function(data)
                                     {
-                                       console.log("aaaaaaaaaaaaaaaaaaa")
+                                       console.log("aaaaaaaaaaaaaaaaaaa11111")
                                        alert("aaaaaaaaaaaaaaaaaaa")
-                                       $('.payment-method').addClass('hide')
+                                       // $('.payment-method').addClass('hide')
                                        if(payment_method =="cash")
                                        { 
                                        var obj = jQuery.parseJSON(data);
