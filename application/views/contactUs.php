@@ -7,6 +7,16 @@
     <title>Contact us</title>
     <link rel="icon" type="img/png" sizes="32x32" href="<?php echo base_url('assets/images/favicon.png')?>">
     <link rel="stylesheet" href="<?= base_url('assets/css/contact.css') ?>">
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-230246454-1"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-230246454-1');
+        </script> 
 </head>
 
 <style>
