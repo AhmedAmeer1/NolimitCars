@@ -580,7 +580,6 @@ input[type=number] {
              get_book_details(book_id)
              $('.payment-method').addClass('hide')
                 $("#book_id").text('<?php echo $booking_id;?>');
-                alert("success_modal")
                $("#success_modal").trigger('click')
          
             }
@@ -670,9 +669,7 @@ input[type=number] {
          });
          }
          
-             $('.payment-method').click(function(){
-               
-    console.log("payment-method   clicked ")
+             $('.payment-method').click(function(){ 
                      //  if($("#my_account_div").hasClass('hide')){
                      //     alert("please login to continue");return;
                      //  }
@@ -744,22 +741,14 @@ input[type=number] {
                                     data: {payment_method:payment_method,jouney_date:jouney_date,journey_time:journey_time,first_name:first_name,last_name:last_name,email:email,phone:phone,pick_up:pick_up,flight_no:flight_no,no_of_passenger:no_of_passenger,no_of_suitcase:no_of_suitcase,hand_lagguage:hand_lagguage,child_seat:child_seat,meet_and_greet:meet_and_greet,drop_off:drop_off,scomments_special_inst:scomments_special_inst},
                                     success: function(data)
                                     {
-                                       console.log("aaaaaaaaaaaaaaaaaaa11111")
-                                       alert("aaaaaaaaaaaaaaaaaaa")
-                                        $('.payment-method').addClass('hide')
+                                       $('.payment-method').addClass('hide')
                                        if(payment_method =="cash")
                                        { 
-                                          console.log("cashhhhhhhhhhhhh")
-                                          console.log("data",)
                                        var obj = jQuery.parseJSON(data);
-                                       console.log("111111111111")
-                                       alert("11111111")
+                                       
                                        if(obj.result['booking_id'] !=""){
-                                          alert("2222222222")
                                              $("#book_id").text(obj.result['booking_id']);
-                                             alert("3333333")
                                              get_book_details(obj.result['booking_id'])
-                                             alert("444444")
                                              $("#success_modal").trigger('click')
                      
                                        }
