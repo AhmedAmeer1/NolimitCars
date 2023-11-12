@@ -1,3 +1,14 @@
+                    Ahmed Note(updates done in website) 
+
+    1 : I have removed the review page code which is comming from the backend , now we have given static reviews 
+                files -- view/reviews.php   ,  controller/Reviews.php  , model/Review_model.php
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                     Admin panel set up, please follow the below instructions.
 
 Step 1: Upload the source folder via ftp or file manager.
