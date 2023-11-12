@@ -98,25 +98,6 @@
                 <td style="border: 1px solid #d2d2d2; background-color: #fff;">£ <?php echo $greeting_cost;?></td>
                     </tr>
                     <?php }?>
-
-
-                    <tr style="text-align: center;">
-                        <td colspan="2" style="border: 1px solid #d2d2d2;    text-align: left;
-    border: 1px solid #f5f5f5;
-    padding: 15px 10px;     background-color: #fff; font-weight: bold; border: 1px solid #d2d2d2;">Drop Off Cost </td>
-                        <!-- <td style="border: 1px solid #d2d2d2; font-weight: bolder; background-color: #fff;">‎£ <?php echo $dropoff_cost; ?></td> -->
-                        <td style="border: 1px solid #d2d2d2; font-weight: bolder; background-color: #fff;">test 1</td>
-                    </tr>   
-                                       
-
-                    <tr style="text-align: center;">
-                        <td colspan="2" style="border: 1px solid #d2d2d2;    text-align: left;
-    border: 1px solid #f5f5f5;
-    padding: 15px 10px;     background-color: #fff; font-weight: bold; border: 1px solid #d2d2d2;">Greeting Cost</td>
-                        <!-- <td style="border: 1px solid #d2d2d2; font-weight: bolder; background-color: #fff;">‎£ <?php echo $greeting_cost; ?></td> -->
-                        <td style="border: 1px solid #d2d2d2; font-weight: bolder; background-color: #fff;">test2</td>
-                    </tr> 
-
                     <tr style="text-align: center;">
                         <td colspan="2" style="border: 1px solid #d2d2d2;    text-align: left;
     border: 1px solid #f5f5f5;
