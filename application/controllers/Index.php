@@ -373,8 +373,7 @@ public function booking_init(){
 	
 	debug_log(" first_name - sesssiion---booking init  method ------ ");
 	debug_log($_SESSION["book_data"]['first_name']);
-	debug_log(" first_name -cookie---booking init  method ------ ");
-	debug_log(get_cookie('first_name'));
+
 
 
 	$this->load->helper('custom_helper');
@@ -416,11 +415,11 @@ public function booking_init(){
 			$data['child_seat'] = $booking['child_seat'];
 			$data['child_seat_cost'] = $child_seat_cost;
 
-			$data['greet_status'] = $booking['greet_status'];
-			$data['greeting_cost'] =$greeting_cost;
+			// $data['greet_status'] = $booking['greet_status'];
+			// $data['greeting_cost'] =$greeting_cost;
 
-			$data['dropOff_status'] = $booking['dropOff_status'];
-			$data['dropoff_cost'] =$dropoff_cost;
+			// $data['dropOff_status'] = $booking['dropOff_status'];
+			// $data['dropoff_cost'] =$dropoff_cost;
 
 			$data['sub_total'] = $_SESSION['base_fare'];
 			$data['total'] = $booking['amount'];
@@ -429,7 +428,12 @@ public function booking_init(){
 			$data['hand_lagguage'] =$input['hand_lagguage'];
 			$data['flight_no'] =$input['flight_no'];
 			$data['pick_up'] =$input['pick_up'];
+
+			debug_log(" dropOff_status' -----9999999999999999999999999- ");
+			debug_log( $booking['dropOff_status']);
+
 			$this->email_notification($data);
+
 		}else{
 			$return['booking_id'] = "";
 		}
