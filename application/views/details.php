@@ -750,6 +750,7 @@ input[type=number] {
                                        if(payment_method =="cash")
                                        { 
                                           console.log("cashhhhhhhhhhhhh")
+                                          console.log("data",data)
                                        var obj = jQuery.parseJSON(data);
                                        console.log("111111111111")
                                        alert("11111111")
