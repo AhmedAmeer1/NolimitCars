@@ -232,14 +232,16 @@ input[type=number] {
                            <div class="col-md-6 brdr-b-r">
                               <div class="form-group">
                                  <label>FIRST NAME*</label>
-                                 <input type="text" onBlur="validateFN(this);"  id="first_name" class="formcontrol" name="first_name">
+                                 <!-- <input type="text" onBlur="validateFN(this);"  id="first_name" class="formcontrol" name="first_name"> -->
+                                 <input type="text"  id="first_name" class="formcontrol" name="first_name">
                               </div>
                            </div>
                            <script></script>
                            <div class="col-md-6 brdr-b">
                               <div class="form-group">
                                  <label>LAST NAME*</label>
-                                 <input type="text" onBlur="validateLN(this);" name ="last_name" id="last_name"class="formcontrol">
+                                 <!-- <input type="text" onBlur="validateLN(this);" name ="last_name" id="last_name"class="formcontrol"> -->
+                                 <input type="text" name ="last_name" id="last_name"class="formcontrol">
                               </div>
                            </div>
                            </script>
