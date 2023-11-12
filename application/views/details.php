@@ -580,6 +580,7 @@ input[type=number] {
              get_book_details(book_id)
              $('.payment-method').addClass('hide')
                 $("#book_id").text('<?php echo $booking_id;?>');
+                alert("success_modal")
                $("#success_modal").trigger('click')
          
             }
@@ -745,10 +746,13 @@ input[type=number] {
                                        if(payment_method =="cash")
                                        { 
                                        var obj = jQuery.parseJSON(data);
-                                       
+                                       alert("11111111")
                                        if(obj.result['booking_id'] !=""){
+                                          alert("2222222222")
                                              $("#book_id").text(obj.result['booking_id']);
+                                             alert("3333333")
                                              get_book_details(obj.result['booking_id'])
+                                             alert("444444")
                                              $("#success_modal").trigger('click')
                      
                                        }
