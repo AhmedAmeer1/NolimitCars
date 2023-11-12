@@ -29,13 +29,24 @@ class Index_Model extends CI_Model{
 		//$last_booking_id = $this->db->get('booking_deatils')->row('booking_id');
 		//if(empty($last_booking_id)){
 			$booking_id = "Book-".rand()."-".date('Y-m-d');
+
+			debug_log("model ---11111111111111--");
+
 		//}
 		$_SESSION["book_data"]['booking_id'] =$booking_id ;
-		$this->db->insert('booking_deatils',$_SESSION["book_data"]);
-		$result['booking_id'] = $booking_id;
-		$result['status'] = $this->db->affected_rows();
-		if($this->db->affected_rows() == 1){
+		debug_log("model ---222222222222222--");
 
+		$this->db->insert('booking_deatils',$_SESSION["book_data"]);
+		debug_log("model ---3333333333333--");
+
+		$result['booking_id'] = $booking_id;
+		debug_log("model ---44444444444--");
+
+		$result['status'] = $this->db->affected_rows();
+		debug_log("model ---555555555555--");
+
+		if($this->db->affected_rows() == 1){
+	debug_log("model ---66666666666666--");
 
 		$customerName=$_SESSION["book_data"]['first_name'];
 
