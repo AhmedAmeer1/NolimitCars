@@ -53,12 +53,24 @@ code {
 p {
 	margin: 12px 15px 12px 15px;
 }
+.error_link{
+	margin: 12px 15px 12px 15px;
+	text-decoration: none;
+    font-size: 16px;
+	/* font-weight: bold; */
+}
 </style>
 </head>
 <body>
 	<div id="container">
+
+	 <h1>Our server is under maintenance.</h1>
+		<a href="https://www.nolimitcars.co.uk/"  class="error_link">Click me to redirect to our website</a> 
+
+
+<!-- 
 		<h1><?php echo $heading; ?></h1>
-		<?php echo $message; ?>
+		<?php echo $message; ?> -->
 	</div>
 </body>
 </html>
