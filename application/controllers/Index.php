@@ -227,6 +227,7 @@ public function booking_init(){
 	$booking['suitcase']= $input['no_of_suitcase'];
 	$booking['child_seat']= $input['child_seat'];
 	$booking['greet_status']= $input['meet_and_greet'];
+	$booking['dropOff_status']= $input['drop_off'];
 	$booking['payment_type']= $input['payment_method'];
 	$booking['base_fare']= $_SESSION['base_fare'];
 	$booking['user_id']= (!empty($_SESSION['user_id'])?$_SESSION['user_id']:'0');
@@ -237,10 +238,20 @@ public function booking_init(){
 
 	
 	if($booking['greet_status'] == '1'){
-    $greeting_cost = 5;
+    $greeting_cost = 6;
 	}else{
 		$greeting_cost = 0;
 	}
+
+
+	if($booking['dropOff_status'] == '1'){
+		$dropoff_cost = 5;
+		}else{
+			$dropoff_cost = 0;
+		}
+	
+
+
 	if($booking['child_seat']  !=0){
 		$this->db->where('vehicle_id',$booking['vehicle_id'] );
 		$cost_per_seat = $this->db->get('vehicle')->row('cost_per_child_seat');
@@ -251,7 +262,9 @@ public function booking_init(){
 		}
 		$booking['child_seat_cost']= $child_seat_cost;
 		$booking['greeting_cost']= $greeting_cost;
-	$booking['amount']= $_SESSION['base_fare'] +$greeting_cost+$child_seat_cost;
+		$booking['dropoff_cost']= $dropoff_cost;
+		
+	$booking['amount']= $_SESSION['base_fare'] +$greeting_cost+$dropoff_cost+$child_seat_cost;
 	//echo "a-".$booking['amount']."discount-".$booking['promocode_discount'];
 	if($booking['promocode_discount'] != 0){
 		$booking['amount'] = $booking['amount']-($booking['amount']*($booking['promocode_discount'] /100));
@@ -301,14 +314,20 @@ public function booking_init(){
 	set_cookie('passenger',$booking['passenger'],86400);
 	set_cookie('suitcase',$booking['suitcase'],86400);
 	set_cookie('child_seat',$booking['child_seat'],86400);
+
 	set_cookie('greet_status',$booking['greet_status'],86400);
+	set_cookie('dropOff_status',$booking['dropOff_status'],86400);
+
 	set_cookie('base_fare',$booking['base_fare'],86400);
 	set_cookie('user_id',$booking['user_id'],86400);
 	set_cookie('userType',$booking['userType'],86400);
 	set_cookie('status',$booking['status'],86400);
 	set_cookie('promocode_discount',$booking['promocode_discount'],86400);
 	set_cookie('child_seat_cost',$booking['child_seat_cost'],86400);
+
 	set_cookie('greeting_cost',$booking['greeting_cost'],86400);
+	set_cookie('dropoff_cost',$booking['dropoff_cost'],86400);
+
 	set_cookie('amount',$booking['amount'],86400);
 	set_cookie('scomments_special_inst',$input['scomments_special_inst'],86400);
 	set_cookie('hand_lagguage',$input['hand_lagguage'],86400);
@@ -396,8 +415,13 @@ public function booking_init(){
 			$data['suitcase'] =$booking['suitcase'];
 			$data['child_seat'] = $booking['child_seat'];
 			$data['child_seat_cost'] = $child_seat_cost;
+
 			$data['greet_status'] = $booking['greet_status'];
 			$data['greeting_cost'] =$greeting_cost;
+
+			$data['dropOff_status'] = $booking['dropOff_status'];
+			$data['dropoff_cost'] =$dropoff_cost;
+
 			$data['sub_total'] = $_SESSION['base_fare'];
 			$data['total'] = $booking['amount'];
 			$data['promocode_discount'] =$booking['promocode_discount'];
@@ -759,14 +783,20 @@ public function lloyds_success(){
 	$booking['passenger'] = (!empty( get_cookie('passenger'))? get_cookie('passenger'):'');
 	$booking['suitcase'] = (!empty( get_cookie('suitcase'))? get_cookie('suitcase'): '');
 	$booking['child_seat'] =(!empty( get_cookie('child_seat'))? get_cookie('child_seat'):'');
+
 	$booking['greet_status'] = (!empty( get_cookie('greet_status'))? get_cookie('greet_status'): '');
+	$booking['dropOff_status'] = (!empty( get_cookie('dropOff_status'))? get_cookie('dropOff_status'): '');
+
 	$booking['base_fare'] = (!empty( get_cookie('base_fare'))? get_cookie('base_fare'): $_SESSION["book_data"]['base_fare']);
 	$booking['user_id'] =(!empty( get_cookie('user_id'))? get_cookie('user_id'):'');
 	$booking['userType'] = (!empty( get_cookie('userType'))? get_cookie('userType'):'');
 	$booking['status'] = (!empty( get_cookie('status'))? get_cookie('status'): $_SESSION["book_data"]['status']);
 	$booking['promocode_discount'] =(!empty( get_cookie('promocode_discount'))? get_cookie('promocode_discount'):'');
 	$booking['child_seat_cost'] = (!empty( get_cookie('child_seat_cost'))? get_cookie('child_seat_cost'): '');
+
 	$booking['greeting_cost'] = (!empty( get_cookie('greeting_cost'))? get_cookie('greeting_cost'):'');
+	$booking['dropoff_cost'] = (!empty( get_cookie('dropoff_cost'))? get_cookie('dropoff_cost'):'');
+
 	$booking['amount'] =(!empty( get_cookie('amount'))? get_cookie('amount'):$_SESSION["book_data"]['amount']);
 	
 
@@ -835,8 +865,15 @@ public function lloyds_success(){
 			$data['suitcase']= (!empty($_SESSION["book_data"]['suitcase']) ? $_SESSION["book_data"]['suitcase'] :  get_cookie('suitcase'));
 			$data['child_seat'] =(!empty($_SESSION["book_data"]['child_seat']) ? $_SESSION["book_data"]['child_seat'] :  get_cookie('child_seat'));
 			$data['child_seat_cost'] =(!empty($_SESSION["book_data"]['child_seat_cost']) ? $_SESSION["book_data"]['child_seat_cost'] :  get_cookie('child_seat_cost'));
+
+
 			$data['greet_status']= (!empty($_SESSION["book_data"]['greet_status']) ? $_SESSION["book_data"]['greet_status'] :  get_cookie('greet_status'));
 			$data['greeting_cost'] =(!empty($_SESSION["book_data"]['greeting_cost']) ? $_SESSION["book_data"]['greeting_cost'] :  get_cookie('greeting_cost'));
+
+			$data['dropOff_status']= (!empty($_SESSION["book_data"]['dropOff_status']) ? $_SESSION["book_data"]['dropOff_status'] :  get_cookie('dropOff_status'));
+			$data['dropoff_cost'] =(!empty($_SESSION["book_data"]['dropoff_cost']) ? $_SESSION["book_data"]['dropoff_cost'] :  get_cookie('dropoff_cost'));
+
+
 			$data['sub_total'] =(!empty($_SESSION["book_data"]['base_fare']) ? $_SESSION["book_data"]['base_fare'] :  get_cookie('base_fare'));
 			$data['total'] =(!empty($_SESSION["book_data"]['amount']) ? $_SESSION["book_data"]['amount'] :  get_cookie('amount'));
 			$data['promocode_discount'] =(!empty($_SESSION["book_data"]['promocode_discount']) ? $_SESSION["book_data"]['promocode_discount'] :  get_cookie('promocode_discount'));

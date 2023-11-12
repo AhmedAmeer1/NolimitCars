@@ -21,6 +21,18 @@
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+
+
+      <!-- Global site tag (gtag.js) - Google Analytics -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-230246454-1"></script>
+      <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-230246454-1');
+      </script> 
+      
    </head>
    <style>
 
@@ -69,7 +81,9 @@ input[type=number] {
    form .error {
   color: #ff0000;
 }
-
+.text_amt{
+   font-size:12px;
+}
 	.paymentalert{
 		position:relative;
 		color:#f38422;
@@ -326,9 +340,12 @@ input[type=number] {
                            </div>
                            <div class="col-md-12 pt-2">
                               <div class="form-group d-flex align-items-center">
-                                 <input type="checkbox" id="meet_and_greet" class="c-check"><label class="ml-2"> MEET AND GREET & DROP OFF - YES, PLEASE MEET ME IN ARRIVALS (+ES)</label>
-                                 <span id="meet_amount"></span>
+                                 <input type="checkbox" id="meet_and_greet" class="c-check"><label class="ml-2"> MEET AND GREET (+£6) 30 MINUTES </label>&nbsp;&nbsp;&nbsp;
+                                 <!-- <span id="meet_amount" class="text_amt" > </span> &nbsp; -->
+                                 <input type="checkbox" id="drop_off" class="c-check"><label class="ml-2"> DROP OFF (+£5) </label>
+                                 <!-- <span id="drop_amount" class="text_amt"></span> -->
                               </div>
+                          
                               <div class="form-group mt-3">
                                  <label>COMMENTS OR SPECIAL INSTRUCTIONS</label>
                                  <textarea rows="3" class="formcontrol" id="scomments_special_inst" name="scomments_special_inst"></textarea>
@@ -683,6 +700,7 @@ input[type=number] {
                            var hand_lagguage = $("#hand_lagguage").val();
                            var child_seat = $("#child_seat").val();
                            var chk_Greet = document.getElementById("meet_and_greet");
+                           var chk_DropOff = document.getElementById("drop_off");
                         var scomments_special_inst = document.getElementById('scomments_special_inst').value;
                            if($(this).attr('data-method') =="pay_now_p"){
                                  var payment_method ="paypal";
@@ -692,10 +710,17 @@ input[type=number] {
                            }else{
                                  var payment_method ="cash";
                            }
+
                            if (chk_Greet.checked) {
                                  var meet_and_greet = 1;
                            }else{
                                  var meet_and_greet = 0;
+                           }
+
+                           if (chk_DropOff.checked) {
+                                 var drop_off = 1;
+                           }else{
+                                 var drop_off = 0;
                            }
                      
                            
@@ -704,7 +729,7 @@ input[type=number] {
                            $.ajax({
                                     type: "POST",
                                     url: url,
-                                    data: {payment_method:payment_method,jouney_date:jouney_date,journey_time:journey_time,first_name:first_name,last_name:last_name,email:email,phone:phone,pick_up:pick_up,flight_no:flight_no,no_of_passenger:no_of_passenger,no_of_suitcase:no_of_suitcase,hand_lagguage:hand_lagguage,child_seat:child_seat,meet_and_greet:meet_and_greet,scomments_special_inst:scomments_special_inst},
+                                    data: {payment_method:payment_method,jouney_date:jouney_date,journey_time:journey_time,first_name:first_name,last_name:last_name,email:email,phone:phone,pick_up:pick_up,flight_no:flight_no,no_of_passenger:no_of_passenger,no_of_suitcase:no_of_suitcase,hand_lagguage:hand_lagguage,child_seat:child_seat,meet_and_greet:meet_and_greet,drop_off:drop_off,scomments_special_inst:scomments_special_inst},
                                     success: function(data)
                                     {
                                        $('.payment-method').addClass('hide')
@@ -769,11 +794,20 @@ input[type=number] {
          $('.cost-add-on').change(function(e){ 
              var fare = '<?php echo $_SESSION["base_fare"];?>';
              var chk_Greet = document.getElementById("meet_and_greet");
+             var chk_DropOff = document.getElementById("drop_off");
                if (chk_Greet.checked) {
                  var meet_and_greet = 1;
              }else{
                  var meet_and_greet = 0;
              }
+
+
+             if (chk_DropOff.checked) {
+                 var drop_off = 1;
+             }else{
+                 var drop_off = 0;
+             }
+         
          
              if($(this).val() != 0)
              { let no_of_chile_seat = $(this).val();
@@ -783,19 +817,23 @@ input[type=number] {
              
             
              if(meet_and_greet == 1){
+                 var fare = parseFloat(fare)+6;
+             }
+             if(drop_off == 1){
                  var fare = parseFloat(fare)+5;
-         
              }
             
               $("#total_fare").text(parseFloat(child_seat_cost)+parseFloat(fare))
               $("#child_seat_amt").text("(£"+$(this).attr('data-cost-per-child-seat')+"/Seat)")
                 // alert( "you need to pay extra £"+ $(this).attr('data-cost-per-child-seat') + "for booking each  child seat for this vehicle")
              } else{
-                 if(meet_and_greet == 1){
-                 var fare = parseFloat(fare)+5;
-         
-             }
-              $("#total_fare").text(parseFloat(fare))
+                     if(meet_and_greet == 1){
+                        var fare = parseFloat(fare)+6;
+                     }
+                     if(drop_off == 1){
+                        var fare = parseFloat(fare)+5;
+                     }
+                  $("#total_fare").text(parseFloat(fare))
              }   
              })
              $('input#meet_and_greet[type="checkbox"]').click(function(){
@@ -804,13 +842,31 @@ input[type=number] {
                  if($(this).prop("checked") == true){
                   $("#meet_amount").text("(+"+"£ 5)")
                      //alert( "you need to pay extra £5 for avail this service")
-                    $("#total_fare").text(parseFloat(fare)+5)
+                    $("#total_fare").text(parseFloat(fare)+6)
                  }else{ 
-                     $("#total_fare").text(parseFloat(fare)-5)
+                     $("#total_fare").text(parseFloat(fare)-6)
                      $("#meet_amount").text("")
                  }
                 
              });
+
+             //new check box inserted using this function the total cost will change 
+             $('input#drop_off[type="checkbox"]').click(function(){
+               
+               var fare = $("#total_fare").text();
+               if($(this).prop("checked") == true){
+                $("#drop_amount").text("(+"+"£ 10)")
+                   //alert( "you need to pay extra £5 for avail this service")
+                  $("#total_fare").text(parseFloat(fare)+5)
+               }else{ 
+                   $("#total_fare").text(parseFloat(fare)-5)
+                   $("#drop_amount").text("")
+               }
+              
+           });
+
+
+
              $('.close').click(function(){
                  window.location.replace('<?php echo base_url('index')?>');
              })
