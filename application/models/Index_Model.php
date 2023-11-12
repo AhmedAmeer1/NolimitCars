@@ -42,13 +42,34 @@ class Index_Model extends CI_Model{
 
 		if($customerName){
 			debug_log("-----ONLINE OR CASH PAYMENT-- model   username and email NOT NULL");
-	
+
+			debug_log("-----name--------");
+			debug_log($_SESSION["book_data"]['last_name']);
+			debug_log("-----email--------");
+			debug_log($_SESSION["book_data"]['email']);
+			debug_log("-----phone--------");
+			debug_log($_SESSION["book_data"]['phone']);
+			debug_log("-----promocode--------");
+			debug_log($_SESSION["book_data"]['promocode']);
+
+			debug_log("-----total_fare--------");
+			debug_log($_SESSION["book_data"]['total_fare']);
+			
 
 			$user['name']= $_SESSION["book_data"]['first_name']." ". $_SESSION["book_data"]['last_name'];
+
+			debug_log("-----11111111111111111111111--------");
 			$user['email']= $_SESSION["book_data"]['email'];
+			debug_log("-----22222222222--------");
 			$user['phone']=$_SESSION["book_data"]['phone'];
+
+			debug_log("-----333333333--------");
 			$user['promo_code']=$_SESSION["promocode"];
+
+			debug_log("-----4444444444--------");
 			$user['amount']=	$_SESSION['total_fare'];
+
+			debug_log("-----555555555555--------");
 		}
 		else{
 			$user['name']= 'online payemnt';
