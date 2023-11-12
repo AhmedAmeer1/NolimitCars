@@ -746,22 +746,21 @@ input[type=number] {
                                     {
                                        console.log("aaaaaaaaaaaaaaaaaaa11111")
                                        alert("aaaaaaaaaaaaaaaaaaa")
-                                       // $('.payment-method').addClass('hide')
+                                        $('.payment-method').addClass('hide')
                                        if(payment_method =="cash")
                                        { 
-                                          $("#success_modal").trigger('click')
                                           console.log("cashhhhhhhhhhhhh")
-                                          console.log("data",data)
-                                       // var obj = jQuery.parseJSON(data);
+                                          console.log("data",)
+                                       var obj = jQuery.parseJSON(data);
                                        console.log("111111111111")
                                        alert("11111111")
                                        if(obj.result['booking_id'] !=""){
                                           alert("2222222222")
-                                             // $("#book_id").text(obj.result['booking_id']);
-                                             // alert("3333333")
-                                             // get_book_details(obj.result['booking_id'])
-                                             // alert("444444")
-                                             // $("#success_modal").trigger('click')
+                                             $("#book_id").text(obj.result['booking_id']);
+                                             alert("3333333")
+                                             get_book_details(obj.result['booking_id'])
+                                             alert("444444")
+                                             $("#success_modal").trigger('click')
                      
                                        }
                                        }else if(payment_method =="lloyds"){

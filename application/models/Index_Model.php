@@ -30,57 +30,31 @@ class Index_Model extends CI_Model{
 		//if(empty($last_booking_id)){
 			$booking_id = "Book-".rand()."-".date('Y-m-d');
 
-			debug_log("model ---11111111111111--");
+
 
 		//}
 		$_SESSION["book_data"]['booking_id'] =$booking_id ;
-		debug_log("model ---222222222222222--");
+	
 
 		$this->db->insert('booking_deatils',$_SESSION["book_data"]);
-		debug_log("model ---3333333333333--");
-
+	
 		$result['booking_id'] = $booking_id;
-		debug_log("model ---44444444444--");
-
 		$result['status'] = $this->db->affected_rows();
-		debug_log("model ---555555555555--");
-
 		if($this->db->affected_rows() == 1){
-	debug_log("model ---66666666666666--");
-
-		$customerName=$_SESSION["book_data"]['first_name'];
-
+			$customerName=$_SESSION["book_data"]['first_name'];
 
 		if($customerName){
 			debug_log("-----ONLINE OR CASH PAYMENT-- model   username and email NOT NULL");
 
-			debug_log("-----name--------");
-			debug_log($_SESSION["book_data"]['last_name']);
-			debug_log("-----email--------");
-			debug_log($_SESSION["book_data"]['email']);
-			debug_log("-----phone--------");
-			debug_log($_SESSION["book_data"]['phone']);
-			debug_log("-----promocode--------");
-			debug_log($_SESSION["book_data"]['promocode']);
-
-			debug_log("-----total_fare--------");
-			debug_log($_SESSION["book_data"]['total_fare']);
 			
 
-			$user['name']= $_SESSION["book_data"]['first_name']." ". $_SESSION["book_data"]['last_name'];
-
-			debug_log("-----11111111111111111111111--------");
+			$user['name']= $_SESSION["book_data"]['first_name']." ". $_SESSION["book_data"]['last_name'];	
 			$user['email']= $_SESSION["book_data"]['email'];
-			debug_log("-----22222222222--------");
 			$user['phone']=$_SESSION["book_data"]['phone'];
-
-			debug_log("-----333333333--------");
 			$user['promo_code']=$_SESSION["promocode"];
-
-			debug_log("-----4444444444--------");
 			$user['amount']=	$_SESSION['total_fare'];
 
-			debug_log("-----555555555555--------");
+		
 		}
 		else{
 			$user['name']= 'online payemnt';
