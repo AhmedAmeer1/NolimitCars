@@ -568,10 +568,14 @@ input[type=number] {
       
       <script>
          $(document).ready(function(){
-     
+           console.log("inside  document ready function ----- ")
             var payment_status = '<?php echo $payment_status;?>';
+            console.log("payment_status ----- ",payment_status)
             var book_id = '<?php echo $booking_id;?>';
+            console.log("book_id ----- ",book_id)
             if(payment_status == "done" && book_id !=0){
+
+               console.log("inside if condition  ----- ",book_id)
              get_book_details(book_id)
              $('.payment-method').addClass('hide')
                 $("#book_id").text('<?php echo $booking_id;?>');
