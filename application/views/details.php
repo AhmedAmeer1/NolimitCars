@@ -330,7 +330,7 @@ input[type=number] {
                            </div>
                            <div class="col-md-3 brdr-b">
                               <div class="form-group">
-                                 <label>CHILD SEAT</label><span id="child_seat_amt"></span>
+                                 <label>CHILD SEAT /TOOLS CHARGE</label><span id="child_seat_amt"></span>
                                  <select id="child_seat" class="formcontrol cost-add-on" data-cost-per-child-seat ="<?php echo $vechicle_data->cost_per_child_seat;?>" >
                                     <option value="0">Select</option>
                                     <?php for($k=1;$k<=$vechicle_data->child_seat;$k++){?>
@@ -400,6 +400,7 @@ input[type=number] {
 
 
                          <div class="user-pay-type">
+                             <button class="paycash-btn promo-code" onclick="apply_promo_code()">Apply Promocode</button>
                         <?php foreach($payment_types as $pt){?>
                            <button  class="paynow-btn payment-method" id="myButton" onclick="startLoading()" data-method=<?php echo $pt->method ?>><a id="pay_now_a"><?php echo $pt->title ?> <span class=" hidden spinner"id="loading"></span></a></button>
                            <!-- <button   class="paynow-btn" id="myButton" onclick="startLoading()"   data-method="asas">loading btn<span class=" hidden spinner"id="loading"></span></button> -->
@@ -638,15 +639,16 @@ input[type=number] {
                              var obj = jQuery.parseJSON(data);
                             // alert(obj.msg);
                              if(obj.msg == "success"){
-                                 $.alert("You will get" + obj.result['discount'] +"  % discount for this booking")
+                                 $.alert("You will get &nbsp;" + obj.result['discount'] +"% discount for this booking")
                                  let fare = $("#total_fare").text();
                                  let discount_amt = (fare* obj.result['discount']/100).toFixed(2);
                                  let after_dscnt = (fare - discount_amt)
                                  $("#total_fare").text(after_dscnt.toFixed(2));
+                                 $(".promo-code").hide();
                              }else{
                              $.alert(obj.msg)
                              }
-                             $(".promo-code").hide();
+                            
                             
                          }
                          })
