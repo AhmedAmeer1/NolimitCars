@@ -101,6 +101,16 @@ input[type=number] {
 		}
 	}
 
+.promotion-btn{
+   background-color: #f38422;
+    border-radius: 25px;
+    font-size: 12px;
+    padding: 10px 15px;
+    border: 0;
+    color: #fff;
+    margin-right: 15px;
+}
+
    </style>
        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
    <body>
@@ -352,6 +362,10 @@ input[type=number] {
                                  <label>COMMENTS OR SPECIAL INSTRUCTIONS</label>
                                  <textarea rows="3" class="formcontrol" id="scomments_special_inst" name="scomments_special_inst"></textarea>
                               </div>
+
+
+                             <button class=" promotion-btn  paycash-btn promo-code" onclick="apply_promo_code()">Apply Promocode</button>
+                                
                            </div>
                         </div>
                         <div class="col-md-12 pt-2">
@@ -400,7 +414,7 @@ input[type=number] {
 
 
                          <div class="user-pay-type">
-                             <button class="paycash-btn promo-code" onclick="apply_promo_code()">Apply Promocode</button>
+                             <!-- <button class="paycash-btn promo-code" onclick="apply_promo_code()">Apply Promocode</button> -->
                         <?php foreach($payment_types as $pt){?>
                            <button  class="paynow-btn payment-method" id="myButton" onclick="startLoading()" data-method=<?php echo $pt->method ?>><a id="pay_now_a"><?php echo $pt->title ?> <span class=" hidden spinner"id="loading"></span></a></button>
                            <!-- <button   class="paynow-btn" id="myButton" onclick="startLoading()"   data-method="asas">loading btn<span class=" hidden spinner"id="loading"></span></button> -->

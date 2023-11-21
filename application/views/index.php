@@ -31,6 +31,24 @@
 		background-size: 40px;
 		background-repeat: no-repeat;
 	}
+
+    .coupen-header{
+        font-size:60px;
+    }
+
+    .coupen-text{
+        font-size:20px;
+    }
+
+    .coupen-code{
+        font-size:32px;
+        color:#155a94;
+        font-weight:900
+    }
+    .coupen-section{
+        /* background-color: #FF700A; */
+    }
+
 	/*================(640)================*/
 	@media screen and (max-width: 40em) {
 		.paymentalert{
@@ -42,8 +60,30 @@
 			padding-left:40px;
 			background-size:35px;
 			margin-top:15px !important;
+            
 		}
+
+        .coupen-header{
+            font-size:30px;
+         }
+         .coupen-text{
+        font-size:15px;
+        }
+
+        .coupen-code{
+            font-size:25px;
+          
+        }
 	}
+
+
+
+
+    /* <h1 class="coupen-header">GET 50% OFF</h1>
+            <p class="coupen-text">here's your coupon code </p>
+            <h3 class="coupen-code">kaud23</h3> */
+
+
 </style>
 <head>
     <meta charset="utf-8">
@@ -155,7 +195,16 @@
             </div>
         </section>
 
-        
+        <section class="coupen-section">
+            <br><br>
+            <center>
+            <h1 class="coupen-header"><b>GET 50% OFF</b></h1>
+            <p class="coupen-text">Here's your coupon code </p>
+            <h3 class="coupen-code">LUTH23</h3>
+            </center>
+            <br><br>
+         
+        </section>
 
         <section class="carlist-wrapper">
             <div class="container no-gutter-responsive">
