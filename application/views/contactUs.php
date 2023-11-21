@@ -4,6 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="title" content="Contact Nolimit Cars for Airport Transfers and Inquiries" />
+    <meta name="description" content="Reach out to Nolimit Cars for all your airport transfer needs or any inquiries. Our team is ready to assist you with bookings, questions, and customized travel solutions." />
+ 
+
+
+
     <title>Contact us</title>
     <link rel="icon" type="img/png" sizes="32x32" href="<?php echo base_url('assets/images/favicon.png')?>">
     <link rel="stylesheet" href="<?= base_url('assets/css/contact.css') ?>">
