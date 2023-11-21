@@ -198,7 +198,7 @@
         <section class="coupen-section">
             <br><br>
             <center>
-            <h1 class="coupen-header"><b>GET 50% OFF</b></h1>
+            <h1 class="coupen-header"><b>GET 10% OFF</b></h1>
             <p class="coupen-text">Here's your coupon code </p>
             <h3 class="coupen-code">LUTH23</h3>
             </center>
