@@ -78,12 +78,6 @@
 
 
 
-
-    /* <h1 class="coupen-header">GET 50% OFF</h1>
-            <p class="coupen-text">here's your coupon code </p>
-            <h3 class="coupen-code">kaud23</h3> */
-
-
 </style>
 <head>
     <meta charset="utf-8">
@@ -132,6 +126,9 @@
     <main class="home">
        
         <div class="responsive-header-image"></div>
+
+
+<!-- 
         <section class="limits-banner">
             <div class="container no-gutter-responsive">
                 <div class="row no-gutter-responsive">
@@ -184,16 +181,97 @@
                     </div>
                     <div class="col-md-6 no-gutter-responsive lite-gutter">
                         <div class="banner-details">
-                            <h1>ALL UK AIRPORTS & OTHER SERVICES</h1>
-                            <p>WE specialise in  minicabs transfers to and from all UK airports for both individuals and groups, with the accent on a courteous and thoroughly professional personal service at affordable prices. 24 hours a day, 7 days
-                                a week </p>
-                            <p>Please <a href="mailto:info@nolimitcars.co.uk">email us</a> with as many details as possible and we will email you back with a quote as soon as possible. The price we quote is the price you pay.</p>
-                            <p> If you would like a quote for a journey you are planning please use our online booking form or call us on <a href="tel:02039822911" class="block-span">02039 822 911</a></p>
+                            <h1>Airport Transfers & Chauffeur Services – Connecting All UK Airports</h1>
+                            <p>
+            At NoLimitCars, we pride ourselves on providing top-notch minicab transfers, ensuring a seamless journey to and from all UK airports. Whether you're traveling solo or as part of a group, you can expect nothing less than a professional and friendly service tailored to your needs. Our services are available around the clock, every day of the week, because we believe in being there for you whenever you need us.
+            </p>
+                                        <p>Getting a quote is simple and transparent - no hidden fees, just straightforward pricing. For a personalized quote that caters to your specific journey, please share your details with us by using our easy online booking form, or feel free to give us a call at  <a href="tel:02039822911" > 02039 822 911</a>. From Brighton to Heathrow, Gatwick to Clifton, and everywhere in between, we've got your airport transfer needs covered. Book with us, and let us take the stress out of your airport journey.
+            </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+        </section> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <section class="limits-banner">
+            <div class="container no-gutter-responsive">
+                <div class="row no-gutter-responsive">
+                    <div class="col-md-6 no-gutter-responsive lite-gutter">
+                        <div class="book-form-box">
+                            <div class="head">
+                                <h1>testing ---</h1>
+                                <img src="assets/images/pay-options.png" class="img-fluid image-width" alt="Payement">
+                            </div>
+                            <?php 
+                           $redirectUrl = (isset($customer_id) && !empty($customer_id))
+                            ?'Index/Search'.$customer_id
+                            :'Index/Search';
+                            if($this->session->flashdata('message')) { 
+                                $flashdata = $this->session->flashdata('message'); ?>
+                                <div class="alert alert-<?= $flashdata['class'] ?>">
+                                <?= $flashdata['message'] ?>
+                            </div>
+                        <?php } ?>
+                            <div class="content">
+                                <div class="form-inner">
+                                <form id="createCustomerForm" role="form" action="<?=base_url($redirectUrl)?>" method="post" class="validate" data-parsley-validate="" enctype="multipart/form-data">
+                                    <div class="form-group">
+                                        <label>PICKUP LOCATION</label>
+                                        <div id="search_car"> 
+											<input type="text" class="form-control autocompleteDoc" name="source" required id="pickPoint" placeholder="Enter a location">
+											<input type="hidden" class="lat_perfect" id="sourceLat" name="sourceLat">
+											<input type="hidden" class="lon_perfect" id="sourceLon" name="sourceLon">
+                                            <input type="hidden" id="total_way_points" name="total_way_points">
+										</div>
+                                    </div>
+                                    <div class="way-points">
+                                       
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="d-flex justify-content-between">
+                                            <label>DESTINATION</label>
+                                           
+                                            <button style="float:right"><i class="fa fa-plus-circle multi-root " ></i> Multi Route</button>
+                                        </div>
+                                        
+                                        <input type="text" class="form-control autocompleteDoc" name="destination" required id="dropPoint" placeholder="Enter a location">
+										<input type="hidden" class="lat_perfect" id="destLat" name="destLat">
+										<input type="hidden" class="lon_perfect" id="destLong" name="destLong">
+                                    </div>
+                                    <button id="createCustomerSubmit" type="submit" class="submit-btn">GET A QUOTE</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 no-gutter-responsive lite-gutter">
+                        <div class="banner-details">
+                            <h1>Airport Transfers & Chauffeur Services Connecting All UK Airports</h1>
+                            <p>
+                            For reliable and professional airport transfers, NoLimitCars has you covered. We offer 24/7 minicab services to all UK airports for individuals and groups, with clear, upfront pricing. 
+                            <br /> <br />
+                            For a hassle-free quote, fill out our online form or call us at <a href="tel:02039822911" > 02039 822 911</a>. Travel comfortably from Brighton to Heathrow, Gatwick, and beyond with us.
+                            </p> <br /> <br />
+                          
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+
+
+
 
         <!-- <section class="coupen-section">
             <br><br>
@@ -311,10 +389,11 @@
                     <div class="col-md-6">
                         <div class="list-details-box">
                             <h4>Your destination is our goal</h4>
-                            <p>From the moment you contact us, we will do everything we can to ensure that your booking and transfer go as smoothly as possible. That means we provide highly professional minicabs, minibus, executive, chauffeur and parcel services
-                                for the number of passengers and the luggage requirements specified by you and provide you with an experienced driver with proven customer service skills and an extensive knowledge of the local area.</p>
+                            <p>
+When you choose us for your travel needs, we're committed to delivering a seamless experience from start to finish. Our diverse fleet, ranging from professional minicabs to executive chauffeurs and minibuses, is tailored to fit your specific passenger and luggage needs. Our drivers are hand-picked for their exceptional customer service and in-depth local knowledge, ensuring a smooth and pleasant journey. Plus, we're inclusive to all travelers with specially designed wheelchair-accessible vehicles. Come take a look at our extensive fleet and find the perfect ride for you.
+</p>
                            
-                            <p class="disability">We provide wheelchair vehicles, specially designed vehicles for disability people. You can see our large fleet service.     </p>
+                            <p class="disability">We offer a selection of wheelchair-accessible vehicles, ensuring comfortable travel for passengers with disabilities. Take a glimpse at our extensive fleet tailored to meet diverse needs.   </p>
                             <p class="flagimg">SERVICES NATIONWIDE</p>
                             
                         </div>
