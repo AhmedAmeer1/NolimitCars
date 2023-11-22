@@ -38,14 +38,18 @@
         <div class="wrapper">
             <div class="subcontent_wrapper">
                 <h1>Client FAQS</h1>
-                <span class="contenthead">HOW DO I MAKE BOOKING?</span>
-                <p>Online or by phone. If you don’t know the address (postcode) please email us and fill the details as much as possible.</p>
-                <span class="contenthead">WILL I RECEIVE A BOOKING CONFIRMATION?</span>
-                <p>You will receive a welcome email containing your login details and password on your first booking with us. You will automatically receive a NOLIMIT CARS acknowledgement email for the journey you have made. We will send you your journey details, pick up instructions and the driver phone number when the journey has been assigned to driver.</p>
-                <span class="contenthead">IF I HAVEN'T RECEIVED MY BOOKING CONFIRMATIONS AND TRANSFER IMMINENT</span>
-                <p>Please call us above phone number we will deal ASAP. We are available 24/7 so you call us at any time.</p>
-                <span class="contenthead">EXTRA CHARGES AND RECEIPT</span>
-                <p>We won’t charge for flight delays as we will track your flight. If you are delayed more than one hour after flight landed there may some be some additional charges, please see our T&amp;C. You will receive your RECEIPT 12 hours after the journey.</p>
+
+                <span class="contenthead">How do I make a booking?</span>
+                <p>Reserve your vehicle online or with a quick phone call. Not sure of the address? No problem—just email us with as many details as you have, and we'll take care of the rest.</p>
+
+                <span class="contenthead">How will I know if my booking got confirmed?</span>
+                <p>Once you book with us, you'll get a welcome email with your personal login and password. After that, every trip you book will be confirmed with an acknowledgement email from NoLimitCars. Plus, we'll send over all the details you need, like journey specifics, pick-up instructions, and your driver's contact, once they're assigned.</p>
+                
+                <span class="contenthead"> I didn’t receive a booking confirmation & Transfer Imminenet </span>
+                <p>If your transfer is approaching and you haven't received confirmation, please contact us at the listed number. Our team is here for you 24/7 to address your concerns promptly.</p>
+              
+                <span class="contenthead">Are there any extra charges?</span>
+                <p>Don't worry about flight delays; we monitor your flight and adjust accordingly without extra charge. If there's a delay exceeding one hour after landing, please refer to our T&Cs for potential additional charges. Expect a detailed receipt sent to you 12 hours post-journey.</p>
             </div>
         </div>
     </section>
