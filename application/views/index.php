@@ -195,7 +195,7 @@
             </div>
         </section>
 
-        <section class="coupen-section">
+        <!-- <section class="coupen-section">
             <br><br>
             <center>
             <h1 class="coupen-header"><b>GET 10% OFF</b></h1>
@@ -204,7 +204,7 @@
             </center>
             <br><br>
          
-        </section>
+        </section> -->
 
         <section class="carlist-wrapper">
             <div class="container no-gutter-responsive">
