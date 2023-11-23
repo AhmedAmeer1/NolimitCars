@@ -169,11 +169,7 @@ input[type=number] {
                                           <label>Pickup Date</label>
                                        </div>
                                        <p class="picker"><input onChange="checkDate()" required type="text" id="datepicker" autocomplete="off"></p>
-                                       <!-- <p class="picker"><input   onchange="checkDate()"  id="travel_date"  class="datep" required class="datepicker-input" type="date" >
-                                                </p> -->
-                                       <!-- <input   onchange="checkDate()"  id="travel_date"  class="datep" required class="datepicker-input" type="date" > -->
-                                       <!-- <label for="travel_date">SELECT DATE</label> 
-                                          <input type="text"  id="travel_date"  type="date" class="datep"> -->
+                               
                                    
                                     </div>
                                  </div>
@@ -184,9 +180,6 @@ input[type=number] {
                                           <label>Pickup Time</label>
                                        </div>
                                        <p class="picker"><input type="text" id="timepicker" autocomplete="off"></p>
-                                       <!-- <p class="picker"><input onclick="checkTime()" type="text" id="timepicker"></p> -->
-                                          <!-- <p class="picker"><input id="travel_time"  type="time" class="timep"></p> -->
-                                       <!-- <input id="travel_time"  type="time" class="timep"> -->
                                     </div>
 
                                  </div>
@@ -216,7 +209,7 @@ input[type=number] {
                   <div class="col-md-4">
                      <div id="login_div">
                         <div class="login-box" >
-                           <h1>Existing member login:</h1>
+                           <h1>Guest member login:</h1>
                            <div class="form-group">
                               <input type="text" id="exist_id" class="formcontrol" placeholder="Your email">
                            </div>
@@ -368,76 +361,24 @@ input[type=number] {
                                 
                            </div>
                         </div>
-                        <div class="col-md-12 pt-2">
-                           <div class="form-group d-flex align-items-center">
-                              <input type="checkbox" id="create_acnt" class="c-check"><label class="ml-2"> IF YOU DO NOT HAVE ANY ACCOUNT PLEASE CREATE AN ACCOUNT</label>
-                           </div>
-                        </div>
-                        <div id="create_acnt_div" class="hide mt-4">
-                            <form action="#" name="registration">
-                           <div class="row">
-                              <div class="col-md-4 brdr-b-r-t">
-                                 <div class="form-group">
-                                    <label for="username">username</label>
-                                    <input type="text" id="username" name="username" class="formcontrol">
-                                 </div>
-                              </div>
-                              <div class="col-md-4 brdr-b-r-t">
-                                 <div class="form-group">
-                                    <label for="username">Password</label>
-                                    <input type="text" id="password" name="password" class="formcontrol">
-                                 </div>
-                              </div>
-                              <div class="col-md-4 brdr-b-t">
-                                 <div class="form-group">
-                                    <label for="confirm_password">Confirm Password</label>
-                                    <input type="text" id="confirm_password" name="confirm_password" class="formcontrol">
-                                 </div>
-                              </div>
-                           </div>
-                           <div class="row text-center">
-                              <div class="form-group text-center">
-                                 <button type="submit"  class="new-lgn-btn">Submit</button>
-                              </div>
-                           </div>
-                           </form>
-                        </div>
+                 
+                 
                      </div>
                      <div class="bottom-buttons">
-                     <div class="admin-pay-type hide ">
-                         <!-- <button class="paycash-btn promo-code" onclick="apply_promo_code()">Apply Promocode</button> -->
-                         <button class="paycash-btn payment-method" data-method="pay_cash">PAY CASH</button> 
-                         <button class="paynow-btn payment-method" data-method="pay_now">PAY NOW</button> 
-                     </div>
-
-
-
-
                          <div class="user-pay-type">
-                             <!-- <button class="paycash-btn promo-code" onclick="apply_promo_code()">Apply Promocode</button> -->
-                        <?php foreach($payment_types as $pt){?>
-                           <button  class="paynow-btn payment-method" id="myButton" onclick="startLoading()" data-method=<?php echo $pt->method ?>><a id="pay_now_a"><?php echo $pt->title ?> <span class=" hidden spinner"id="loading"></span></a></button>
-                           <!-- <button   class="paynow-btn" id="myButton" onclick="startLoading()"   data-method="asas">loading btn<span class=" hidden spinner"id="loading"></span></button> -->
-                        <?php }?>
-                        <!-- <button   class="paynow-btn" id="myButton" onclick="startLoading()"   data-method="asas">loading btn<span class=" hidden spinner"id="loading"></span></button>
-                       
-                        -->
-                       
-                       
-                        <!-- <button id="myButton"  class="paynow-btn" onclick="startLoading()">Click Me <div class=" hidden spinner"id="loading"></div></button> -->
-                        
-                        <span id="loading" class="hidden">
-                              <span id="hiddenBtn">
-                                  <span class="spinner">
-                                  </span>
+                              <?php foreach($payment_types as $pt){?>
+                                 <button  class="paynow-btn payment-method" id="myButton"  data-method=<?php echo $pt->method ?>><a id="pay_now_a"><?php echo $pt->title ?> <span class=" hidden spinner"id="loading"></span></a></button>
+                              <?php }?>
+                                         
+                              <span id="loading" class="hidden">
+                                    <span id="hiddenBtn">
+                                       <span class="spinner">
+                                       </span>
+                                    </span>
                               </span>
-                           
-                         </span>
+                        </div>
 
-                    
 
-                        
-                     </div>
                   </div>
                </div>
             </div>
@@ -540,29 +481,7 @@ input[type=number] {
       </div>
       </div>
 
-<script>
-       function startLoading() {
-         // alert("clicked")
-   //  var button = document.getElementById("myButton");
-   //  var loading = document.getElementById("loading");
-   //  var hiddenBtn = document.getElementById("hiddenBtn");
-   //  // Disable the button
-   //  button.disabled = true;
-   //  hiddenBtn.disabled = true;
-   // //  button.style.display ="none"
-   //  // Show the loading spinner
-   //  loading.style.display = "block";
 
-   //  // Simulate a delay (replace with your actual processing)
-   //  setTimeout(function() {
-   //      // Re-enable the button
-   //      button.disabled = false;
-
-   //      // Hide the loading spinner
-   //      loading.style.display = "none";
-   //  }, 6000); // Change 3000 to the desired processing time in milliseconds
-}
-</script>
 
       
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -906,86 +825,7 @@ input[type=number] {
              })
              // Wait for the DOM to be ready
            
-$(function() {
-    jQuery.validator.setDefaults({
-  debug: true,
-  success: "valid"
-});
-  // Initialize form validation on the registration form.
-  // It has the name attribute "registration"
-  $("form[name='registration']").validate({
-    // Specify validation rules
-    rules: {
-      // The key name on the left side is the name attribute
-      // of an input field. Validation rules are defined
-      // on the right side
-     
-      
-      
-      username: {
-        required: true,
-       
-        email: true
-      },
-      password: {
-        required: true,
-        minlength: 5
-      },
-      confirm_password: {
-        equalTo: "#password"
-      },
-      
-    },
-    // Specify validation error messages
-    messages: {
-        username: "Please enter a valid email address",
-     
-      password: {
-        required: "Please provide a password",
-        minlength: "Your password must be at least 5 characters long"
-      },
-      confirm_password: {
-       
-        equalTo : "Please enter the same password"
-      },
-     
-    },
-    // Make sure the form is submitted to the destination defined
-    // in the "action" attribute of the form when valid
-    submitHandler: function(form) {
-        var username = $("#username").val();
-        var password = $("#password").val();
-        var first_name = $("#first_name").val();
-        var last_name = $("#last_name").val();
-        var phone_no = $("#phone_no").val();
-        
-        var url ="<?php echo base_url('index/create_account') ?>";
-        $.ajax({
-                         type: "POST",
-                         url: url,
-                         data: {username:username,password:password,first_name:first_name,last_name:last_name,phone_no:phone_no},
-                         success: function(result)
-                         {
-                            
-                             var obj = jQuery.parseJSON(result);
-                             if(obj.status > 0){
-                                 $("#login_div").addClass('hide');
-                                 $("#my_account_div").removeClass('hide');
-                                 $("#my_account").attr('data-user-id',obj.user_id)
 
-
-                             }
-                          
-                           alert(obj.msg)
-
-             
-                         }
-             })
-        
-      //form.submit();
-    }
-  });
-});
 
 $("#login").click(function(){ 
    var username = $("#exist_id").val();
