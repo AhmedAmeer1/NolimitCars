@@ -211,7 +211,7 @@
                     <div class="col-md-6 no-gutter-responsive lite-gutter">
                         <div class="book-form-box">
                             <div class="head">
-                                <h1>testing ---</h1>
+                                <h1>BOOK NOW</h1>
                                 <img src="assets/images/pay-options.png" class="img-fluid image-width" alt="Payement">
                             </div>
                             <?php 
