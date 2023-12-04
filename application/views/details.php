@@ -577,6 +577,15 @@ input[type=number] {
                                  console.log(" dicount success---------------22222222222-------")
                                  let fare = $("#total_fare").text();
                                  console.log(" dicount success---------------33333333---- fare---",fare)
+
+
+                                 let ahmeddiscount =  obj.result['discount'];
+
+                                 console.log(" dicount success---------------44444444444-- ahmeddiscount-----",ahmeddiscount)
+
+                                 let discount_amttest = (fare* obj.result['discount']/100);
+                                 console.log(" dicount success---------------44444444444-- discount_amttest-----",discount_amt)
+
                                  let discount_amt = (fare* obj.result['discount']/100).toFixed(2);
                                  console.log(" dicount success---------------44444444444-- discount_amt-----",discount_amt)
                                  let after_dscnt = (fare - discount_amt)
