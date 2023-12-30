@@ -9,6 +9,7 @@ class Index extends CI_Controller {
 		date_default_timezone_set('Europe/London');
 		$this->load->model('Index_Model');
 		$this->load->helper('cookie');
+		$this->load->helper('custom_helper');
 	
  	}	
 	public function index(){
@@ -519,7 +520,7 @@ public function check_promo_code(){
 	public function email_notification($data){
 
 		$this->load->helper('custom_helper');
-		debug_log("---------------------------START  ENTERED email_notification method ------------------ ");
+	
 	
 
 		$this->load->library('email');
@@ -662,9 +663,19 @@ public function cancel_trip(){
 }
 function get_per_mile_charge(){
 	$vehichle_id = $_POST['vehicle_id'];
+
+
+
+
 	// $total_mile =  round($_POST['total_mile'],2);
 	$total_mile =  $_POST['total_mile'];
+	$total_minutes = $_POST['durationInMinutes'];
 	
+	// debug_log(" durationInMinutes-----");
+
+	// debug_log($total_minutes);
+
+
 	$result=$this->Index_Model->get_vehicle($vehichle_id);
 	$special_location = $_POST['special_location'];
 	$special_amount_per_mile =0;
@@ -685,12 +696,10 @@ function get_per_mile_charge(){
 		if($result->mile_range != "" && $result->mile_range != "null"){
 			$mile_range = json_decode($result->mile_range);
 			foreach($mile_range as $mr){
-				
+
+
 				if( $total_mile >= $mr->from  && $total_mile <= $mr->to){  
 
-					// echo $mr->single.'<br/>';
-					// echo $total_mile.'<br/>';
-					// echo $result->perKm.'<br/>';
 					$single = ($mr->single*$total_mile)+ $result->perKm;
 					$return = ($mr->return*$total_mile*2)+ $result->perKmReturn;
 
@@ -704,8 +713,7 @@ function get_per_mile_charge(){
 				}
 			}
 		}else{
-			// $single = $result->perKm+$result->fixedPrice;
-			// $return = $result->perKmReturn+$result->fixedPrice;
+
 			$single = $result->perKm;
 			$return = $result->perKmReturn*2;
 		}
@@ -713,9 +721,63 @@ function get_per_mile_charge(){
 	}
 	$single = round($single, 2);
 	$return = round($return, 2);
-	$array1= array('single' =>$single,'retn' =>$return);
+	// $array1= array('single' =>$single,'retn' =>$return);
+
+
+
+
+//--***************----COST CALCULATING BASED ON THE MINUTES START  ---***********----
+
+	$singleTime = 0;
+	$returnTime = 0;
+	if($result->time_range != "" && $result->time_range != "null"){
+		$time_range = json_decode($result->time_range);
+		foreach($time_range as $mr){
+			
+			if( $total_minutes >= $mr->from  && $total_minutes <= $mr->to){  
+
+			
+				$singleTime = $mr->single*$total_minutes;
+				$returnTime = $mr->return*$total_minutes;
+
+				
+				break;
+			}
+		}
+	}
+
+
+	// debug_log(" --------------------------VECHICLE title -------------------");
+	// debug_log($result->title);
+	// debug_log(" kilometer price -- ");
+	// debug_log($single);
+	// debug_log(" timing  price -- ");
+	// debug_log($singleTime);
+	// debug_log(" ================= ");
+	// debug_log(" return kilometer price -- ");
+	// debug_log($return);
+	// debug_log(" return timing  price -- ");
+	// debug_log($returnTime);
+
+	$totalsingle = $single + $singleTime ;
+	$totalreturn = $return + $returnTime ;
+
+	// debug_log(" totalsingle -- ");
+	// debug_log($totalsingle);
+
+	// debug_log(" total return  -- ");
+	// debug_log($totalreturn);
+
+	
+	$array1= array('single' =>$totalsingle,'retn' =>$totalreturn);
+
 	echo json_encode($array1);
 }
+
+
+
+
+
 public function ipg(){
 
 date_default_timezone_set("Europe/Berlin");

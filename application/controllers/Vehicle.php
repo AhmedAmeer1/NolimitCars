@@ -9,6 +9,7 @@ class Vehicle extends CI_Controller {
         $this->load->model('VehicleModel');
         $this->load->model('CompanyModel');
         $this->load->model('LocationModel');
+        $this->load->helper('custom_helper');
         if(!$this->session->userdata('logged_in')) {
             redirect(base_url('Login'));
         }
@@ -52,6 +53,8 @@ class Vehicle extends CI_Controller {
     }
     
     public function createVehicle(){  
+
+
         $err = 0;
         $errMsg = '';
         $flashMsg = array('message'=>'Something went wrong, please try again..!','class'=>'error');
@@ -90,6 +93,8 @@ class Vehicle extends CI_Controller {
         }
 
         
+
+      //MILES RANGE (BASED ON THE MILES  SET THE PRICE )LOGIC 
         $total_mile_range = $_POST['total_mile_range'];
         if($total_mile_range > 0){
             $mile_set = array();
@@ -110,7 +115,37 @@ class Vehicle extends CI_Controller {
         }
         unset($_POST['total_mile_range']);
         $_POST['mile_range'] = json_encode($mile_set);  
+
+
+
+        //TIME RANGE (BASED ON THE TIME SET THE PRICE )LOGIC 
+       $total_time_range = $_POST['total_time_range'];
+
+        if($total_time_range > 0){
+            $time_set = array();
+           
+            for($i=1;$i<=$total_time_range;$i++){
+               $res = explode('-',$_POST['time-range-'.$i]);
+               unset($_POST['time-range-'.$i]);
+        
+               $time_x = (object) [
+                'from' => $res[0],
+                'to' => $res[1],
+                'single' => $res[2],
+                'return' => $res[3]
+            ];
+            $time_set[] = $time_x;
+
+            }
+        }
+
+        unset($_POST['total_time_range']);
+        $_POST['time_range'] = json_encode($time_set);  
       
+
+
+
+
         
         $status = $this->VehicleModel->createVehicle($_POST);
         if($status == 1){
@@ -125,6 +160,7 @@ class Vehicle extends CI_Controller {
     }
     
     public function editVehicle($vehicle_id){
+
         $flashMsg = array('message'=>'Something went wrong, please try again..!','class'=>'error');
         if(empty($vehicle_id)){
             $this->session->set_flashdata('message',$flashMsg);
@@ -141,6 +177,7 @@ class Vehicle extends CI_Controller {
         $template['company_data'] =  $this->CompanyModel->getCompany();
         $template['vehicle_type'] =  $this->VehicleModel->getVehicleType();
         $template['mile_range'] = json_decode($template['vehicle_data']->mile_range);
+        $template['time_range'] = json_decode($template['vehicle_data']->time_range);
         
 
         $this->load->view('template',$template);
@@ -177,22 +214,24 @@ class Vehicle extends CI_Controller {
             $this->session->set_flashdata('message',$flashMsg);
             redirect(base_url('Vehicle/editVehicle'));
         }
+
+
+
+
+        //----*****************-----EDIT VEHICLE MILE UPDATE LOGIC START  ------*****************------
+
         $total_mile_range = $_POST['total_mile_range'];  
-       
+
         if($total_mile_range > 0){
             $mile_set = array(); $last_mile_index=0;
             foreach($_POST as $key1 => $value1){
-               
-               
                 if (strpos($key1, 'mile-range-') !== false) { 
                    $test =  explode('mile-range-',$key1);
                    if($last_mile_index < $test[1])
-                   
                     $last_mile_index = $test[1];
                 }
             }
-            //echo  $last_mile_index;exit;
-           
+                
             for($i=1;$i<=$last_mile_index;$i++){
                 if(!empty($_POST['mile-range-'.$i])){
                     $res = explode('-',$_POST['mile-range-'.$i]);
@@ -206,19 +245,68 @@ class Vehicle extends CI_Controller {
                     $mile_set[] = $x;
                 }
                 unset($_POST['mile-range-'.$i]);
-        
-             
-
             }
         }
-        //echo "<pre>";print_r($_POST);exit;
-       foreach($_POST as $key => $value){
-          
-        if (strpos($key, 'mile-range-') !== false) { 
+
+         foreach($_POST as $key => $value){         
+            if (strpos($key, 'mile-range-') !== false) { 
+                unset($_POST[$key]);
+            }
+           }     
+
+           $_POST['mile_range'] = json_encode($mile_set);  
+            unset($_POST['total_mile_range']);
+
+  
+
+         //---*****************---EDIT VEHICLE TIME  UPDATE LOGIC START ----******************---
+
+        $total_time_range = $_POST['total_time_range']; 
+
+        if($total_time_range > 0){
+            $time_set = array(); $last_time_index=0;
+            foreach($_POST as $key1 => $value1){              
+                if (strpos($key1, 'time-range-') !== false) { 
+                   $test =  explode('time-range-',$key1);
+                   if($last_time_index < $test[1])
+                   
+                    $last_time_index = $test[1];
+                }
+            }
+
+            for($i=1;$i<=$last_time_index;$i++){
+                if(!empty($_POST['time-range-'.$i])){
+                    $res = explode('-',$_POST['time-range-'.$i]);
+                    
+                    $x = (object) [
+                        'from' => $res[0],
+                        'to' => $res[1],
+                        'single' => $res[2],
+                        'return' => $res[3]
+                    ];
+                    $time_set[] = $x;
+                }
+                unset($_POST['time-range-'.$i]);
+           }
+        }
+
+       foreach($_POST as $key => $value){         
+        if (strpos($key, 'time-range-') !== false) { 
             unset($_POST[$key]);
         }
-       }        $_POST['mile_range'] = json_encode($mile_set);  
-        unset($_POST['total_mile_range']);
+       }     
+
+       $_POST['time_range'] = json_encode($time_set);  
+        unset($_POST['total_time_range']);
+
+     //---*****************---EDIT VEHICLE TIME  UPDATE LOGIC  END ----******************---
+
+
+
+
+
+
+
         $status = $this->VehicleModel->updateVehicle(decode_param($vehicle_id),$_POST);
         if($status == 1){
             $flashMsg['class'] = 'success';
@@ -230,6 +318,14 @@ class Vehicle extends CI_Controller {
         $this->session->set_flashdata('message',$flashMsg);
         redirect(base_url('Vehicle/addVehicle'));
     }
+
+
+
+
+
+
+
+
     public function getVehicleData(){
        $return_arr = array('status'=>'0');
         if(!isset($_POST)||empty($_POST)||!isset($_POST['vehicle_id'])||empty($_POST['vehicle_id'])){

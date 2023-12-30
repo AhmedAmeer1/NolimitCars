@@ -362,6 +362,18 @@ for(var j=0;j<all_points.length;j++){
         if ( status == google.maps.DirectionsStatus.OK ) {
 
             var kil =   response.routes[0].legs[0].distance.value/1000;
+
+            var minutes = response.routes[0].legs[0].duration.value / 60;
+            var durationInSeconds = response.routes[0].legs[0].duration.value;
+            var durationInMinutes = durationInSeconds / 60;
+            var durationInHours = durationInMinutes / 60;
+
+
+            console.log("kil----",kil)
+            console.log("durationInSeconds----",durationInSeconds)
+            console.log("durationInMinutes----",durationInMinutes)
+            console.log("durationInHours----",durationInHours)
+
              var total_mile = parseFloat( kil * 0.621371);
              mile_total += total_mile;
             mile_array.push(total_mile);
@@ -379,7 +391,7 @@ for(var j=0;j<all_points.length;j++){
         $.ajax({
                 type: "POST",
                 url: '<?php echo base_url('index/get_per_mile_charge')?>',
-                data: {vehicle_id:vehicle_id,total_mile:mile_total,special_location:special_location},
+                data: {vehicle_id:vehicle_id,total_mile:mile_total,special_location:special_location,durationInMinutes:durationInMinutes},
                 success: function(data)
                 {
                     var obj = jQuery.parseJSON(data);
@@ -387,7 +399,7 @@ for(var j=0;j<all_points.length;j++){
                     // var total_amount_single = obj['single']*total_mile;
                     // var total_amount_return = obj['retn']*total_mile;
                     var total_amount_single = obj['single'];
-                    var total_amount_return = obj['retn'];
+                    var total_amount_return = obj['retn']
                     if(obj['single'] == 0 || obj['retn'] == 0){
                         $("#vehicle"+vehicle_id).hide();
                     }
